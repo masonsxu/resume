@@ -2,7 +2,7 @@
 
 > Backend Engineer / Tech Lead  
 > Go · Microservices · DDD · CloudWeGo  
-> Open to opportunities in Shanghai
+> Open to opportunities in Shanghai/Hangzhou
 
 ---
 
