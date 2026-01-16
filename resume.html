@@ -12,165 +12,329 @@
             box-sizing: border-box;
         }
 
+        /* 核心调整：减小页面边距，为内容腾出空间 */
         @page {
             size: A4;
-            margin: 10mm 10mm;
+            margin: 8mm 8mm;
+            /* 从10mm缩减到8mm，每页多2mm可用空间 */
         }
 
         html,
         body {
             width: 210mm;
             font-family: "Microsoft YaHei", "PingFang SC", "SimHei", sans-serif;
-            font-size: 10pt;
+            font-size: 9.5pt;
+            /* 核心文本从10pt微调至9.5pt，减少垂直占用 */
             line-height: 1.4;
-            color: #333;
+            /* 行高从1.5缩减到1.4，既紧凑又保持可读性 */
+            color: #2d3748;
             background: white;
             -webkit-print-color-adjust: exact;
             print-color-adjust: exact;
         }
 
+        /* 压缩容器内边距 */
         .container {
-            width: 190mm;
+            width: 194mm;
+            /* 从190mm加宽到194mm，利用更多横向空间 */
             margin: 0 auto;
-            padding: 5mm 0;
+            padding: 4mm 0;
+            /* 从8mm缩减到4mm */
         }
 
-        /* Header - 紧凑 */
+        /* 主题色定义（高级深蓝/商务风） */
+        :root {
+            --primary: #0f172a;
+            /* Slate 900 - 深邃专业 */
+            --primary-light: #334155;
+            /* Slate 700 - 次级信息 */
+            --primary-dark: #020617;
+            /* Slate 950 - 强调 */
+            --accent: #0369a1;
+            /* Sky 700 - 稳重的强调色 (原橙色太活泼，改为深蓝系) */
+            --accent-light: #0ea5e9;
+            /* Sky 500 - 亮点 */
+            --secondary: #475569;
+            /* Slate 600 - 辅助 */
+            --neutral-100: #f8fafc;
+            --neutral-200: #e2e8f0;
+            --neutral-700: #334155;
+            --neutral-800: #1e293b;
+            --success: #059669;
+            /* Emerald 600 */
+            --danger: #dc2626;
+        }
+
+        /* Header - 增加留白，提升高级感 */
         .header {
             text-align: center;
-            border-bottom: 2pt solid #2c3e50;
-            padding-bottom: 8pt;
-            margin-bottom: 10pt;
+            border-bottom: none;
+            /* 去掉底部粗线，改用更现代的方式 */
+            padding-bottom: 12pt;
+            margin-bottom: 12pt;
+            position: relative;
+        }
+
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40mm;
+            /* 缩短线条，更精致 */
+            height: 2pt;
+            background: var(--accent);
+            border-radius: 2px;
         }
 
         .header h1 {
-            font-size: 22pt;
-            color: #2c3e50;
-            margin-bottom: 4pt;
-            letter-spacing: 2pt;
+            font-size: 24pt;
+            /* 恢复大字号 */
+            color: var(--neutral-800);
+            margin-bottom: 6pt;
+            letter-spacing: 1pt;
+            font-weight: 800;
         }
 
         .header .position {
             font-size: 12pt;
-            color: #3498db;
+            /* 从13pt微调至12pt */
+            color: var(--primary);
             font-weight: 600;
             margin-bottom: 6pt;
+            /* 从8pt缩减到6pt */
+            letter-spacing: 1pt;
         }
 
         .contact-info {
-            font-size: 9pt;
-            color: #555;
+            font-size: 8.5pt;
+            /* 从9pt微调至8.5pt */
+            color: var(--neutral-700);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 6pt;
+            /* 从8pt缩减到6pt */
         }
 
         .contact-info span {
-            display: inline-block;
-            margin: 0 6pt;
+            display: inline-flex;
+            align-items: center;
+            gap: 3pt;
+            /* 从4pt缩减到3pt */
         }
 
         .contact-info a {
-            color: #3498db;
+            color: var(--primary);
             text-decoration: none;
+            transition: color 0.2s;
         }
 
-        /* Section - 紧凑 */
+        .contact-info a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        /* Section - 压缩模块间距 */
         .section {
             margin-bottom: 8pt;
+            /* 从12pt缩减到8pt */
+            position: relative;
         }
 
         .section-title {
             font-size: 12pt;
-            color: #2c3e50;
-            border-left: 3pt solid #3498db;
-            padding-left: 8pt;
+            /* 从13pt微调至12pt */
+            color: var(--neutral-800);
+            border-left: 4pt solid var(--primary);
+            padding: 3pt 8pt;
+            /* 从4pt 10pt缩减到3pt 8pt */
             margin-bottom: 6pt;
+            /* 从8pt缩减到6pt */
             font-weight: 700;
+            background-color: var(--neutral-100);
+            border-radius: 0 6px 6px 0;
+            display: inline-block;
         }
 
-        /* Core Competency - 紧凑 */
+        /* Core Competency - 压缩内边距 */
         .core-competency {
-            background-color: #f5f7f8;
-            padding: 6pt 8pt;
-            border-left: 3pt solid #3498db;
+            background-color: var(--neutral-100);
+            padding: 6pt 10pt;
+            /* 从8pt 12pt缩减到6pt 10pt */
+            border-left: 4pt solid var(--primary);
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
 
         .core-competency p {
-            font-size: 9.5pt;
-            line-height: 1.6;
+            font-size: 9pt;
+            /* 从9.5pt微调至9pt */
+            line-height: 1.4;
+            /* 从1.7缩减到1.4 */
             text-align: left;
         }
 
         .highlight {
-            color: #c0392b;
+            color: var(--accent);
             font-weight: 600;
+            text-shadow: 0 0 1px rgba(249, 115, 22, 0.3);
         }
 
-        /* Skills - 紧凑 */
+        /* Skills - 压缩技能模块间距 */
         .skills-group {
             margin-bottom: 6pt;
+            /* 从8pt缩减到6pt */
         }
 
         .skills-group h3 {
             font-size: 10pt;
-            color: #34495e;
+            /* 从10.5pt微调至10pt */
+            color: var(--neutral-800);
             margin-bottom: 4pt;
+            /* 从6pt缩减到4pt */
             font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4pt;
+            /* 从6pt缩减到4pt */
+        }
+
+        .skills-group h3::before {
+            content: "●";
+            color: var(--primary);
+            font-size: 8pt;
         }
 
         .skill-item {
-            font-size: 9pt;
+            font-size: 8.5pt;
+            /* 从9pt微调至8.5pt */
             margin-bottom: 2pt;
+            /* 从3pt缩减到2pt */
             padding-left: 12pt;
+            /* 从14pt缩减到12pt */
             position: relative;
-            line-height: 1.45;
+            line-height: 1.4;
+            /* 从1.5缩减到1.4 */
+            transition: padding-left 0.2s;
         }
 
         .skill-item::before {
             content: "▪";
             position: absolute;
             left: 0;
-            color: #3498db;
+            color: var(--primary-light);
+            font-size: 9pt;
+            /* 从10pt微调至9pt */
+        }
+
+        .skill-item:hover {
+            padding-left: 14pt;
+            /* 从16pt缩减到14pt */
         }
 
         .skill-label {
             font-weight: 600;
-            color: #2c3e50;
+            color: var(--neutral-800);
         }
 
-        /* Experience - 紧凑 */
+        /* 两列技能布局 - 压缩列间距 */
+        .skills-two-col {
+            display: table;
+            width: 100%;
+            gap: 8pt;
+            /* 从12pt缩减到8pt */
+        }
+
+        .skills-col {
+            display: table-cell;
+            width: 50%;
+            vertical-align: top;
+            padding: 0 6pt;
+            /* 从0 8pt缩减到0 6pt */
+        }
+
+        .skills-col:first-child {
+            padding-left: 0;
+            border-right: 1px solid var(--neutral-200);
+        }
+
+        .skills-col:last-child {
+            padding-right: 0;
+        }
+
+        /* Experience - 压缩工作经历模块间距 */
         .experience-item,
         .project-item {
             margin-bottom: 8pt;
+            /* 从12pt缩减到8pt */
+            padding-bottom: 6pt;
+            /* 从10pt缩减到6pt */
+            border-bottom: 1px dashed var(--neutral-200);
+        }
+
+        .experience-item:last-child,
+        .project-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
 
         .company-name,
         .project-name {
-            font-size: 11pt;
+            font-size: 10.5pt;
+            /* 从11.5pt微调至10.5pt */
             font-weight: 600;
-            color: #2c3e50;
+            color: var(--neutral-800);
+            display: flex;
+            align-items: center;
+            gap: 4pt;
+            /* 从6pt缩减到4pt */
+        }
+
+        .company-name::before,
+        .project-name::before {
+            content: "▶";
+            color: var(--primary);
+            font-size: 8pt;
+            /* 从9pt微调至8pt */
         }
 
         .position-period {
-            color: #666;
-            font-size: 9pt;
-            margin-top: 2pt;
+            color: var(--neutral-700);
+            font-size: 8.5pt;
+            /* 从9pt微调至8.5pt */
+            margin-top: 3pt;
+            /* 从4pt缩减到3pt */
+            font-style: italic;
         }
 
         .role-period {
             margin-bottom: 4pt;
+            /* 从6pt缩减到4pt */
             overflow: hidden;
+            padding: 2pt 0;
+            /* 从4pt 0缩减到2pt 0 */
         }
 
         .role-title {
             font-weight: 600;
-            color: #34495e;
+            color: var(--neutral-800);
             font-size: 10pt;
+            /* 从10.5pt微调至10pt */
             float: left;
         }
 
         .period {
-            color: #666;
-            font-size: 9pt;
+            color: var(--neutral-700);
+            font-size: 8.5pt;
+            /* 从9pt微调至8.5pt */
             float: right;
+            background-color: var(--neutral-100);
+            padding: 1pt 5pt;
+            /* 从1pt 6pt缩减到1pt 5pt */
+            border-radius: 10px;
         }
 
         .role-period::after {
@@ -180,176 +344,313 @@
         }
 
         .responsibility-list {
-            margin-left: 14pt;
-            font-size: 9pt;
+            margin-left: 12pt;
+            /* 从16pt缩减到12pt */
+            font-size: 8.5pt;
+            /* 从9pt微调至8.5pt */
         }
 
         .responsibility-list li {
             margin-bottom: 2pt;
-            line-height: 1.45;
+            /* 从3pt缩减到2pt */
+            line-height: 1.4;
+            /* 从1.5缩减到1.4 */
+            list-style: none;
+            position: relative;
+            padding-left: 8pt;
+            /* 从10pt缩减到8pt */
         }
 
-        /* Project - 紧凑 */
+        .responsibility-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-light);
+        }
+
+        /* Project - 压缩项目模块内边距 */
         .project-background {
-            background-color: #fafafa;
-            padding: 5pt 8pt;
-            margin-bottom: 5pt;
-            font-size: 9pt;
-            line-height: 1.45;
+            background-color: var(--neutral-100);
+            padding: 6pt 8pt;
+            /* 从8pt 10pt缩减到6pt 8pt */
+            margin-bottom: 6pt;
+            /* 从8pt缩减到6pt */
+            font-size: 8.5pt;
+            /* 从9pt微调至8.5pt */
+            line-height: 1.4;
+            /* 从1.5缩减到1.4 */
+            border-radius: 6px;
+            border-left: 3pt solid var(--secondary);
         }
 
         .tech-stack {
-            background-color: #e8f4f8;
-            padding: 5pt 8pt;
-            margin-bottom: 5pt;
-            font-size: 8.5pt;
-            line-height: 1.45;
+            background-color: #f0f7ff;
+            padding: 4pt 8pt;
+            /* 从6pt 10pt缩减到4pt 8pt */
+            margin-bottom: 6pt;
+            /* 从8pt缩减到6pt */
+            font-size: 8pt;
+            /* 从8.5pt微调至8pt */
+            line-height: 1.4;
+            /* 从1.5缩减到1.4 */
+            border-radius: 6px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3pt;
+            /* 从4pt缩减到3pt */
+            align-items: center;
+        }
+
+        .tech-stack strong {
+            margin-right: 4pt;
+            /* 从6pt缩减到4pt */
+            color: var(--primary-dark);
+        }
+
+        .tech-stack a {
+            color: var(--primary);
+            text-decoration: none;
+            padding: 1pt 3pt;
+            /* 从1pt 4pt缩减到1pt 3pt */
+            border-radius: 3px;
+            background-color: rgba(37, 99, 235, 0.1);
+        }
+
+        .tech-stack a:hover {
+            background-color: rgba(37, 99, 235, 0.2);
         }
 
         .achievement-list {
-            margin-left: 14pt;
-            font-size: 9pt;
+            margin-left: 12pt;
+            /* 从16pt缩减到12pt */
+            font-size: 8.5pt;
+            /* 从9pt微调至8.5pt */
         }
 
         .achievement-list>li {
             margin-bottom: 3pt;
-            line-height: 1.5;
+            /* 从4pt缩减到3pt */
+            line-height: 1.4;
+            /* 从1.5缩减到1.4 */
+            list-style: decimal;
+            color: var(--neutral-800);
+        }
+
+        .achievement-list>li strong {
+            color: var(--primary-dark);
         }
 
         .sub-list {
-            margin-left: 14pt;
+            margin-left: 10pt;
+            /* 从14pt缩减到10pt */
             margin-top: 2pt;
+            /* 从3pt缩减到2pt */
         }
 
         .sub-list li {
             margin-bottom: 1pt;
-            font-size: 8.5pt;
+            /* 从2pt缩减到1pt */
+            font-size: 8pt;
+            /* 从8.5pt微调至8pt */
             line-height: 1.4;
+            /* 从1.4保持不变 */
+            list-style: circle;
         }
 
         .highlight-box {
-            background-color: #fffbeb;
-            border-left: 3pt solid #f59e0b;
-            padding: 5pt 8pt;
+            background-color: #fff7ed;
+            border-left: 4pt solid var(--accent);
+            padding: 6pt 8pt;
+            /* 从8pt 10pt缩减到6pt 8pt */
             margin-top: 6pt;
-            font-size: 9pt;
-            line-height: 1.45;
+            /* 从8pt缩减到6pt */
+            font-size: 8.5pt;
+            /* 从9pt微调至8.5pt */
+            line-height: 1.4;
+            /* 从1.5缩减到1.4 */
+            border-radius: 0 6px 6px 0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
 
         .highlight-box strong {
-            color: #92400e;
+            color: #c2410c;
         }
 
         .checkmark {
-            color: #16a34a;
+            color: var(--success);
             margin-right: 3pt;
+            /* 从4pt缩减到3pt */
+            font-weight: 600;
         }
 
-        /* 开源贡献标签 */
+        /* 开源贡献标签 - 压缩间距 */
         .value-tag-container {
             display: flex;
             flex-wrap: wrap;
             gap: 6pt;
+            /* 从8pt缩减到6pt */
             margin-top: 6pt;
+            /* 从8pt缩减到6pt */
         }
 
         .value-tag {
-            font-size: 8.5pt;
-            background: #f0fff4;
-            border: 1px solid #9ae6b4;
-            color: #22543d;
+            font-size: 8pt;
+            /* 从8.5pt微调至8pt */
+            background: linear-gradient(120deg, #ecfdf5, #f0f7ff);
+            border: 1px solid var(--primary-light);
+            color: var(--neutral-800);
             padding: 2pt 8pt;
-            border-radius: 12pt;
+            /* 从3pt 10pt缩减到2pt 8pt */
+            border-radius: 15pt;
             display: inline-flex;
             align-items: center;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
         }
 
         .value-tag::before {
             content: "✓";
             margin-right: 4pt;
+            /* 从5pt缩减到4pt */
             font-weight: bold;
-            color: #38a169;
+            color: var(--success);
         }
 
         .opensource-list {
-            margin-left: 14pt;
-            font-size: 9pt;
+            margin-left: 12pt;
+            /* 从16pt缩减到12pt */
+            font-size: 8.5pt;
+            /* 从9pt微调至8.5pt */
         }
 
         .opensource-list li {
             margin-bottom: 3pt;
-            line-height: 1.5;
+            /* 从4pt缩减到3pt */
+            line-height: 1.4;
+            /* 从1.5缩减到1.4 */
+            list-style: none;
+            position: relative;
+            padding-left: 8pt;
+            /* 从10pt缩减到8pt */
+        }
+
+        .opensource-list li::before {
+            content: "●";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-size: 7pt;
+            /* 从8pt微调至7pt */
         }
 
         .opensource-list a {
-            color: #3498db;
+            color: var(--primary);
             text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .opensource-list a:hover {
+            color: var(--accent);
+            text-decoration: underline;
         }
 
         .opensource-list code {
             background: #f1f5f9;
-            padding: 0 3pt;
-            border-radius: 2pt;
-            font-size: 8.5pt;
-            color: #475569;
+            padding: 1pt 4pt;
+            /* 从1pt 5pt缩减到1pt 4pt */
+            border-radius: 4pt;
+            font-size: 8pt;
+            /* 从8.5pt微调至8pt */
+            color: var(--neutral-800);
+            border: 1px solid var(--neutral-200);
         }
 
-        /* Education - 紧凑 */
+        /* Education - 压缩教育模块 */
         .education-item {
-            font-size: 9pt;
+            font-size: 8.5pt;
+            /* 从9pt微调至8.5pt */
+            padding: 4pt 0;
+            /* 从6pt 0缩减到4pt 0 */
+            border-left: 3pt solid var(--primary-light);
+            padding-left: 8pt;
+            /* 从10pt缩减到8pt */
+            background-color: var(--neutral-100);
+            border-radius: 0 6px 6px 0;
         }
 
         .school-name {
             font-size: 10pt;
+            /* 从10.5pt微调至10pt */
             font-weight: 600;
-            color: #2c3e50;
+            color: var(--neutral-800);
+            margin-bottom: 2pt;
+            /* 从3pt缩减到2pt */
         }
 
-        /* Self Evaluation - 紧凑 */
+        /* Self Evaluation - 压缩自我评价 */
         .evaluation {
-            font-size: 9pt;
-            line-height: 1.5;
+            font-size: 8.5pt;
+            /* 从9pt微调至8.5pt */
+            line-height: 1.4;
+            /* 从1.6缩减到1.4 */
+            background-color: var(--neutral-100);
+            padding: 8pt 10pt;
+            /* 从10pt 12pt缩减到8pt 10pt */
+            border-radius: 8px;
+            border: 1px solid var(--neutral-200);
         }
 
         .evaluation p {
-            margin-bottom: 5pt;
+            margin-bottom: 4pt;
+            /* 从6pt缩减到4pt */
             text-align: left;
         }
 
-        /* Footer - 紧凑 */
+        .evaluation p:last-child {
+            margin-bottom: 0;
+        }
+
+        .evaluation strong {
+            color: var(--primary-dark);
+        }
+
+        /* Footer - 压缩页脚间距 */
         .footer {
-            margin-top: 10pt;
+            margin-top: 8pt;
+            /* 从15pt大幅缩减到8pt */
             padding-top: 6pt;
-            border-top: 1pt solid #ddd;
+            /* 从8pt缩减到6pt */
+            border-top: 1.5pt solid var(--primary);
             text-align: center;
-            color: #666;
-            font-size: 8pt;
+            color: var(--neutral-700);
+            font-size: 7.5pt;
+            /* 从8pt微调至7.5pt */
+            position: relative;
+        }
+
+        .footer::before {
+            content: "";
+            position: absolute;
+            top: -1.5pt;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60mm;
+            height: 1.5pt;
+            background: var(--accent);
+            border-radius: 2px;
         }
 
         .footer a {
-            color: #3498db;
+            color: var(--primary);
             text-decoration: none;
+            font-weight: 600;
         }
 
-        /* 两列技能布局 */
-        .skills-two-col {
-            display: table;
-            width: 100%;
+        .footer a:hover {
+            color: var(--accent);
+            text-decoration: underline;
         }
 
-        .skills-col {
-            display: table-cell;
-            width: 50%;
-            vertical-align: top;
-            padding-right: 8pt;
-        }
-
-        .skills-col:last-child {
-            padding-right: 0;
-            padding-left: 8pt;
-        }
-
-        /* Print */
+        /* Print 适配优化（保留） */
         @media print {
 
             html,
@@ -365,6 +666,27 @@
 
             a {
                 text-decoration: none;
+                color: var(--primary-dark) !important;
+            }
+
+            .skill-item:hover {
+                padding-left: 12pt;
+            }
+
+            .highlight-box,
+            .core-competency,
+            .evaluation {
+                box-shadow: none;
+            }
+
+            .core-competency,
+            .project-background,
+            .tech-stack,
+            .highlight-box,
+            .education-item,
+            .evaluation {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
         }
     </style>
@@ -384,17 +706,18 @@
             </div>
         </div>
 
-        <!-- Core Competency -->
+        <!-- Core Competency (Merged with Self Evaluation) -->
         <div class="section">
             <h2 class="section-title">核心竞争力</h2>
             <div class="core-competency">
-                <p>4年后端研发经验，<span class="highlight">精通Go微服务架构设计</span>，具备从0到1构建生产级微服务平台的完整能力。作为技术负责人，<span
+                <p><strong>5年后端研发经验，精通Go微服务架构设计</strong>，具备从0到1构建生产级微服务平台的完整能力。作为技术负责人，<span
                         class="highlight">主导公司从Python单体架构向Go微服务架构转型</span>，独立设计并实现完整的微服务架构体系（<span
-                        class="highlight">10个微服务、441个Go文件、77,600行核心代码</span>）。擅长<span
-                        class="highlight">DDD分层架构</span>、<span class="highlight">API网关设计</span>、<span
-                        class="highlight">服务治理</span>、<span class="highlight">可观测性</span>、<span
-                        class="highlight">容器化部署</span>，带领<span class="highlight">8人团队</span>完成多个生产级系统落地，具备丰富的<span
-                        class="highlight">大规模系统部署</span>和<span class="highlight">技术架构升级</span>经验。</p>
+                        class="highlight">10个微服务、441个Go文件、77,600行核心代码</span>）。</p>
+                <div style="margin-top: 4pt;">
+                    <p>● <strong>技术广度：</strong>深度掌握 CloudWeGo 生态，擅长 DDD 分层架构、API
+                        网关设计、服务治理、可观测性、数据湖架构（Trino）及权限管理（Casbin）。</p>
+                    <p>● <strong>工程能力：</strong>具备大规模系统部署经验（52个生产环境），带领 8 人团队建立代码评审、技术分享等工程化机制，显著提升团队研发效率。</p>
+                </div>
             </div>
         </div>
 
@@ -450,10 +773,10 @@
             <h2 class="section-title">工作经历</h2>
             <div class="experience-item">
                 <div class="company-name">福建自贸试验区厦门片区 Manteia 数据科技有限公司</div>
-                <div style="margin-top: 6pt;">
+                <div style="margin-top: 4pt;"> <!-- 从6pt缩减到4pt -->
                     <div class="role-period">
                         <span class="role-title">技术负责人 / 后端架构师</span>
-                        <span class="period">2024.07 - 至今</span>
+                        <span class="period">2025.03 - 至今</span>
                     </div>
                     <ul class="responsibility-list">
                         <li><strong>技术架构转型：</strong>主导公司从Python单体架构向Go微服务架构转型，独立设计并实现完整的微服务架构体系（10个微服务、441个Go文件、77,600行核心代码），建立公司技术标准
@@ -464,10 +787,10 @@
                         <li><strong>技术决策与落地：</strong>负责技术选型、架构设计、系统落地等核心决策，确保系统高性能、高可用、易维护，支撑业务快速发展</li>
                     </ul>
                 </div>
-                <div style="margin-top: 6pt;">
+                <div style="margin-top: 4pt;"> <!-- 从6pt缩减到4pt -->
                     <div class="role-period">
                         <span class="role-title">Python 开发工程师</span>
-                        <span class="period">2021.06 - 2024.06</span>
+                        <span class="period">2021.06 - 2025.03</span>
                     </div>
                     <ul class="responsibility-list">
                         <li><strong>系统架构与研发：</strong>主导多个核心系统的架构设计与重构，负责技术攻关和性能优化，确保系统稳定性和可扩展性</li>
@@ -482,23 +805,23 @@
 
         <!-- Projects -->
         <div class="section">
-            <h2 class="section-title">项目经历</h2>
+            <h2 class="section-title">架构设计与重点项目</h2>
 
             <!-- Project 1 -->
             <div class="project-item">
-                <div class="project-name">CloudWeGo 微服务架构实践 - 开源项目</div>
-                <div class="position-period">架构师 / 开源维护 | 2024.07 - 至今</div>
+                <div class="project-name">CloudWeGo 微服务架构实践 - 架构研发</div>
+                <div class="position-period">架构设计 / 开源维护 | 2025.07 - 至今</div>
 
                 <div class="project-background">
-                    <strong>项目背景：</strong>基于CloudWeGo生态（Kitex +
-                    Hertz）构建的生产级微服务架构Demo，展示API网关、RPC微服务、权限管理、可观测性等最佳实践。采用星型拓扑架构，所有RPC调用由网关发起，服务间不直接调用，适用于互联网、跨境、AI基础设施等场景。
+                    <strong>项目定位：</strong>基于 CloudWeGo 生态构建的<span
+                        class="highlight">生产级微服务架构标准模板</span>。旨在解决微服务落地过程中的依赖注入、配置管理、链路追踪等痛点，确立团队技术规范。
                 </div>
 
                 <div class="tech-stack">
                     <strong>技术架构：</strong>Go 1.24+、CloudWeGo（Kitex RPC、Hertz
                     HTTP）、PostgreSQL、etcd、Redis、Casbin、Docker、Google Wire、Thrift |
-                    <strong>项目地址：</strong><a href="https://github.com/masonsxu/cloudwego-microservice-demo"
-                        style="color: #3498db;">github.com/masonsxu/cloudwego-microservice-demo</a>
+                    <strong>项目地址：</strong><a
+                        href="https://github.com/masonsxu/cloudwego-microservice-demo">github.com/masonsxu/cloudwego-microservice-demo</a>
                 </div>
 
                 <strong>核心设计与实现：</strong>
@@ -521,7 +844,7 @@
             <!-- Project 2 -->
             <div class="project-item">
                 <div class="project-name">Radius 数据管理平台 - 微服务架构</div>
-                <div class="position-period">技术负责人 / 架构师 | 2024.07 - 至今</div>
+                <div class="position-period">技术负责人 / 架构师 | 2025.03 - 至今</div>
 
                 <div class="project-background">
                     <strong>项目背景：</strong>从0到1设计并实现完整的微服务架构体系，涵盖身份认证、数据管理、数据湖、权限管理等核心业务。独立完成架构设计、技术选型、系统落地，形成可复用的微服务架构模板。
@@ -601,28 +924,17 @@
             <div class="education-item">
                 <div class="school-name">河南城建学院</div>
                 <div class="position-period">信息管理与信息系统（大数据方向） | 2017.07 - 2021.06</div>
-                <div style="margin-top: 3pt; font-size: 9pt;">
+                <div style="margin-top: 2pt; font-size: 8.5pt;"> <!-- 从3pt缩减到2pt，字号8.5pt -->
                     <strong>荣誉：</strong>2021年河南省优秀学位论文、国家级单项奖学金、省级单项奖学金
                 </div>
             </div>
         </div>
 
-        <!-- Self Evaluation -->
-        <div class="section">
-            <h2 class="section-title">自我评价</h2>
-            <div class="evaluation">
-                <p>4年后端研发经验，<strong>精通Go微服务架构设计</strong>，具备从0到1构建生产级微服务平台的完整能力。作为技术负责人，主导公司技术架构转型，独立设计并实现完整的微服务架构体系（<strong>10个微服务、441个Go文件、77,600行核心代码</strong>），形成可复用的架构模板。
-                </p>
-                <p><strong>技术能力：</strong>深度掌握CloudWeGo技术栈，擅长DDD分层架构、API网关设计、服务治理、可观测性、数据湖架构、权限管理等微服务最佳实践。具备扎实的架构设计能力，能够独立完成技术选型、架构设计、系统落地等核心工作。
-                </p>
-                <p><strong>团队协作：</strong>带领<strong>8人技术团队</strong>推动技术架构升级，建立代码评审、技术分享、文档规范等工程化机制。具备丰富的<strong>大规模系统部署</strong>经验（52个生产环境），深刻理解系统集成、性能优化、稳定性保障等工程实践。
-                </p>
-            </div>
-        </div>
+        <!-- Self Evaluation Removed (Merged into Core Competency) -->
 
         <!-- Footer -->
         <div class="footer">
-            <p>最后更新：2025年12月 | GitHub: <a href="https://github.com/masonsxu">github.com/masonsxu</a> | 核心项目：
+            <p>最后更新：2026年1月 | GitHub: <a href="https://github.com/masonsxu">github.com/masonsxu</a> | 核心项目：
                 <a href="https://github.com/masonsxu/cloudwego-microservice-demo">cloudwego-microservice-demo</a>
             </p>
         </div>
