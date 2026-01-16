@@ -394,11 +394,15 @@
             line-height: 1.4;
             /* 从1.5缩减到1.4 */
             border-radius: 6px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 3pt;
-            /* 从4pt缩减到3pt */
-            align-items: center;
+            /* Removed flex to allow block layout */
+        }
+
+        .tech-row {
+            margin-bottom: 2pt;
+        }
+
+        .tech-row:last-child {
+            margin-bottom: 0;
         }
 
         .tech-stack strong {
@@ -472,14 +476,26 @@
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
 
+        .highlight-item {
+            margin-bottom: 2pt;
+            padding-left: 10pt;
+            position: relative;
+        }
+
+        .highlight-item:last-child {
+            margin-bottom: 0;
+        }
+
         .highlight-box strong {
             color: #c2410c;
+            display: block;
+            margin-bottom: 2pt;
         }
 
         .checkmark {
             color: var(--success);
-            margin-right: 3pt;
-            /* 从4pt缩减到3pt */
+            position: absolute;
+            left: 0;
             font-weight: 600;
         }
 
@@ -818,10 +834,14 @@
                 </div>
 
                 <div class="tech-stack">
-                    <strong>技术架构：</strong>Go 1.24+、CloudWeGo（Kitex RPC、Hertz
-                    HTTP）、PostgreSQL、etcd、Redis、Casbin、Docker、Google Wire、Thrift |
-                    <strong>项目地址：</strong><a
-                        href="https://github.com/masonsxu/cloudwego-microservice-demo">github.com/masonsxu/cloudwego-microservice-demo</a>
+                    <div class="tech-row">
+                        <strong>技术架构：</strong>Go 1.24+、CloudWeGo（Kitex RPC、Hertz
+                        HTTP）、PostgreSQL、etcd、Redis、Casbin、Docker、Google Wire、Thrift
+                    </div>
+                    <div class="tech-row">
+                        <strong>项目地址：</strong><a
+                            href="https://github.com/masonsxu/cloudwego-microservice-demo">github.com/masonsxu/cloudwego-microservice-demo</a>
+                    </div>
                 </div>
 
                 <strong>核心设计与实现：</strong>
@@ -835,9 +855,9 @@
 
                 <div class="highlight-box">
                     <strong>项目价值：</strong>
-                    <span class="checkmark">✓</span>展示生产级微服务架构最佳实践，可作为技术选型参考
-                    <span class="checkmark">✓</span>完整的技术文档和部署指南，支持快速上手
-                    <span class="checkmark">✓</span>适用于互联网、跨境、AI基础设施等场景的微服务架构设计
+                    <div class="highlight-item"><span class="checkmark">✓</span>展示生产级微服务架构最佳实践，可作为技术选型参考</div>
+                    <div class="highlight-item"><span class="checkmark">✓</span>完整的技术文档和部署指南，支持快速上手</div>
+                    <div class="highlight-item"><span class="checkmark">✓</span>适用于互联网、跨境、AI基础设施等场景的微服务架构设计</div>
                 </div>
             </div>
 
@@ -851,11 +871,17 @@
                 </div>
 
                 <div class="tech-stack">
-                    <strong>技术架构：</strong>Go 1.24、CloudWeGo（Kitex RPC、Hertz
-                    HTTP）、PostgreSQL、etcd、Trino、Casbin、RustFS、Docker、Google Wire、Thrift |
-                    <strong>代码规模：</strong>441个Go文件，77,600行核心代码，48个Thrift IDL |
-                    <strong>微服务：</strong>10个服务（identity、datalake、patient、cancer、dicom、medrec、ocr、athoslide、permission +
-                    API网关）
+                    <div class="tech-row">
+                        <strong>技术架构：</strong>Go 1.24、CloudWeGo（Kitex RPC、Hertz
+                        HTTP）、PostgreSQL、etcd、Trino、Casbin、RustFS、Docker、Google Wire、Thrift
+                    </div>
+                    <div class="tech-row">
+                        <strong>代码规模：</strong>441个Go文件，77,600行核心代码，48个Thrift IDL
+                    </div>
+                    <div class="tech-row">
+                        <strong>微服务：</strong>10个服务（identity、datalake、patient、cancer、dicom、medrec、ocr、athoslide、permission
+                        + API网关）
+                    </div>
                 </div>
 
                 <strong>核心设计与实现：</strong>
@@ -870,9 +896,10 @@
 
                 <div class="highlight-box">
                     <strong>项目成果：</strong>
-                    <span class="checkmark">✓</span>代码规模：441个Go文件、77,600行核心代码、48个IDL接口定义
-                    <span class="checkmark">✓</span>成为公司微服务架构标准模板，支撑业务快速发展
-                    <span class="checkmark">✓</span>文档完善（超过2000行技术文档），支持团队协作和知识传承
+                    <div class="highlight-item"><span class="checkmark">✓</span>代码规模：441个Go文件、77,600行核心代码、48个IDL接口定义
+                    </div>
+                    <div class="highlight-item"><span class="checkmark">✓</span>成为公司微服务架构标准模板，支撑业务快速发展</div>
+                    <div class="highlight-item"><span class="checkmark">✓</span>文档完善（超过2000行技术文档），支持团队协作和知识传承</div>
                 </div>
             </div>
 
