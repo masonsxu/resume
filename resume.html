@@ -713,7 +713,7 @@
         <!-- Header -->
         <div class="header">
             <h1>徐俊飞</h1>
-            <div class="position">Go架构师 / 技术负责人</div>
+            <div class="position">资深后端工程师 (Go & Python)</div>
             <div class="contact-info">
                 <span>📧 masonsxu@foxmail.com</span>
                 <span>🔗 <a href="https://github.com/masonsxu">GitHub: masonsxu</a></span>
@@ -726,12 +726,12 @@
         <div class="section">
             <h2 class="section-title">核心竞争力</h2>
             <div class="core-competency">
-                <p><strong>5年后端研发经验，精通Go微服务架构设计</strong>，具备从0到1构建生产级微服务平台的完整能力。作为技术负责人，<span
+                <p><strong>5年后端研发经验，深度掌握Go微服务架构设计</strong>，具备从0到1构建生产级微服务平台的完整能力。作为技术负责人，<span
                         class="highlight">主导公司从Python单体架构向Go微服务架构转型</span>，独立设计并实现完整的微服务架构体系（<span
                         class="highlight">10个微服务、441个Go文件、77,600行核心代码</span>）。</p>
                 <div style="margin-top: 4pt;">
-                    <p>● <strong>技术广度：</strong>深度掌握 CloudWeGo 生态，擅长 DDD 分层架构、API
-                        网关设计、服务治理、可观测性、数据湖架构（Trino）及权限管理（Casbin）。</p>
+                    <p>● <strong>技术广度：</strong>深度实践 CloudWeGo 生态，擅长 DDD 分层架构、API
+                        网关设计、服务治理、可观测性、数据湖架构（Iceberg-REST/Polars）及权限管理（Casbin）。</p>
                     <p>● <strong>工程能力：</strong>具备大规模系统部署经验（52个生产环境），带领 8 人团队建立代码评审、技术分享等工程化机制，显著提升团队研发效率。</p>
                 </div>
             </div>
@@ -758,8 +758,24 @@
                                 class="skill-label">权限与安全：</span>Casbin（RBAC/ABAC）、JWT认证、API鉴权、数据权限控制
                         </div>
                     </div>
+                    <div class="skills-group">
+                        <h3>其他技术栈</h3>
+                        <div class="skill-item"><span class="skill-label">数据分析：</span>Pandas、Polars、PyArrow，擅长大规模数据清洗与处理
+                        </div>
+                        <div class="skill-item"><span class="skill-label">领域经验：</span>医疗信息化、数据处理、系统集成、大规模部署
+                        </div>
+                    </div>
                 </div>
                 <div class="skills-col">
+                    <div class="skills-group">
+                        <h3>Python 工程化与 AI 实战（核心优势）</h3>
+                        <div class="skill-item"><span class="skill-label">核心库：</span>精通
+                            Asyncio、Flask、SQLAlchemy、Pydantic，具备高性能异步编程能力</div>
+                        <div class="skill-item"><span class="skill-label">医疗影像：</span>深度掌握 SimpleITK、Pydicom，擅长 Dicom
+                            影像解析、转换与算法优化</div>
+                        <div class="skill-item"><span class="skill-label">工程化：</span>熟练运用 Docker、Portainer
+                            构建容器化环境，编写自动化迁移脚本，提升部署效率</div>
+                    </div>
                     <div class="skills-group">
                         <h3>基础设施与工程化</h3>
                         <div class="skill-item"><span class="skill-label">云原生：</span>Docker、Docker
@@ -772,13 +788,6 @@
                         </div>
                         <div class="skill-item"><span
                                 class="skill-label">可观测性：</span>OpenTelemetry链路追踪、日志聚合、监控告警、统一错误码体系、性能分析</div>
-                    </div>
-                    <div class="skills-group">
-                        <h3>其他技术栈</h3>
-                        <div class="skill-item"><span
-                                class="skill-label">Python：</span>Python全栈开发，精通asyncio、Flask、SQLAlchemy、Pandas</div>
-                        <div class="skill-item"><span class="skill-label">领域经验：</span>医疗信息化、数据处理、系统集成、大规模部署
-                        </div>
                     </div>
                 </div>
             </div>
@@ -873,7 +882,7 @@
                 <div class="tech-stack">
                     <div class="tech-row">
                         <strong>技术架构：</strong>Go 1.24、CloudWeGo（Kitex RPC、Hertz
-                        HTTP）、PostgreSQL、etcd、Trino、Casbin、RustFS、Docker、Google Wire、Thrift
+                        HTTP）、PostgreSQL、etcd、Iceberg-REST、Polars、PyArrow、Casbin、Docker
                     </div>
                     <div class="tech-row">
                         <strong>代码规模：</strong>441个Go文件，77,600行核心代码，48个Thrift IDL
@@ -888,7 +897,8 @@
                 <ol class="achievement-list">
                     <li><strong>微服务分层架构：</strong>设计DDD四层架构（Handler→Logic→DAL→Converter），实现10个独立微服务，采用仓储模式（20+实体），确保业务逻辑与框架解耦
                     </li>
-                    <li><strong>数据湖集成：</strong>设计datalake_srv服务，集成Trino查询引擎，支持跨数据源联合查询，实现多数据源管理和元数据管理</li>
+                    <li><strong>数据湖集成：</strong>设计datalake_srv服务，基于Iceberg-REST协议管理元数据，结合Polars与PyArrow实现高性能数据处理，支持跨数据源联合查询
+                    </li>
                     <li><strong>权限管理系统：</strong>基于Casbin实现RBAC权限模型，设计多级组织权限体系（组织→部门→用户），实现菜单权限动态解析和API鉴权</li>
                     <li><strong>可观测性：</strong>设计RPC追踪中间件（request_id/trace_id），建立统一错误码体系（6位数字），实现分层错误转换和链路追踪</li>
                     <li><strong>工程化：</strong>基于48个Thrift IDL定义接口，使用Google Wire依赖注入，完整Docker编排方案，环境驱动配置管理</li>
@@ -909,15 +919,20 @@
                 <div class="position-period">核心开发 | 2021.06 - 至今</div>
 
                 <div class="tech-stack">
-                    <strong>技术栈：</strong>Python、Flask、Pandas、MySQL、MongoDB、WebSocket、Docker、Portainer
+                    <strong>技术栈：</strong>Python、Flask、Asyncio、Pydantic、SimpleITK、Pydicom、Docker、Portainer
                 </div>
 
                 <strong>核心贡献：</strong>
                 <ol class="achievement-list">
-                    <li><strong>核心模块开发：</strong>独立完成权限控制、表单设计、流程设计等核心模块，通过索引优化和查询重构，表单查询效率提升<strong>50%</strong></li>
-                    <li><strong>容器化转型：</strong>主导Shell脚本→Docker容器化转型，设计多环境Docker镜像构建策略，部署时间从<strong>4小时→30分钟</strong>，故障率降低<strong>45%</strong>
+                    <li><strong>核心模块重构：</strong>基于 <strong class="text-primary-dark">Asyncio + Pydantic</strong>
+                        重构数据校验与核心链路，表单查询效率提升 <strong>50%</strong>，并大幅提升代码可维护性</li>
+                    <li><strong>医疗影像攻坚：</strong>在 WebDicomView 系统中，攻克 <strong class="text-primary-dark">Dicom
+                            解析与窗宽窗位转换</strong> 难题，通过算法优化使影像加载响应时间缩短 <strong>35%</strong></li>
+                    <li><strong>容器化转型：</strong>主导 Shell 脚本→Docker 容器化转型，设计多环境 Docker 镜像构建策略，部署时间从
+                        <strong>4小时→30分钟</strong>，故障率降低 <strong>45%</strong>
                     </li>
-                    <li><strong>大规模部署：</strong>完成<strong>52个生产环境</strong>系统部署和技术对接，设计并实现第三方系统数据接口集成方案，数据传输准确率达<strong>99.9%</strong>
+                    <li><strong>大规模部署：</strong>完成 <strong>52个生产环境</strong> 系统部署和技术对接，设计并实现第三方系统数据接口集成方案，数据传输准确率达
+                        <strong>99.9%</strong>
                     </li>
                 </ol>
             </div>
@@ -951,8 +966,10 @@
             <div class="education-item">
                 <div class="school-name">河南城建学院</div>
                 <div class="position-period">信息管理与信息系统（大数据方向） | 2017.07 - 2021.06</div>
-                <div style="margin-top: 2pt; font-size: 8.5pt;"> <!-- 从3pt缩减到2pt，字号8.5pt -->
-                    <strong>荣誉：</strong>2021年河南省优秀学位论文、国家级单项奖学金、省级单项奖学金
+                <div style="margin-top: 4pt; font-size: 8.5pt;">
+                    <div style="margin-bottom: 2pt;">2018/2019 · 国家级单项奖学金 (×2) &nbsp;&nbsp;|&nbsp;&nbsp; 2021 ·
+                        河南省优秀学位论文 (省级荣誉 / Top 0.5%-1%) &nbsp;&nbsp;|&nbsp;&nbsp; 2020 · 省级单项奖学金
+                    </div>
                 </div>
             </div>
         </div>
