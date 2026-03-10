@@ -1,8 +1,9 @@
 name: Sync Resume to Portfolio
 
 on:
+  workflow_dispatch:
   push:
-    branches: [main]
+    branches: [master]
     paths:
       - 'resume.html'
       - 'resume.pdf'
