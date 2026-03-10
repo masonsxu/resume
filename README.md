@@ -2,7 +2,7 @@
 
 > Backend Engineer / Tech Lead  
 > Go · Microservices · DDD · CloudWeGo  
-> Open to opportunities in Shanghai/Hangzhou
+> Open to opportunities
 
 ---
 
@@ -10,9 +10,9 @@
 
 - 4 年后端研发经验，主栈 **Go / Python**
 - 主导公司 **Python 单体 → Go 微服务架构** 转型
-- 从 0 到 1 设计并落地 **医疗放射治疗数据管理平台**
+- 从 0 到 1 设计并落地 **核心医疗数据管理平台**
 - 担任技术负责人，带领 **8 人团队**
-- 系统已在 **52 家医院** 生产环境稳定运行
+- 系统已在 **数十家医院** 生产环境稳定运行
 
 我专注于 **可落地的系统架构设计**，擅长在真实业务压力下做技术决策，而不是停留在概念层。
 
@@ -32,26 +32,20 @@
 
 ## 🚀 Featured Project
 
-### Radius · 医疗放射治疗数据管理平台
+### 核心医疗数据管理平台
 
 **Role**：Tech Lead / Architect  
-**Background**：医疗放疗领域核心数据平台，从 0→1 构建生产级系统  
+**Background**：医疗信息化领域核心数据平台，从 0→1 构建生产级系统  
 
 **System Scale**
-- 10 个微服务
-- 48 个 Thrift IDL
-- ~77,600 行 Go 核心业务代码
+- 多个微服务 / IDL-First 驱动开发 / 数万行 Go 核心代码
 
 **Key Responsibilities**
 - 设计并落地基于 **DDD 的微服务架构**
-- 构建 **数据湖服务**，支持跨数据源查询（Trino）
+- 构建 **数据湖服务**，支持数据分析层统一数据访问
 - 设计并实现 **权限管理系统**（Casbin）
 - 推动系统容器化与工程化标准建设
-- 支撑系统在 **52 家医院** 的部署与长期稳定运行
-
-📐 Architecture overview  
-
-![Architecture](./assets/architecture.svg)
+- 支撑系统在 **数十家医院** 的部署与长期稳定运行
 
 ---
 

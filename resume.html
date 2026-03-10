@@ -358,10 +358,8 @@
                             <h4>差异化领域能力</h4>
                             <div class="skill-tags">
                                 <span class="skill-tag">DICOM影像解析</span>
-                                <span class="skill-tag">SimpleITK</span>
                                 <span class="skill-tag">医疗系统集成</span>
                                 <span class="skill-tag">数据湖</span>
-                                <span class="skill-tag">Iceberg-REST</span>
                                 <span class="skill-tag">Polars</span>
                                 <span class="skill-tag">PyArrow</span>
                                 <span class="skill-tag">Python Asyncio</span>
@@ -429,7 +427,7 @@
                 <p><strong>系统规模：</strong>多个业务微服务 + API网关，按业务域独立部署；IDL-First驱动开发</p>
                 <ul>
                     <li><strong>服务边界设计：</strong>以业务能力(而非数据层)为准则划分多个微服务，规避跨服务分布式事务，保障各服务独立演进；DDD四层架构(Handler→Logic→DAL→Converter)+ 仓储模式，将业务逻辑与框架彻底解耦，服务可独立替换底层存储。</li>
-                    <li><strong>医疗数据湖：</strong>设计数据湖服务，实现高性能数据处理，支持跨数据源联合查询，为数据分析层提供统一数据访问接口。</li>
+                    <li><strong>医疗数据湖：</strong>设计数据湖服务，实现高性能数据处理，为数据分析层提供统一访问接口。</li>
                     <li><strong>多级权限体系：</strong>基于Casbin实现RBAC权限模型，设计组织-部门-用户三级权限结构，实现菜单权限动态解析和API级鉴权，满足多院区、多科室的差异化权限管理需求。</li>
                     <li><strong>可观测性体系：</strong>设计RPC追踪中间件(request_id/trace_id全链路透传)，建立统一6位数字错误码体系，实现分层错误转换，接入OpenTelemetry链路追踪与监控告警。</li>
                     <li><strong>项目成果：</strong>完整替代Python单体系统，成为公司新一代医疗数字化基础设施；服务边界设计与工程规范成为团队微服务技术标准，直接指导后续系统建设；2,000+行架构文档沉淀，有效支撑团队技术对齐与知识传承。</li>
@@ -441,7 +439,7 @@
                     <div class="project-title">▶ Mria 医院信息管理系统 - 核心重构与工程化改造</div>
                     <div class="project-date">后端主程 / 核心开发 | 2021.06 - 至今 | 生产系统(多家医院)</div>
                 </div>
-                <p><strong>技术栈：</strong>Python、Flask、Asyncio、Pydantic、SimpleITK、Pydicom、Docker、Portainer</p>
+                <p><strong>技术栈：</strong>Python、Flask、Asyncio、Pydantic、医学影像处理库、Docker、Portainer</p>
                 <p><strong>量化成果：</strong>Asyncio + Pydantic重构核心链路，表单查询效率↑50%；DICOM影像算法优化，加载响应时间↓35%；Shell→Docker容器化改造，部署时间4h→30min(↓87.5%)，故障率↓45%；主导多家医院系统部署与接口对接，数据传输准确率99.9%。</p>
                 <p><strong>典型线上事故处理：</strong></p>
                 <ul>
