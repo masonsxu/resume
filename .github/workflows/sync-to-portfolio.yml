@@ -1,0 +1,40 @@
+name: Sync Resume to Portfolio
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'resume.html'
+      - 'resume.pdf'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout resume repo
+        uses: actions/checkout@v4
+
+      - name: Checkout portfolio repo
+        uses: actions/checkout@v4
+        with:
+          repository: masonsxu/masonsxu.github.io
+          token: ${{ secrets.PORTFOLIO_PAT }}
+          path: portfolio
+
+      - name: Copy resume files
+        run: |
+          cp resume.html portfolio/resume.html
+          cp resume.pdf portfolio/resume.pdf
+
+      - name: Commit and push
+        working-directory: portfolio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add resume.html resume.pdf
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: 同步简历文件（来自 resume 仓库）"
+            git push
+          fi
