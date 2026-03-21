@@ -27,6 +27,12 @@ jobs:
           cp resume.html portfolio/resume.html
           cp resume.pdf portfolio/resume.pdf
 
+      - name: Remove PDF from LFS tracking
+        working-directory: portfolio
+        run: |
+          git lfs untrack "*.pdf" || true
+          git add .gitattributes
+
       - name: Commit and push
         working-directory: portfolio
         run: |
