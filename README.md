@@ -1,68 +1,64 @@
-# 徐俊飞 | Go 后端工程师 / 技术负责人
+# 徐俊飞 | Go 微服务架构师
 
-> Backend Engineer / Tech Lead  
-> Go · Microservices · DDD · CloudWeGo  
-> Open to opportunities
+<div align="center">
 
----
+**5 年后端** · **Go 微服务** · **分布式系统** · **CloudWeGo 开源贡献者**
 
-## 👋 About Me
+📧 masonsxu@foxmail.com · 📍 厦门 → 上海/杭州 · [github.com/masonsxu](https://github.com/masonsxu)
 
-- 4 年后端研发经验，主栈 **Go / Python**
-- 主导公司 **Python 单体 → Go 微服务架构** 转型
-- 从 0 到 1 设计并落地 **核心医疗数据管理平台**
-- 担任技术负责人，带领 **8 人团队**
-- 系统已在 **数十家医院** 生产环境稳定运行
-
-我专注于 **可落地的系统架构设计**，擅长在真实业务压力下做技术决策，而不是停留在概念层。
+</div>
 
 ---
 
-## 🧠 Technical Focus
+## 我是谁
 
-- **Go Microservices**：CloudWeGo（Kitex / Hertz）、gRPC
-- **Architecture**：DDD 分层架构、IDL-First、仓储模式
-- **Distributed Systems**：服务治理、数据一致性、可观测性
-- **Data Platform**：Trino 数据湖、多数据源集成
-- **Auth & Permission**：Casbin（RBAC / ABAC）
-- **Engineering**：Docker、环境变量驱动配置、工程化规范
-- **Domain**：医疗信息系统、DICOM 医疗影像
+主导过 **Python 单体 → Go 微服务** 架构转型，带领 8 人团队交付生产级分布式系统，系统可用性 **99.9%**，方案成为公司技术标准。
+
+喜欢在真实业务压力下做技术决策，而非停留在概念层。
 
 ---
 
-## 🚀 Featured Project
+## 硬核能力
 
-### 核心医疗数据管理平台
-
-**Role**：Tech Lead / Architect  
-**Background**：医疗信息化领域核心数据平台，从 0→1 构建生产级系统  
-
-**System Scale**
-- 多个微服务 / IDL-First 驱动开发 / 数万行 Go 核心代码
-
-**Key Responsibilities**
-- 设计并落地基于 **DDD 的微服务架构**
-- 构建 **数据湖服务**，支持数据分析层统一数据访问
-- 设计并实现 **权限管理系统**（Casbin）
-- 推动系统容器化与工程化标准建设
-- 支撑系统在 **数十家医院** 的部署与长期稳定运行
+| 领域 | 能做的事 |
+|------|---------|
+| **Go 微服务架构** | 从 0 到 1 设计 DDD 四层 + API 网关 + 服务治理全链路，CloudWeGo 生产落地 |
+| **分布式系统** | etcd 服务发现、Casbin RBAC 权限、OpenTelemetry 全链路追踪 |
+| **工程效能** | Shell → Docker，部署 4h → 30min；故障当日恢复 |
+| **AI 辅助开发** | 330+ 行架构规范编码为 AI 可执行知识，8 个 Custom Skills，3 个 AI 驱动 CI/CD |
 
 ---
 
-## 📄 Resume
+## 开源 & 项目
 
-- 👉 [HTML Resume](./resume.html)
-- 👉 [PDF Resume](./resume.pdf)
+### CloudWeGo 生态贡献
 
-（HTML 版本更完整，适合技术负责人查看）
+- **[cloudwego-microservice-demo](https://github.com/masonsxu/cloudwego-microservice-demo)** — 生产验证的微服务架构模板（Kitex + Hertz + etcd + Casbin + OpenTelemetry）
+- 修复 **hertz-contrib/jwt** RefreshToken Bug，影响数千开发者
+- PR: [hertz-contrib/jwt#27](https://github.com/hertz-contrib/jwt/pull/27), [hertz-contrib/obs-opentelemetry#67](https://github.com/hertz-contrib/obs-opentelemetry/pull/67), [cloudwego/abcoder#84](https://github.com/cloudwego/abcoder/pull/84)
 
 ---
 
-## 📫 Contact
+## 量化成果
 
-- Email: masonsxu@foxmail.com  
-- GitHub: https://github.com/masonsxu  
+```
+系统可用性      99.9%
+数据传输准确率  99.9%
+部署效率提升    87.5%  (4h → 30min)
+故障率降低      45%
+查询效率提升    50%
+```
 
-> Feel free to reach out via email for professional opportunities
-> Currently open to **Backend Engineer / Tech Lead** roles  
-> Prefer **Go / Microservices / System Architecture** oriented teams
+---
+
+## 简历
+
+详细版本（技术细节、项目背景、故障处理案例）：[resume.html](./resume.html) | [resume.pdf](./resume.pdf)
+
+---
+
+<div align="center">
+
+**求职意向**：Go 后端 / 微服务架构师 · 偏好上海/杭州
+
+</div>
