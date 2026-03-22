@@ -25,9 +25,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## 技术说明
 
 - 简历使用中文（zh-CN）
-- 样式针对A4纸张打印优化（210mm宽度）
+- 样式针对A4纸张打印优化
 - 使用 `@page` 和 `@media print` 规则确保打印效果
-- 颜色方案：主色 #2c3e50（深蓝灰），强调色 #3498db（蓝色），高亮 #c0392b（红色）
+- 颜色方案：主色 var(--accent) #3370FF（蓝色），强调 var(--highlight) #D97706（琥珀色）
 
 ## 简历 HTML 转 PDF 技术规范
 
@@ -80,3 +80,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 1.  **Ctrl + F** 可搜索页面内任意文字。
 2.  鼠标可正常划选文字。
 3.  所有 URL 和邮箱地址点击可跳转。
+
+### 6. 两页黄金规则 (2-Page Rule)
+简历必须严格控制在 **2 页 A4** 以内，以下为经验准则：
+* **严禁使用强制分页**：不要使用 `page-break-after: always` 等强制分页。依靠各区块的 `page-break-inside: avoid` 让 Chrome 自然分页即可。强制分页在布局微调后极易产生空白第三页。
+* **间距预算意识**：每次修改内容或样式后，必须验证 PDF 页数。当内容接近 2 页边界时，以下间距是可压缩的安全区：
+    * `@page margin`（上下方向）：6-8mm 范围内调整
+    * `.container` padding：2-4mm
+    * 区块间 `margin-bottom` / `padding-bottom`：5-8pt
+    * 列表项 `margin-bottom`：3-4pt
+* **内容溢出时优先收紧间距，而非删减内容**：全局减少 1-2pt 的间距往往足以回收一个区块的空间。
+* **验证流程**：每次修改后用 Chrome 另存为 PDF，确认恰好 2 页且第 2 页底部无大片空白。
