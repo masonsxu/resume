@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="public/favicon.svg" type="image/svg+xml">
     <title>徐俊飞 - 资深后端工程师</title>
     <style>
         :root {
@@ -167,6 +168,19 @@
             background: linear-gradient(90deg, var(--color-accent), rgba(36, 78, 143, 0.18));
         }
 
+        .hero__brand-row {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .hero__brand-logo {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+        }
+
         .eyebrow {
             display: inline-flex;
             align-items: center;
@@ -175,7 +189,6 @@
             letter-spacing: 0.14em;
             text-transform: uppercase;
             color: var(--color-text-soft);
-            margin-bottom: 0.9rem;
         }
 
         .eyebrow::before {
@@ -509,6 +522,13 @@
             color: var(--color-text-soft);
         }
 
+        .resume-footer__brand {
+            font-family: var(--font-mono);
+            font-size: var(--text-sm);
+            color: #B8961F;
+            letter-spacing: 0.08em;
+        }
+
         @keyframes fadeUp {
             from {
                 opacity: 0;
@@ -556,6 +576,11 @@
             .hero::after {
                 left: 1.2rem;
                 right: 1.2rem;
+            }
+
+            .hero__brand-logo {
+                width: 40px;
+                height: 40px;
             }
 
             .hero__meta {
@@ -793,6 +818,15 @@
                 font-size: 8.2pt;
             }
 
+            .hero__brand-logo {
+                width: 36px;
+                height: 36px;
+            }
+
+            .resume-footer__brand {
+                font-size: 8.9pt;
+            }
+
             a {
                 color: var(--color-accent) !important;
                 text-decoration: underline;
@@ -806,7 +840,10 @@
 <body>
     <main class="resume" aria-label="徐俊飞简历">
         <header class="hero reveal" style="animation-delay: 40ms;">
-            <div class="eyebrow">Senior Backend Resume</div>
+            <div class="hero__brand-row">
+                <img class="hero__brand-logo" src="public/logo-options/logo-secondary-square-light.svg" alt="MXW" width="48" height="48">
+                <div class="eyebrow">Senior Backend Resume</div>
+            </div>
             <h1 class="hero__name">徐俊飞</h1>
             <p class="hero__role">资深后端工程师 · Go 微服务 / 数据平台架构方向</p>
             <p class="hero__summary">
@@ -1036,6 +1073,7 @@
 
         <footer class="resume-footer reveal" style="animation-delay: 390ms;">
             <div class="resume-footer__main">
+                <span class="resume-footer__brand">MASONS.XU</span>
                 <span>最后更新：2026 年 3 月</span>
                 <span>GitHub：<a href="https://github.com/masonsxu">github.com/masonsxu</a></span>
             </div>
