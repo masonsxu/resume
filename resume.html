@@ -4,424 +4,754 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XuJunfei - Senior Go Backend Engineer</title>
+    <title>徐俊飞 - 资深后端工程师</title>
     <style>
+        :root {
+            --color-bg: #ece8df;
+            --color-paper: #fcfaf5;
+            --color-surface: rgba(255, 253, 248, 0.82);
+            --color-surface-strong: #f6f1e8;
+            --color-text: #202733;
+            --color-text-soft: #5d6778;
+            --color-heading: #16263f;
+            --color-accent: #244e8f;
+            --color-accent-soft: rgba(36, 78, 143, 0.12);
+            --color-accent-line: rgba(36, 78, 143, 0.26);
+            --color-metric: #9b4b20;
+            --color-border: rgba(24, 38, 62, 0.14);
+            --color-border-strong: rgba(24, 38, 62, 0.24);
+            --shadow-soft: 0 20px 60px rgba(25, 39, 65, 0.08);
+            --radius-sm: 10px;
+            --radius-md: 20px;
+            --radius-lg: 30px;
+            --space-1: 0.3rem;
+            --space-2: 0.55rem;
+            --space-3: 0.9rem;
+            --space-4: 1.2rem;
+            --space-5: 1.8rem;
+            --space-6: 2.5rem;
+            --font-heading: "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", "STSong", serif;
+            --font-body: "Source Han Sans SC", "Noto Sans CJK SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+            --font-mono: "Iosevka", "SFMono-Regular", "Consolas", monospace;
+            --text-xs: 0.78rem;
+            --text-sm: 0.9rem;
+            --text-base: 1rem;
+            --text-lg: 1.14rem;
+            --text-xl: 1.38rem;
+            --text-2xl: 2.85rem;
+            --duration-fast: 180ms;
+            --duration-base: 240ms;
+            --easing: cubic-bezier(.22, 1, .36, 1);
+        }
+
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
             -webkit-print-color-adjust: exact !important;
             print-color-adjust: exact !important;
         }
 
         @page {
             size: A4 portrait;
-            margin: 5.5mm 6mm;
+            margin: 8mm 8mm;
         }
 
-        html,
-        body {
-            width: 100%;
-            font-family: "Source Han Sans SC", "Noto Sans CJK SC", "PingFang SC", "Microsoft YaHei", sans-serif;
-            font-size: 10.5pt;
-            line-height: 1.48;
-            color: #1f2430;
-            background: #f4f2ec;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 196mm;
-            margin: 0 auto;
-            padding: 2.2mm 2mm 1.4mm;
-            border: 1px solid #d9d3c6;
-            border-radius: 8px;
+        html {
             background:
-                radial-gradient(140% 130% at 100% 0%, #fff8ea 0%, #fbfaf6 40%, #f7f5ee 100%);
-            box-shadow: 0 1px 0 #fff inset;
+                radial-gradient(circle at top, rgba(255, 247, 231, 0.9), transparent 34%),
+                linear-gradient(180deg, #f0ece4 0%, #e8e2d7 100%);
+            color: var(--color-text);
+            font-size: 15px;
+            scroll-behavior: smooth;
         }
 
-        :root {
-            --accent: #193a8a;
-            --accent-deep: #10244f;
-            --accent-light: #3b65c7;
-            --metric: #9a3f18;
-            --neutral-100: #fbfaf6;
-            --neutral-200: #ddd7ca;
-            --neutral-300: #c8bfad;
-            --neutral-700: #3f4857;
-            --neutral-800: #212938;
+        body {
+            min-height: 100vh;
+            font-family: var(--font-body);
+            line-height: 1.72;
+            color: var(--color-text);
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.34), transparent 34%),
+                linear-gradient(180deg, rgba(255, 255, 255, 0.2), transparent 40%);
+            padding: 24px;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+            background-size: 24px 24px;
+            mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.32), transparent 72%);
+            opacity: 0.35;
+        }
+
+        a {
+            color: var(--color-accent);
+            text-decoration: none;
+            position: relative;
+            z-index: 1;
+            transition: color var(--duration-fast) var(--easing), border-color var(--duration-fast) var(--easing), background-color var(--duration-fast) var(--easing);
+        }
+
+        a:hover {
+            color: #173a73;
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        [tabindex]:focus-visible {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 3px;
+            border-radius: 6px;
+        }
+
+        .resume {
+            width: min(100%, 880px);
+            margin: 0 auto;
+            padding: 18px 20px 16px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            background:
+                radial-gradient(circle at top right, rgba(255, 247, 229, 0.85), transparent 28%),
+                linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(252, 250, 245, 0.96) 100%);
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resume::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                linear-gradient(130deg, rgba(255, 255, 255, 0.52), transparent 30%),
+                radial-gradient(circle at 100% 0, rgba(36, 78, 143, 0.06), transparent 24%);
+        }
+
+        .hero,
+        .section,
+        .resume-footer {
+            position: relative;
+            z-index: 1;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(14px);
+            animation: fadeUp var(--duration-base) var(--easing) forwards;
+        }
+
+        .hero {
+            padding: 1.55rem 1.55rem 1.35rem;
+            border: 1px solid var(--color-border-strong);
+            border-radius: calc(var(--radius-lg) - 8px);
+            background:
+                linear-gradient(140deg, rgba(245, 240, 231, 0.98) 0%, rgba(253, 251, 246, 0.96) 48%, rgba(255, 249, 238, 0.98) 100%);
+            margin-bottom: 1.45rem;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            left: 1.55rem;
+            right: 1.55rem;
+            top: 0;
+            height: 3px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--color-accent), rgba(36, 78, 143, 0.18));
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-size: var(--text-xs);
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-text-soft);
+            margin-bottom: 0.9rem;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 1.8rem;
+            height: 1px;
+            background: var(--color-accent-line);
+        }
+
+        .hero__name {
+            font-family: var(--font-heading);
+            font-size: clamp(2.4rem, 5vw, 3.55rem);
+            line-height: 1.08;
+            letter-spacing: 0.08em;
+            color: var(--color-heading);
+            margin-bottom: 0.35rem;
+        }
+
+        .hero__role {
+            font-size: 1.08rem;
+            font-weight: 700;
+            color: var(--color-heading);
+            margin-bottom: 0.9rem;
+        }
+
+        .hero__summary {
+            max-width: 48rem;
+            font-size: 1rem;
+            color: var(--color-text);
+            margin-bottom: 1rem;
+        }
+
+        .hero__highlights {
+            list-style: none;
+            display: grid;
+            gap: 0.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero__highlights li {
+            padding-left: 1rem;
+            position: relative;
+            color: var(--color-text);
+        }
+
+        .hero__highlights li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.74rem;
+            width: 0.38rem;
+            height: 0.38rem;
+            border-radius: 999px;
+            background: var(--color-accent);
         }
 
         .metric {
-            color: var(--metric);
+            color: var(--color-metric);
             font-weight: 700;
         }
 
-        .header {
-            text-align: center;
-            padding: 7pt 8pt 6.2pt;
-            margin-bottom: 7pt;
-            border: 1px solid var(--neutral-300);
-            border-left: 6px solid var(--accent);
-            border-radius: 7px;
-            background:
-                linear-gradient(92deg, #f0ede3 0%, #f8f6ef 62%, #fff9ee 100%);
-        }
-
-        .header h1 {
-            font-family: "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", "STSong", serif;
-            font-size: 26.8pt;
-            font-weight: 800;
-            color: var(--accent-deep);
-            letter-spacing: 1.6pt;
-            margin-bottom: 2.2pt;
-        }
-
-        .header .title {
-            font-size: 13.6pt;
-            color: var(--accent-deep);
-            font-weight: 700;
-        }
-
-        .contact-bar {
-            margin-top: 7.2pt;
-            font-size: 9.9pt;
-            color: var(--neutral-700);
+        .hero__meta {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
-            gap: 11pt;
+            gap: 0.55rem 0.7rem;
+            padding-top: 0.95rem;
+            border-top: 1px solid var(--color-border);
         }
 
-        .contact-bar a {
-            color: var(--accent-light);
-            text-decoration: none;
-            position: relative;
-            z-index: 10;
-            border-bottom: 1px solid rgba(59, 101, 199, 0.35);
+        .hero__meta-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            min-height: 2.1rem;
+            padding: 0.38rem 0.72rem;
+            border: 1px solid rgba(24, 38, 62, 0.1);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.58);
+            color: var(--color-text-soft);
+            font-size: var(--text-sm);
+        }
+
+        .hero__meta-label {
+            font-size: 0.76rem;
+            color: var(--color-text-soft);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
         }
 
         .section {
-            margin-bottom: 6.2pt;
+            padding: 1.15rem 0 1.2rem;
+            border-top: 1px solid rgba(24, 38, 62, 0.1);
         }
 
-        .section-title {
-            font-family: "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", "STSong", serif;
-            font-size: 13.1pt;
+        .section:first-of-type {
+            border-top: none;
+            padding-top: 0.2rem;
+        }
+
+        .section__title {
+            font-family: var(--font-heading);
+            font-size: var(--text-xl);
             font-weight: 700;
-            color: var(--neutral-800);
-            padding: 2.8pt 10pt 3.2pt;
-            border: 1px solid var(--neutral-300);
-            border-left: 6px solid var(--accent);
-            border-radius: 0 6px 6px 0;
-            background: linear-gradient(90deg, #f7f4eb 0%, #fbf9f1 100%);
-            display: inline-block;
-            margin-bottom: 5.2pt;
+            letter-spacing: 0.04em;
+            color: var(--color-heading);
+            margin-bottom: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
         }
 
-        .core-box {
-            background: var(--neutral-100);
-            border: 1px solid var(--neutral-200);
-            border-left: 4pt solid var(--accent);
-            padding: 6.2pt 10.5pt;
-            border-radius: 5px;
-            margin-bottom: 5.4pt;
+        .section__title::before {
+            content: "";
+            width: 1.5rem;
+            height: 1px;
+            background: var(--color-accent-line);
         }
 
-        .core-box p {
-            font-size: 10.1pt;
-            margin-bottom: 4.2pt;
+        .lede {
+            color: var(--color-text);
+            margin-bottom: 0.9rem;
         }
 
-        .core-box ul,
-        .highlight-box ul,
-        .job ul,
-        .project ul {
+        .summary-list,
+        .timeline-list,
+        .other-list {
+            display: grid;
+            gap: 0.9rem;
+        }
+
+        .summary-list {
             list-style: none;
-            margin-left: 2pt;
         }
 
-        .core-box li,
-        .highlight-box li,
-        .job li,
-        .project li {
-            margin-bottom: 3pt;
-            padding-left: 11.2pt;
+        .summary-list li {
             position: relative;
-            font-size: 10.2pt;
+            padding-left: 1rem;
+            color: var(--color-text);
         }
 
-        .core-box li:before,
-        .highlight-box li:before,
-        .job li:before,
-        .project li:before {
+        .summary-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.76rem;
+            width: 0.38rem;
+            height: 0.38rem;
+            border-radius: 999px;
+            background: var(--color-accent);
+        }
+
+        .timeline-item,
+        .education-item,
+        .other-card {
+            position: relative;
+            padding: 0.15rem 0 0.15rem 1.15rem;
+            page-break-inside: avoid;
+        }
+
+        .timeline-item::before,
+        .education-item::before,
+        .other-card::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.15rem;
+            bottom: 0.1rem;
+            width: 2px;
+            border-radius: 999px;
+            background: linear-gradient(180deg, var(--color-accent), rgba(36, 78, 143, 0.1));
+        }
+
+        .timeline-item::after,
+        .education-item::after,
+        .other-card::after {
+            content: "";
+            position: absolute;
+            left: -0.23rem;
+            top: 0.42rem;
+            width: 0.58rem;
+            height: 0.58rem;
+            border: 2px solid var(--color-accent);
+            border-radius: 999px;
+            background: var(--color-paper);
+        }
+
+        .item-card {
+            padding: 0.2rem 0 0.25rem;
+            border-radius: var(--radius-sm);
+            transition: transform var(--duration-fast) var(--easing), background-color var(--duration-fast) var(--easing);
+        }
+
+        .item-card:hover {
+            transform: translateY(-1px);
+            background: rgba(36, 78, 143, 0.03);
+        }
+
+        .item-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 0.35rem 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .item-title {
+            font-family: var(--font-heading);
+            font-size: 1.08rem;
+            line-height: 1.4;
+            color: var(--color-heading);
+            font-weight: 700;
+        }
+
+        .item-subtitle {
+            font-size: var(--text-sm);
+            color: var(--color-accent);
+            font-weight: 700;
+            margin-bottom: 0.45rem;
+        }
+
+        .item-date {
+            font-size: var(--text-sm);
+            color: var(--color-text-soft);
+            white-space: nowrap;
+        }
+
+        .item-context,
+        .item-stack,
+        .item-note {
+            color: var(--color-text-soft);
+            font-size: var(--text-sm);
+            margin-bottom: 0.45rem;
+        }
+
+        .bullet-list {
+            list-style: none;
+            display: grid;
+            gap: 0.45rem;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .bullet-list li::before {
             content: "•";
             position: absolute;
             left: 0;
-            color: var(--accent);
+            top: 0;
+            color: var(--color-accent);
             font-weight: 700;
         }
 
-        .highlight-box {
-            border: 1px solid var(--neutral-200);
-            border-radius: 5px;
-            padding: 5.8pt 9.8pt;
-            background: linear-gradient(180deg, #fffcf4 0%, #fcfaf4 100%);
-        }
-
-        .skills-table {
+        .skills-groups {
             display: grid;
-            width: 100%;
-            grid-template-columns: 1fr 1fr;
-            grid-template-areas:
-                "go data"
-                "obs store";
-            gap: 7.5pt;
-            margin-bottom: 5.5pt;
-            align-items: stretch;
+            gap: 0.8rem;
         }
 
-        .skill-category {
-            margin: 0;
-            border: 1px solid var(--neutral-200);
-            border-left: 3px solid var(--accent-light);
-            border-radius: 6px;
-            padding: 7pt 7.5pt 6.5pt;
-            background: linear-gradient(160deg, #fdfbf5 0%, #f8f4e9 100%);
-            min-height: 100%;
+        .skill-group {
+            padding: 0.78rem 0.92rem;
+            border: 1px solid rgba(24, 38, 62, 0.1);
+            border-radius: 12px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(248, 244, 236, 0.64));
+            page-break-inside: avoid;
+            transition: border-color var(--duration-fast) var(--easing), transform var(--duration-fast) var(--easing), background-color var(--duration-fast) var(--easing);
         }
 
-        .skill-go {
-            grid-area: go;
+        .skill-group:hover {
+            transform: translateY(-1px);
+            border-color: rgba(36, 78, 143, 0.2);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(248, 244, 236, 0.7));
         }
 
-        .skill-obs {
-            grid-area: obs;
-        }
-
-        .skill-data {
-            grid-area: data;
-        }
-
-        .skill-store {
-            grid-area: store;
-        }
-
-        .skill-category h4 {
-            font-family: "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", "STSong", serif;
-            font-size: 10.4pt;
-            color: var(--accent-deep);
-            font-weight: 700;
-            margin-bottom: 3.5pt;
-            border-bottom: 1px solid var(--neutral-300);
-            padding-bottom: 2pt;
+        .skill-group__title {
+            font-family: var(--font-heading);
+            color: var(--color-heading);
+            font-size: 0.98rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
         }
 
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 4.4pt 4.2pt;
+            gap: 0.28rem 0.4rem;
         }
 
         .skill-tag {
-            background: #f1f5ff;
-            color: #193a8a;
-            font-size: 9.1pt;
-            padding: 1.7pt 6.2pt;
-            border-radius: 10px;
-            border: 1px solid #bfcced;
-            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            min-height: 1.7rem;
+            padding: 0.16rem 0.56rem;
+            border: 1px solid rgba(36, 78, 143, 0.12);
+            border-radius: 999px;
+            background: rgba(36, 78, 143, 0.045);
+            color: var(--color-heading);
+            font-size: 0.82rem;
         }
 
-        .job,
-        .project {
-            margin-bottom: 6pt;
-            padding: 4.8pt 6.8pt 4.8pt 7.2pt;
-            border: 1px solid var(--neutral-200);
-            border-left: 3px solid #8ea3d6;
-            border-radius: 6px;
-            background: linear-gradient(180deg, #fefdf8 0%, #faf8f2 100%);
-            page-break-inside: avoid;
+        .education-item .item-note {
+            margin-top: 0.45rem;
+            margin-bottom: 0;
         }
 
-        .job:last-child,
-        .project:last-child {
-            margin-bottom: 0.6pt;
+        .todo {
+            color: var(--color-metric);
+            font-weight: 700;
         }
 
-        .job-header,
-        .project-header {
+        .resume-footer {
+            margin-top: 0.9rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--color-border);
+            page-break-before: avoid;
+        }
+
+        .resume-footer__main {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
-            margin-bottom: 3.4pt;
-            align-items: flex-start;
+            gap: 0.4rem 1rem;
+            font-size: var(--text-sm);
+            color: var(--color-text-soft);
         }
 
-        .job-title,
-        .project-title {
-            font-family: "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", "STSong", serif;
-            font-size: 11.2pt;
-            font-weight: 700;
-            color: var(--neutral-800);
+        .resume-footer__note {
+            margin-top: 0.5rem;
+            font-size: var(--text-xs);
+            color: var(--color-text-soft);
         }
 
-        .job-company,
-        .project-meta {
-            font-size: 9.9pt;
-            color: var(--accent-deep);
-            margin-top: 0.4pt;
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(14px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .job-date,
-        .project-date {
-            font-size: 9.3pt;
-            color: var(--neutral-700);
-            white-space: nowrap;
-            font-style: italic;
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+
+            .reveal {
+                opacity: 1 !important;
+                transform: none !important;
+            }
         }
 
-        .project p {
-            font-size: 10pt;
-            margin: 2.8pt 0;
-        }
+        @media (max-width: 720px) {
+            body {
+                padding: 14px;
+            }
 
-        .education-box {
-            background: var(--neutral-100);
-            padding: 6pt 10.5pt;
-            border-radius: 6px;
-            border: 1px solid var(--neutral-200);
-            border-left: 4pt solid var(--accent-light);
-            page-break-inside: avoid;
-        }
+            .resume {
+                padding: 14px;
+                border-radius: 22px;
+            }
 
-        .education-left h4 {
-            font-family: "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", "STSong", serif;
-            font-size: 11.2pt;
-            font-weight: 700;
-            color: var(--neutral-800);
-        }
+            .hero {
+                padding: 1.2rem;
+            }
 
-        .education-left p,
-        .education-right,
-        .honors {
-            font-size: 10pt;
-            color: var(--neutral-700);
-        }
+            .hero::after {
+                left: 1.2rem;
+                right: 1.2rem;
+            }
 
-        .honors {
-            margin-top: 5.4pt;
-        }
+            .hero__meta {
+                gap: 0.5rem;
+            }
 
-        .footer {
-            margin-top: 8.2pt;
-            padding-top: 4.4pt;
-            border-top: 1.6pt solid var(--accent);
-            text-align: center;
-            font-size: 8.8pt;
-            color: var(--neutral-700);
-        }
+            .hero__meta-item {
+                width: 100%;
+                justify-content: flex-start;
+                border-radius: 14px;
+            }
 
-        .footnote {
-            margin-top: 3pt;
-            font-size: 8.3pt;
-            color: #64748b;
-            text-align: center;
-        }
+            .item-header {
+                align-items: flex-start;
+            }
 
-        .footer a {
-            color: var(--accent);
-            text-decoration: none;
-            position: relative;
-            z-index: 10;
+            .item-date {
+                white-space: normal;
+            }
         }
 
         @media print {
             html,
             body {
-                font-size: 10.2pt;
-                line-height: 1.42;
+                background: #fff !important;
+                font-size: 10.1pt;
+                line-height: 1.43;
             }
 
-            .container {
-                width: 100%;
+            body {
                 padding: 0;
             }
 
-            .job,
-            .project,
-            .core-box,
-            .highlight-box,
-            .education-box {
-                page-break-inside: avoid !important;
+            body::before,
+            .resume::before {
+                display: none !important;
             }
 
-            .section,
-            ul {
-                page-break-inside: auto !important;
+            .resume {
+                width: 100%;
+                padding: 0;
+                border: none;
+                border-radius: 0;
+                background: #fff !important;
+                box-shadow: none !important;
             }
 
-            .header {
-                padding: 5.8pt 7.5pt 5pt !important;
-                margin-bottom: 5.5pt !important;
+            .hero {
+                margin-bottom: 4.5pt;
+                padding: 8pt 10pt 7pt;
+                border-radius: 10px;
+                background: #faf8f2 !important;
+                box-shadow: none !important;
+                page-break-inside: avoid;
             }
 
-            .header h1 {
-                font-size: 24.8pt !important;
-                margin-bottom: 1.4pt !important;
+            .hero::after {
+                left: 10pt;
+                right: 10pt;
             }
 
-            .header .title {
-                font-size: 12.8pt !important;
+            .hero__name {
+                font-size: 24.8pt;
+                margin-bottom: 1pt;
             }
 
-            .contact-bar {
-                margin-top: 5pt !important;
-                font-size: 9.2pt !important;
-                gap: 8.2pt !important;
+            .hero__role {
+                font-size: 10.8pt;
+                margin-bottom: 4pt;
+            }
+
+            .hero__summary,
+            .hero__highlights li,
+            .lede,
+            .summary-list li,
+            .bullet-list li,
+            .item-context,
+            .item-stack,
+            .item-note,
+            .resume-footer__main {
+                font-size: 9.55pt;
+            }
+
+            .hero__summary,
+            .lede,
+            .item-context,
+            .item-stack,
+            .item-note {
+                margin-bottom: 3pt;
+            }
+
+            .hero__highlights,
+            .summary-list,
+            .timeline-list,
+            .other-list,
+            .bullet-list,
+            .skills-groups {
+                gap: 0 !important;
+            }
+
+            .summary-list,
+            .timeline-list,
+            .other-list,
+            .skills-groups,
+            .bullet-list {
+                display: block !important;
+            }
+
+            .summary-list li,
+            .bullet-list li,
+            .timeline-item,
+            .other-card,
+            .skill-group {
+                margin-bottom: 3pt;
+            }
+
+            .timeline-item:last-child,
+            .other-card:last-child,
+            .skill-group:last-child,
+            .summary-list li:last-child,
+            .bullet-list li:last-child {
+                margin-bottom: 0;
+            }
+
+            .hero__meta {
+                gap: 4pt;
+                padding-top: 5pt;
+            }
+
+            .hero__meta-item {
+                min-height: auto;
+                padding: 2pt 6pt;
+                font-size: 8.6pt;
+                background: #fff !important;
             }
 
             .section {
-                margin-bottom: 5pt !important;
-            }
-
-            .section-title {
-                margin-bottom: 3.8pt !important;
-                font-size: 12.6pt !important;
-                padding-top: 2.2pt !important;
-                padding-bottom: 2.4pt !important;
-            }
-
-            .core-box,
-            .highlight-box,
-            .job,
-            .project,
-            .education-box {
-                padding-top: 4.4pt !important;
-                padding-bottom: 4.2pt !important;
-            }
-
-            .core-box li,
-            .highlight-box li,
-            .job li,
-            .project li {
-                margin-bottom: 2pt !important;
-            }
-
-            .skills-table {
-                gap: 4.2pt !important;
-            }
-
-            .skill-category {
-                padding: 4.2pt 5pt 4pt !important;
-                border-left-width: 2px !important;
+                padding: 4pt 0;
                 page-break-inside: auto !important;
             }
 
-            .skill-category h4 {
-                margin-bottom: 2.2pt !important;
-                padding-bottom: 1.2pt !important;
-                font-size: 10pt !important;
+            .section__title {
+                margin-bottom: 3pt;
+                font-size: 12.2pt;
+                page-break-after: avoid !important;
+                page-break-before: avoid !important;
+            }
+
+            .section__title::before {
+                width: 12pt;
+            }
+
+            .timeline-item,
+            .education-item,
+            .other-card,
+            .skill-group,
+            .hero,
+            .resume-footer {
+                page-break-inside: avoid !important;
+            }
+
+            .item-card,
+            .timeline-item,
+            .education-item,
+            .other-card {
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
+            }
+
+            .item-header {
+                margin-bottom: 1.5pt;
+            }
+
+            .item-title {
+                font-size: 10.9pt;
+            }
+
+            .item-subtitle,
+            .item-date {
+                font-size: 8.9pt;
+            }
+
+            .item-card:hover,
+            .skill-group:hover {
+                transform: none !important;
+                background: transparent !important;
+            }
+
+            .skill-group {
+                padding: 3.5pt 6pt;
+                background: #faf8f2 !important;
+            }
+
+            .skill-group__title {
+                margin-bottom: 1pt;
+                font-size: 9.6pt;
             }
 
             .skill-tags {
@@ -430,197 +760,194 @@
 
             .skill-tag {
                 display: inline !important;
-                background: transparent !important;
-                border: none !important;
                 padding: 0 !important;
-                margin-right: 0 !important;
+                border: none !important;
                 border-radius: 0 !important;
-                font-size: 9pt !important;
-                white-space: normal !important;
-                color: #1f2430 !important;
+                background: transparent !important;
+                font-size: 8.9pt !important;
+                color: var(--color-text) !important;
             }
 
             .skill-tag::after {
                 content: " / ";
-                color: #64748b;
+                color: var(--color-text-soft);
             }
 
             .skill-tags .skill-tag:last-child::after {
                 content: "";
             }
 
-            .section-title,
-            .footer {
-                page-break-after: avoid !important;
+            .resume-footer {
+                margin-top: 4pt;
+                padding-top: 4pt;
+            }
+
+            .resume-footer,
+            .resume-footer__main,
+            .resume-footer__note {
                 page-break-before: avoid !important;
             }
 
-            .container {
-                background: #fff !important;
-                border-color: #d7d7d7 !important;
-                box-shadow: none !important;
+            .resume-footer__note {
+                margin-top: 2pt;
+                font-size: 8.2pt;
             }
 
             a {
-                color: var(--accent) !important;
+                color: var(--color-accent) !important;
+                text-decoration: underline;
+                text-decoration-thickness: 0.8px;
+                text-underline-offset: 2px;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-
-        <div class="header">
-            <h1>徐俊飞</h1>
-            <div class="title">资深后端工程师 · Go 微服务 / 数据平台架构方向</div>
-            <div class="contact-bar">
-                <span>📧 masonsxu@foxmail.com</span>
-                <span>🔗 <a href="https://github.com/masonsxu">github.com/masonsxu</a></span>
-                <span>🌐 <a href="https://masonsxu-github-io.pages.dev/">masonsxu-github-io.pages.dev</a></span>
-                <span>📍 现居厦门 · 意向城市：上海 / 杭州</span>
+    <main class="resume" aria-label="徐俊飞简历">
+        <header class="hero reveal" style="animation-delay: 40ms;">
+            <div class="eyebrow">Senior Backend Resume</div>
+            <h1 class="hero__name">徐俊飞</h1>
+            <p class="hero__role">资深后端工程师 · Go 微服务 / 数据平台架构方向</p>
+            <p class="hero__summary">
+                5 年后端研发经验，聚焦高可用微服务与数据链路工程。擅长在复杂场景下完成架构选型、系统拆分、工程规范落地与线上稳定性治理，持续把技术动作转化为可复用的交付体系与可量化的效率收益。
+            </p>
+            <ul class="hero__highlights" aria-label="核心亮点摘要">
+                <li>主导 Radius 后端从单体演进为 <span class="metric">9 服务体系</span>，建立 IDL-First、分层架构与依赖注入规范，支撑多业务域并行迭代。</li>
+                <li>构建 Radius 数据湖 <span class="metric">10 DAG</span> 主链路，打通“配置同步 → 批量入湖 → 字典抽取 → 业务回传”的数据闭环。</li>
+                <li>推动部署时间从 <span class="metric">4h → 30min</span>，查询效率 <span class="metric">+50%</span>，数据加载响应 <span class="metric">+35%</span>，故障率 <span class="metric">-45%</span>。</li>
+            </ul>
+            <div class="hero__meta" aria-label="联系方式">
+                <span class="hero__meta-item"><span class="hero__meta-label">Email</span>masonsxu@foxmail.com</span>
+                <a class="hero__meta-item" href="https://github.com/masonsxu"><span class="hero__meta-label">GitHub</span>github.com/masonsxu</a>
+                <a class="hero__meta-item" href="https://masonsxu-github-io.pages.dev/"><span class="hero__meta-label">Website</span>masonsxu-github-io.pages.dev</a>
+                <span class="hero__meta-item"><span class="hero__meta-label">Location</span>现居厦门 · 意向城市：上海 / 杭州</span>
             </div>
-        </div>
+        </header>
 
-        <div class="section">
-            <div class="section-title">职业定位</div>
-            <div class="core-box">
-                <p><strong>5 年后端研发经验，聚焦高可用微服务与数据链路工程。</strong>擅长在不确定场景下完成架构选型、系统拆分、工程规范落地与线上稳定性治理，目标岗位：高级工程师 / 架构师 /
-                    技术负责人。</p>
-            </div>
-        </div>
+        <section class="section reveal" id="summary" aria-labelledby="summary-title" style="animation-delay: 90ms;">
+            <h2 class="section__title" id="summary-title">个人简介</h2>
+            <p class="lede">
+                以结果为导向推进后端架构与数据平台建设，既能承担核心链路的方案设计、落地与救火，也能把研发协作从“个人经验驱动”推进到“标准流程驱动”。目标岗位为高级工程师 / 架构师 / 技术负责人。
+            </p>
+            <ul class="summary-list">
+                <li>完成网关与多 RPC 服务治理方案落地，形成从接口契约、服务发现到可观测联动的统一技术底座。</li>
+                <li>建立 OpenTelemetry、Jaeger 与结构化日志联动链路，缩短跨服务故障定位路径，支撑高频需求下的稳定交付。</li>
+                <li>实现字典规则驱动抽取引擎，通过 BFS 自动发现多表 JOIN 路径并在失败场景回退 UNION ALL，降低手工 SQL 维护成本。</li>
+                <li>沉淀项目文档 <span class="metric">31 份</span>、累计约 <span class="metric">1.1 万行</span>，覆盖架构、规范、运维与交接，提升团队扩展与知识传承效率。</li>
+            </ul>
+        </section>
 
-        <div class="section">
-            <div class="section-title">核心价值摘要</div>
-            <div class="core-box">
-                <ul>
-                    <li><strong>架构交付：</strong>主导 Radius 后端从单体演进到 <span class="metric">9 服务体系</span>（8 RPC + 1 API
-                        Gateway），建立 IDL-First + 分层架构 + Wire 注入规范。</li>
-                    <li><strong>业务闭环：</strong>构建 Radius 数据湖 <span class="metric">10 DAG</span> 主链路（仓库当前 13 个
-                        dag_id），打通“配置同步→批量入湖→字典抽取→业务回传”。</li>
-                    <li><strong>工程收益：</strong>部署时间 <span class="metric">4h → 30min</span>（效率 <span
-                            class="metric">+87.5%</span>），故障率 <span class="metric">-45%</span>；查询效率 <span
-                            class="metric">+50%</span>，数据加载响应 <span class="metric">+35%</span>（同周期项目复盘口径）。</li>
-                    <li><strong>稳定性：</strong>线上可用性达到 <span class="metric">99.9%</span>，多次 P0
-                        级故障当日恢复，具备复杂线上问题快速止损与根因修复能力。</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section-title">关键成果（影响力优先）</div>
-            <div class="highlight-box">
-                <ul>
-                    <li>完成网关 + 多 RPC 服务治理方案落地（Hertz / Kitex / Etcd / Thrift IDL），支撑多业务域并行迭代与独立部署。</li>
-                    <li>建立 OpenTelemetry + Jaeger + 结构化日志联动链路，缩短跨服务故障定位路径。</li>
-                    <li>实现字典规则驱动抽取引擎：BFS 自动发现多表 JOIN 路径，失败回退 UNION ALL，降低手工 SQL 维护成本。</li>
-                    <li>沉淀研发资产：项目文档 <span class="metric">31 份</span>，累计约 <span class="metric">1.1
-                            万行</span>，覆盖架构、规范、运维与交接。</li>
-                </ul>
-            </div>
-        </div>
-
-
-        <div class="section">
-            <div class="section-title">工作经历</div>
-
-            <div class="job">
-                <div class="job-header">
-                    <div>
-                        <span class="job-title">Go 后端架构师 / 技术负责人</span>
-                        <div class="job-company">福建自贸试验区厦门片区 Manteia 数据科技有限公司</div>
+        <section class="section reveal" id="experience" aria-labelledby="experience-title" style="animation-delay: 140ms;">
+            <h2 class="section__title" id="experience-title">工作经历</h2>
+            <div class="timeline-list">
+                <article class="timeline-item">
+                    <div class="item-card">
+                        <div class="item-header">
+                            <div>
+                                <h3 class="item-title">Go 后端架构师 / 技术负责人</h3>
+                                <p class="item-subtitle">福建自贸试验区厦门片区 Manteia 数据科技有限公司</p>
+                            </div>
+                            <time class="item-date" datetime="2025-03">2025.03 - 至今</time>
+                        </div>
+                        <p class="item-context">技术架构与分布式系统 · 核心技术成员</p>
+                        <ul class="bullet-list">
+                            <li>在多业务域并行演进场景下主导后端服务化升级，完成 <span class="metric">8 RPC + 1 API Gateway</span> 的 9 服务体系建设，支撑多模块独立演进与部署。</li>
+                            <li>统一 IDL-First 开发流程、分层架构约束与 Wire 依赖注入规范，把服务研发从“人依赖”推进为“体系依赖”。</li>
+                            <li>推动 8 人研发协作机制标准化，围绕代码评审、接口契约与交付规范建立可复制的工程流程，降低跨模块协作成本。</li>
+                            <li>建设 OTel、Jaeger 与 trace / request_id 传播链路，打通网关到核心 RPC 的排障路径，提升复杂线上问题的定位与止损效率。</li>
+                            <li>完成结构化交接资产沉淀，为团队扩展、新成员接入与后续演进提供稳定工程基础。</li>
+                        </ul>
                     </div>
-                    <div class="job-date">2025.03 - 至今</div>
-                </div>
-                <div style="font-size:9.5pt;color:#475569;margin-bottom:4.2pt;">技术架构与分布式系统 · 核心技术成员</div>
-                <ul>
-                    <li><strong>Mission：</strong>在多业务域并行演进场景下，重构后端技术底座并提升交付稳定性。</li>
-                    <li><strong>Action：</strong>作为架构 Owner 主导服务化升级为 9 服务体系，统一 IDL-First 开发流程、分层架构约束与依赖注入规范，建立可复制的工程交付模板。
-                    </li>
-                    <li><strong>Action：</strong>推动 8 人研发协作机制（代码评审、接口契约、交付规范）从“个人经验驱动”转为“标准流程驱动”。</li>
-                    <li><strong>Action：</strong>建设可观测链路（OTel + Jaeger + trace/request_id 传播）与错误治理规范，打通网关到核心 RPC 的排障路径。
-                    </li>
-                    <li><strong>Outcome：</strong>支撑高频需求迭代与跨模块协作，项目从“人依赖”转向“体系依赖”，并完成结构化交接资产沉淀。</li>
-                </ul>
-            </div>
+                </article>
 
-            <div class="job">
-                <div class="job-header">
-                    <div>
-                        <span class="job-title">Python 后端开发工程师</span>
-                        <div class="job-company">福建自贸试验区厦门片区 Manteia 数据科技有限公司</div>
+                <article class="timeline-item">
+                    <div class="item-card">
+                        <div class="item-header">
+                            <div>
+                                <h3 class="item-title">Python 后端开发工程师</h3>
+                                <p class="item-subtitle">福建自贸试验区厦门片区 Manteia 数据科技有限公司</p>
+                            </div>
+                            <time class="item-date" datetime="2021-06">2021.06 - 2025.03</time>
+                        </div>
+                        <ul class="bullet-list">
+                            <li>基于 Asyncio 与 Pydantic 重构核心业务链路，优化查询与数据加载模型，使查询效率提升 <span class="metric">50%</span>，数据加载响应提升 <span class="metric">35%</span>。</li>
+                            <li>推动核心服务从 Shell 方式迁移到容器化工程流程，部署时间从 <span class="metric">4 小时缩短至 30 分钟</span>，整体效率提升 <span class="metric">87.5%</span>。</li>
+                            <li>通过链路治理与变更风险收敛，使故障率下降 <span class="metric">45%</span>，系统可用性达到 <span class="metric">99.9%</span>。</li>
+                            <li>多次在关键故障中实现当日恢复，兼顾快速止损与根因修复，降低线上业务影响范围。</li>
+                        </ul>
                     </div>
-                    <div class="job-date">2021.06 - 2025.03</div>
-                </div>
-                <ul>
-                    <li><strong>Mission：</strong>提升核心业务链路性能并降低线上变更风险。</li>
-                    <li><strong>Action：</strong>基于 Asyncio + Pydantic 重构核心链路，优化查询与数据加载模型；完成 Shell 到 Docker 的工程化迁移。</li>
-                    <li><strong>Outcome：</strong>查询效率 <span class="metric">+50%</span>、数据加载响应 <span
-                            class="metric">+35%</span>、部署效率 <span class="metric">+87.5%</span>、故障率 <span
-                            class="metric">-45%</span>。</li>
-                    <li><strong>Outcome：</strong>多次关键故障当日恢复，系统可用性达到 <span class="metric">99.9%</span>。</li>
-                </ul>
+                </article>
             </div>
-        </div>
+        </section>
 
-        <div class="section">
-            <div class="section-title">代表项目</div>
+        <section class="section reveal" id="projects" aria-labelledby="projects-title" style="animation-delay: 190ms;">
+            <h2 class="section__title" id="projects-title">项目经历</h2>
+            <div class="timeline-list">
+                <article class="timeline-item">
+                    <div class="item-card">
+                        <div class="item-header">
+                            <div>
+                                <h3 class="item-title">Radius Backend 微服务平台</h3>
+                                <p class="item-subtitle">技术负责人 · 生产系统</p>
+                            </div>
+                            <time class="item-date" datetime="2025-03">2025.03 - 至今</time>
+                        </div>
+                        <p class="item-stack">技术栈：Go、Hertz、Kitex、Thrift IDL、Etcd、PostgreSQL、Redis、Wire、OpenTelemetry、Jaeger</p>
+                        <ul class="bullet-list">
+                            <li>落地 <span class="metric">8 RPC + 1 Gateway</span> 的服务体系，统一承接 10 类业务入口，支撑多业务域并行迭代与独立部署。</li>
+                            <li>建立服务契约优先与分层职责边界，让架构方案从单点设计升级为团队默认技术标准。</li>
+                            <li>实现 trace / request_id 贯穿传播与结构化日志联动，提升跨服务调用链追踪与错误定位效率。</li>
+                            <li>输出完整架构、规范、运维与交接文档体系，累计 <span class="metric">31 份</span>、约 <span class="metric">1.1 万行</span>，增强团队扩展与知识传承能力。</li>
+                        </ul>
+                    </div>
+                </article>
 
-            <div class="project">
-                <div class="project-header">
-                    <div class="project-title">▶ Radius Backend 微服务平台（核心项目）</div>
-                    <div class="project-date">技术负责人 | 2025.03 - 至今 | 生产系统</div>
-                </div>
-                <p><strong>技术栈：</strong>Go + Hertz + Kitex + Thrift IDL + Etcd + PostgreSQL + Redis + Wire +
-                    OpenTelemetry + Jaeger</p>
-                <ul>
-                    <li><strong>架构规模：</strong>落地 <strong>8 RPC + 1 Gateway</strong> 服务体系（go.work 多模块管理），网关统一承接 10 类业务入口。
-                    </li>
-                    <li><strong>治理设计：</strong>建立服务契约优先（IDL-First）与分层职责边界，推动架构方案成为团队默认技术标准。</li>
-                    <li><strong>可观测性：</strong>实现 trace/request_id 贯穿传播与结构化日志联动，提升跨服务调用链追踪与错误定位效率。</li>
-                    <li><strong>工程沉淀：</strong>输出完整规范与架构文档体系（31 份，约 1.1 万行），支撑团队扩展、知识传承与新成员快速接入。</li>
-                </ul>
+                <article class="timeline-item">
+                    <div class="item-card">
+                        <div class="item-header">
+                            <div>
+                                <h3 class="item-title">Radius Datalake 数据湖平台</h3>
+                                <p class="item-subtitle">核心开发 · 生产系统</p>
+                            </div>
+                            <time class="item-date" datetime="2024">2024 - 至今</time>
+                        </div>
+                        <p class="item-stack">技术栈：Airflow、Iceberg、Trino、PyIceberg、Polars、PyArrow、RustFS（S3）、Python</p>
+                        <ul class="bullet-list">
+                            <li>设计并落地 <span class="metric">10 DAG</span> 主链路（4 个 core + 6 个 business），当前仓库总 dag_id 为 13，形成稳定的数据闭环。</li>
+                            <li>通过配置驱动拉取业务 API 数据源与字典配置，并实现 JWT Token 自动刷新与 Airflow Variables 缓存，降低手工维护成本。</li>
+                            <li>完成 MySQL 流式游标批量入湖、Mongo 原始文档入湖与 Iceberg schema evolution，支撑多来源数据接入与演进。</li>
+                            <li>实现规则驱动 SQL 自动生成，采用 BFS 自动发现多表 JOIN 路径并在失败场景自动回退 UNION ALL，显著降低人工拼接 SQL 成本。</li>
+                            <li>构建按分类并行、批次重试、错误隔离的回传容错机制，核心 DAG 默认手动触发，可按部署策略切换为定时调度。</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="item-card">
+                        <div class="item-header">
+                            <div>
+                                <h3 class="item-title">CloudWeGo 生态实践与开源贡献</h3>
+                                <p class="item-subtitle">架构实践 / 开源贡献者</p>
+                            </div>
+                            <time class="item-date" datetime="2025">2025 - 至今</time>
+                        </div>
+                        <p class="item-note">项目地址：<a href="https://github.com/masonsxu/cloudwego-microservice-demo">github.com/masonsxu/cloudwego-microservice-demo</a></p>
+                        <ul class="bullet-list">
+                            <li>基于生产经验沉淀 CloudWeGo 微服务模板，覆盖网关接入、服务发现、可观测、容器化与工程规范。</li>
+                            <li>推动 AI 辅助开发流程落地，通过规范文档、技能脚本与自动化工作流提升需求到交付的端到端效率。</li>
+                            <li>参与 CloudWeGo 生态问题修复与贡献，包括 hertz-contrib/jwt 等组件。</li>
+                        </ul>
+                    </div>
+                </article>
             </div>
+        </section>
 
-            <div class="project">
-                <div class="project-header">
-                    <div class="project-title">▶ Radius Datalake 数据湖平台</div>
-                    <div class="project-date">核心开发 | 2024 - 至今 | 生产系统</div>
-                </div>
-                <p><strong>技术栈：</strong>Airflow + Iceberg + Trino + PyIceberg + Polars + PyArrow + RustFS(S3) + Python
-                </p>
-                <ul>
-                    <li><strong>链路闭环：</strong>设计并落地 10 DAG 主链路（4 个 core + 6 个 business），当前仓库总 dag_id 为 13（含日志链路）。</li>
-                    <li><strong>配置驱动：</strong>从业务 API 拉取数据源与字典配置，JWT Token 自动刷新并缓存到 Airflow Variables，降低手工维护成本。</li>
-                    <li><strong>入湖引擎：</strong>MySQL 流式游标批量入湖（默认 10k/批，max_active_tasks=10）+ Mongo 原始文档入湖（raw_document）+
-                        Iceberg schema evolution。</li>
-                    <li><strong>规则引擎：</strong>字典抽取 SQL 由规则驱动自动生成，MySQL 多表关联采用 BFS 自动找路径，失败场景自动回退 UNION ALL，显著降低人工拼 SQL
-                        成本。</li>
-                    <li><strong>回传容错：</strong>按分类并行、批次重试、错误隔离（默认 100 条/批）；核心 DAG 默认手动触发（schedule=None），可按部署策略切换为定时调度。
-                    </li>
-                </ul>
-            </div>
-
-            <div class="project">
-                <div class="project-header">
-                    <div class="project-title">▶ CloudWeGo 生态实践与开源贡献</div>
-                    <div class="project-date">架构实践 / 开源贡献者 | 2025 - 至今</div>
-                </div>
-                <p><strong>项目：</strong><a
-                        href="https://github.com/masonsxu/cloudwego-microservice-demo">cloudwego-microservice-demo</a>
-                </p>
-                <ul>
-                    <li>基于生产经验沉淀 CloudWeGo 微服务模板，覆盖网关接入、服务发现、可观测、容器化与工程规范。</li>
-                    <li>推动 AI 辅助开发流程落地（规范文档 + 技能脚本 + 自动化工作流），提升需求到交付的端到端效率。</li>
-                    <li>参与 CloudWeGo 生态问题修复与贡献（包括 hertz-contrib/jwt 等组件）。</li>
-                </ul>
-            </div>
-        </div>
-        <div class="section">
-            <div class="section-title">专业技能</div>
-            <div class="skills-table">
-                <div class="skill-category skill-go">
-                    <h4>Go 微服务架构（核心）</h4>
+        <section class="section reveal" id="skills" aria-labelledby="skills-title" style="animation-delay: 240ms;">
+            <h2 class="section__title" id="skills-title">技能</h2>
+            <div class="skills-groups">
+                <section class="skill-group" aria-labelledby="skill-go">
+                    <h3 class="skill-group__title" id="skill-go">微服务架构</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Go 1.24+</span>
                         <span class="skill-tag">Kitex RPC</span>
@@ -632,9 +959,9 @@
                         <span class="skill-tag">gRPC</span>
                         <span class="skill-tag">API 网关</span>
                     </div>
-                </div>
-                <div class="skill-category skill-obs">
-                    <h4>分布式治理与可观测</h4>
+                </section>
+                <section class="skill-group" aria-labelledby="skill-obs">
+                    <h3 class="skill-group__title" id="skill-obs">分布式治理与可观测</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">OpenTelemetry</span>
                         <span class="skill-tag">Jaeger</span>
@@ -645,9 +972,9 @@
                         <span class="skill-tag">JWT 认证</span>
                         <span class="skill-tag">权限模型设计</span>
                     </div>
-                </div>
-                <div class="skill-category skill-data">
-                    <h4>数据平台与数据工程</h4>
+                </section>
+                <section class="skill-group" aria-labelledby="skill-data">
+                    <h3 class="skill-group__title" id="skill-data">数据平台与数据工程</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Airflow</span>
                         <span class="skill-tag">Apache Iceberg</span>
@@ -658,9 +985,9 @@
                         <span class="skill-tag">BFS 关联路径</span>
                         <span class="skill-tag">批量回传链路</span>
                     </div>
-                </div>
-                <div class="skill-category skill-store">
-                    <h4>存储与工程化</h4>
+                </section>
+                <section class="skill-group" aria-labelledby="skill-store">
+                    <h3 class="skill-group__title" id="skill-store">存储与工程化</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">PostgreSQL</span>
                         <span class="skill-tag">MySQL</span>
@@ -673,34 +1000,76 @@
                         <span class="skill-tag">CI/CD</span>
                         <span class="skill-tag">AI 辅助开发</span>
                     </div>
-                </div>
+                </section>
             </div>
-        </div>
+        </section>
 
-        <div class="section">
-            <div class="section-title">教育背景</div>
-            <div class="education-box">
-                <div style="display:flex;justify-content:space-between;align-items:baseline;">
-                    <div class="education-left">
-                        <h4>河南城建学院</h4>
-                        <p>信息管理与信息系统（大数据方向）</p>
+        <section class="section reveal" id="education" aria-labelledby="education-title" style="animation-delay: 290ms;">
+            <h2 class="section__title" id="education-title">教育</h2>
+            <article class="education-item">
+                <div class="item-card">
+                    <div class="item-header">
+                        <div>
+                            <h3 class="item-title">河南城建学院</h3>
+                            <p class="item-subtitle">信息管理与信息系统（大数据方向）</p>
+                        </div>
+                        <time class="item-date" datetime="2017-07">2017.07 - 2021.06</time>
                     </div>
-                    <div class="education-right">2017.07 - 2021.06</div>
+                    <p class="item-note"><strong>荣誉奖项：</strong>2021 · 河南省优秀学位论文（省级）｜2018 / 2019 · 国家级单项奖学金（2 次）｜2020 · 省级单项奖学金</p>
                 </div>
-                <div class="honors">
-                    <strong>荣誉奖项：</strong>2021 · 河南省优秀学位论文（省级） | 2018/2019 · 国家级单项奖学金（2次） | 2020 · 省级单项奖学金
-                </div>
+            </article>
+        </section>
+
+        <section class="section reveal" id="others" aria-labelledby="others-title" style="animation-delay: 340ms;">
+            <h2 class="section__title" id="others-title">其他</h2>
+            <div class="other-list">
+                <article class="other-card">
+                    <div class="item-card">
+                        <ul class="bullet-list">
+                            <li>个人主页：<a href="https://masonsxu-github-io.pages.dev/">masonsxu-github-io.pages.dev</a></li>
+                            <li>开源实践：持续维护 CloudWeGo 微服务模板，并参与相关生态问题修复与贡献。</li>
+                        </ul>
+                    </div>
+                </article>
             </div>
-        </div>
+        </section>
 
-        <div class="footer">
-            最后更新：2026年3月 | GitHub: <a href="https://github.com/masonsxu">github.com/masonsxu</a>
-        </div>
-        <div class="footnote">
-            指标口径说明：效率/故障率/可用性等数据基于 2021-2026 同周期项目复盘与运维记录，不虚构业务结果。
-        </div>
+        <footer class="resume-footer reveal" style="animation-delay: 390ms;">
+            <div class="resume-footer__main">
+                <span>最后更新：2026 年 3 月</span>
+                <span>GitHub：<a href="https://github.com/masonsxu">github.com/masonsxu</a></span>
+            </div>
+            <p class="resume-footer__note">指标口径说明：效率、故障率、可用性等数据基于 2021–2026 同周期项目复盘与运维记录，不虚构业务结果。</p>
+        </footer>
+    </main>
 
-    </div>
+    <script>
+        (() => {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelectorAll('.reveal').forEach((node) => {
+                    node.style.opacity = '1';
+                    node.style.transform = 'none';
+                    node.style.animation = 'none';
+                });
+                return;
+            }
+
+            const items = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.14 });
+
+            items.forEach((item) => {
+                item.style.animationPlayState = 'paused';
+                observer.observe(item);
+            });
+        })();
+    </script>
 </body>
 
 </html>
