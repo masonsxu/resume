@@ -16,303 +16,317 @@
 
         @page {
             size: A4 portrait;
-            margin: 6mm 7mm;
+            margin: 5.5mm 6mm;
         }
 
         html,
         body {
             width: 100%;
-            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
-            font-size: 9.7pt;
-            line-height: 1.42;
-            color: #1f2937;
-            background: #ffffff;
+            font-family: "Source Han Sans SC", "Noto Sans CJK SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+            font-size: 10.5pt;
+            line-height: 1.48;
+            color: #1f2430;
+            background: #f4f2ec;
         }
 
         .container {
             width: 100%;
             max-width: 196mm;
             margin: 0 auto;
-            padding: 2mm 0 1mm;
+            padding: 2.2mm 2mm 1.4mm;
+            border: 1px solid #d9d3c6;
+            border-radius: 8px;
+            background:
+                radial-gradient(140% 130% at 100% 0%, #fff8ea 0%, #fbfaf6 40%, #f7f5ee 100%);
+            box-shadow: 0 1px 0 #fff inset;
         }
 
         :root {
-            --accent: #3370FF;
-            --accent-light: #5B8DEF;
-            --highlight: #D97706;
-            --neutral-100: #f8fafc;
-            --neutral-200: #e2e8f0;
-            --neutral-700: #334155;
-            --neutral-800: #1e293b;
-            --success: #15803d;
+            --accent: #193a8a;
+            --accent-deep: #10244f;
+            --accent-light: #3b65c7;
+            --metric: #9a3f18;
+            --neutral-100: #fbfaf6;
+            --neutral-200: #ddd7ca;
+            --neutral-300: #c8bfad;
+            --neutral-700: #3f4857;
+            --neutral-800: #212938;
         }
 
-        /* Metric highlight */
         .metric {
-            color: var(--highlight);
+            color: var(--metric);
             font-weight: 700;
         }
 
-        /* Header */
         .header {
             text-align: center;
-            padding-bottom: 7pt;
+            padding: 7pt 8pt 6.2pt;
             margin-bottom: 7pt;
-            border-bottom: 2.5pt solid var(--accent);
+            border: 1px solid var(--neutral-300);
+            border-left: 6px solid var(--accent);
+            border-radius: 7px;
+            background:
+                linear-gradient(92deg, #f0ede3 0%, #f8f6ef 62%, #fff9ee 100%);
         }
 
         .header h1 {
-            font-size: 25.8pt;
+            font-family: "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", "STSong", serif;
+            font-size: 26.8pt;
             font-weight: 800;
-            color: var(--neutral-800);
+            color: var(--accent-deep);
             letter-spacing: 1.6pt;
-            margin-bottom: 2pt;
+            margin-bottom: 2.2pt;
         }
 
         .header .title {
-            font-size: 13pt;
-            color: var(--accent);
-            font-weight: 600;
+            font-size: 13.6pt;
+            color: var(--accent-deep);
+            font-weight: 700;
         }
 
         .contact-bar {
-            margin-top: 7.5pt;
-            font-size: 9pt;
+            margin-top: 7.2pt;
+            font-size: 9.9pt;
             color: var(--neutral-700);
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 13.5pt;
+            gap: 11pt;
         }
 
         .contact-bar a {
-            color: var(--accent);
+            color: var(--accent-light);
             text-decoration: none;
             position: relative;
             z-index: 10;
+            border-bottom: 1px solid rgba(59, 101, 199, 0.35);
         }
 
-        /* Section Title */
+        .section {
+            margin-bottom: 6.2pt;
+        }
+
         .section-title {
-            font-size: 12.5pt;
+            font-family: "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", "STSong", serif;
+            font-size: 13.1pt;
             font-weight: 700;
             color: var(--neutral-800);
-            padding: 2.8pt 10pt;
-            border-left: 4.2pt solid var(--accent);
-            background: var(--neutral-100);
+            padding: 2.8pt 10pt 3.2pt;
+            border: 1px solid var(--neutral-300);
+            border-left: 6px solid var(--accent);
+            border-radius: 0 6px 6px 0;
+            background: linear-gradient(90deg, #f7f4eb 0%, #fbf9f1 100%);
             display: inline-block;
-            margin-bottom: 5pt;
+            margin-bottom: 5.2pt;
         }
 
-        /* Core Competency */
         .core-box {
             background: var(--neutral-100);
-            border-left: 4.2pt solid var(--accent);
-            padding: 5.5pt 10.5pt;
-            border-radius: 3px;
-            margin-bottom: 6pt;
+            border: 1px solid var(--neutral-200);
+            border-left: 4pt solid var(--accent);
+            padding: 6.2pt 10.5pt;
+            border-radius: 5px;
+            margin-bottom: 5.4pt;
         }
 
         .core-box p {
-            font-size: 9.7pt;
-            margin-bottom: 4pt;
+            font-size: 10.1pt;
+            margin-bottom: 4.2pt;
         }
 
-        .core-box ul {
+        .core-box ul,
+        .highlight-box ul,
+        .job ul,
+        .project ul {
             list-style: none;
             margin-left: 2pt;
         }
 
-        .core-box li {
+        .core-box li,
+        .highlight-box li,
+        .job li,
+        .project li {
             margin-bottom: 3pt;
-            padding-left: 14pt;
+            padding-left: 11.2pt;
             position: relative;
-            font-size: 9.6pt;
+            font-size: 10.2pt;
         }
 
-        .core-box li:before {
-            content: "●";
+        .core-box li:before,
+        .highlight-box li:before,
+        .job li:before,
+        .project li:before {
+            content: "•";
             position: absolute;
-            left: 1pt;
+            left: 0;
             color: var(--accent);
+            font-weight: 700;
         }
 
-        /* Skills */
+        .highlight-box {
+            border: 1px solid var(--neutral-200);
+            border-radius: 5px;
+            padding: 5.8pt 9.8pt;
+            background: linear-gradient(180deg, #fffcf4 0%, #fcfaf4 100%);
+        }
+
         .skills-table {
-            display: table;
+            display: grid;
             width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 5pt;
-        }
-
-        .skills-row {
-            display: table-row;
-        }
-
-        .skills-cell {
-            display: table-cell;
-            width: 50%;
-            vertical-align: top;
-            padding: 0 5pt;
-        }
-
-        .skills-cell:first-child {
-            padding-left: 0;
-            border-right: 1px solid var(--neutral-200);
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "go data"
+                "obs store";
+            gap: 7.5pt;
+            margin-bottom: 5.5pt;
+            align-items: stretch;
         }
 
         .skill-category {
-            margin-bottom: 5pt;
+            margin: 0;
+            border: 1px solid var(--neutral-200);
+            border-left: 3px solid var(--accent-light);
+            border-radius: 6px;
+            padding: 7pt 7.5pt 6.5pt;
+            background: linear-gradient(160deg, #fdfbf5 0%, #f8f4e9 100%);
+            min-height: 100%;
+        }
+
+        .skill-go {
+            grid-area: go;
+        }
+
+        .skill-obs {
+            grid-area: obs;
+        }
+
+        .skill-data {
+            grid-area: data;
+        }
+
+        .skill-store {
+            grid-area: store;
         }
 
         .skill-category h4 {
-            font-size: 10.2pt;
-            color: var(--neutral-800);
+            font-family: "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", "STSong", serif;
+            font-size: 10.4pt;
+            color: var(--accent-deep);
             font-weight: 700;
             margin-bottom: 3.5pt;
-            border-bottom: 1px solid var(--neutral-200);
+            border-bottom: 1px solid var(--neutral-300);
             padding-bottom: 2pt;
         }
 
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 3.8pt;
+            gap: 4.4pt 4.2pt;
         }
 
         .skill-tag {
-            background: #EFF4FF;
-            color: #1D3A8A;
-            font-size: 8.5pt;
-            padding: 1.8pt 6.8pt;
+            background: #f1f5ff;
+            color: #193a8a;
+            font-size: 9.1pt;
+            padding: 1.7pt 6.2pt;
             border-radius: 10px;
-            border: 1px solid #BEDAFF;
+            border: 1px solid #bfcced;
             white-space: nowrap;
-        }
-
-        /* Work Experience & Projects */
-        .job ul,
-        .project ul {
-            list-style: none;
-            margin-left: 11pt;
-            font-size: 9.4pt;
-        }
-
-        .job li,
-        .project li {
-            margin-bottom: 3pt;
-            padding-left: 8pt;
-            position: relative;
-        }
-
-        .job li:before,
-        .project li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--accent-light);
         }
 
         .job,
         .project {
             margin-bottom: 6pt;
-            padding-bottom: 5pt;
-            border-bottom: 1px dashed var(--neutral-200);
+            padding: 4.8pt 6.8pt 4.8pt 7.2pt;
+            border: 1px solid var(--neutral-200);
+            border-left: 3px solid #8ea3d6;
+            border-radius: 6px;
+            background: linear-gradient(180deg, #fefdf8 0%, #faf8f2 100%);
             page-break-inside: avoid;
         }
 
         .job:last-child,
         .project:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
+            margin-bottom: 0.6pt;
         }
 
         .job-header,
         .project-header {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 3.5pt;
+            margin-bottom: 3.4pt;
             align-items: flex-start;
         }
 
         .job-title,
         .project-title {
-            font-size: 11pt;
+            font-family: "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", "STSong", serif;
+            font-size: 11.2pt;
             font-weight: 700;
             color: var(--neutral-800);
         }
 
-        .promotion-badge {
-            display: inline-block;
-            background: var(--success);
-            color: white;
-            font-size: 7.8pt;
-            padding: 0.5pt 5.5pt;
-            border-radius: 10px;
-            margin-right: 6pt;
-        }
-
         .job-company,
         .project-meta {
-            font-size: 9.2pt;
-            color: var(--accent);
-            margin-top: 0.5pt;
+            font-size: 9.9pt;
+            color: var(--accent-deep);
+            margin-top: 0.4pt;
         }
 
         .job-date,
         .project-date {
-            font-size: 8.8pt;
+            font-size: 9.3pt;
             color: var(--neutral-700);
             white-space: nowrap;
             font-style: italic;
         }
 
         .project p {
-            font-size: 9.4pt;
-            margin: 3pt 0;
+            font-size: 10pt;
+            margin: 2.8pt 0;
         }
 
-        /* Education */
         .education-box {
             background: var(--neutral-100);
-            padding: 5.5pt 10.5pt;
-            border-radius: 3px;
-            border-left: 3.8pt solid var(--accent-light);
+            padding: 6pt 10.5pt;
+            border-radius: 6px;
+            border: 1px solid var(--neutral-200);
+            border-left: 4pt solid var(--accent-light);
             page-break-inside: avoid;
         }
 
         .education-left h4 {
-            font-size: 10.9pt;
+            font-family: "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", "STSong", serif;
+            font-size: 11.2pt;
             font-weight: 700;
             color: var(--neutral-800);
         }
 
-        .education-left p {
-            font-size: 9.4pt;
+        .education-left p,
+        .education-right,
+        .honors {
+            font-size: 10pt;
             color: var(--neutral-700);
-        }
-
-        .education-right {
-            font-size: 9.4pt;
-            color: var(--neutral-700);
-            text-align: right;
         }
 
         .honors {
-            margin-top: 5.5pt;
-            font-size: 9pt;
+            margin-top: 5.4pt;
+        }
+
+        .footer {
+            margin-top: 8.2pt;
+            padding-top: 4.4pt;
+            border-top: 1.6pt solid var(--accent);
+            text-align: center;
+            font-size: 8.8pt;
             color: var(--neutral-700);
         }
 
-        /* Footer */
-        .footer {
-            margin-top: 8pt;
-            padding-top: 4pt;
-            border-top: 1.6pt solid var(--accent);
+        .footnote {
+            margin-top: 3pt;
+            font-size: 8.3pt;
+            color: #64748b;
             text-align: center;
-            font-size: 8.1pt;
-            color: var(--neutral-700);
         }
 
         .footer a {
@@ -322,8 +336,13 @@
             z-index: 10;
         }
 
-        /* 打印控制 */
         @media print {
+            html,
+            body {
+                font-size: 10.2pt;
+                line-height: 1.42;
+            }
+
             .container {
                 width: 100%;
                 padding: 0;
@@ -332,37 +351,114 @@
             .job,
             .project,
             .core-box,
-            .skill-category,
+            .highlight-box,
             .education-box {
                 page-break-inside: avoid !important;
             }
 
-            .section-title {
-                page-break-after: avoid !important;
-            }
-
-            .footer {
-                page-break-before: avoid !important;
-            }
-
+            .section,
             ul {
-                page-break-inside: avoid !important;
+                page-break-inside: auto !important;
+            }
+
+            .header {
+                padding: 5.8pt 7.5pt 5pt !important;
+                margin-bottom: 5.5pt !important;
+            }
+
+            .header h1 {
+                font-size: 24.8pt !important;
+                margin-bottom: 1.4pt !important;
+            }
+
+            .header .title {
+                font-size: 12.8pt !important;
+            }
+
+            .contact-bar {
+                margin-top: 5pt !important;
+                font-size: 9.2pt !important;
+                gap: 8.2pt !important;
+            }
+
+            .section {
+                margin-bottom: 5pt !important;
+            }
+
+            .section-title {
+                margin-bottom: 3.8pt !important;
+                font-size: 12.6pt !important;
+                padding-top: 2.2pt !important;
+                padding-bottom: 2.4pt !important;
+            }
+
+            .core-box,
+            .highlight-box,
+            .job,
+            .project,
+            .education-box {
+                padding-top: 4.4pt !important;
+                padding-bottom: 4.2pt !important;
+            }
+
+            .core-box li,
+            .highlight-box li,
+            .job li,
+            .project li {
+                margin-bottom: 2pt !important;
             }
 
             .skills-table {
-                display: flex;
-                flex-wrap: wrap;
-                page-break-inside: avoid !important;
+                gap: 4.2pt !important;
             }
 
-            .skills-row {
-                display: flex;
-                width: 100%;
+            .skill-category {
+                padding: 4.2pt 5pt 4pt !important;
+                border-left-width: 2px !important;
+                page-break-inside: auto !important;
             }
 
-            .skills-cell {
-                display: block;
-                width: 50%;
+            .skill-category h4 {
+                margin-bottom: 2.2pt !important;
+                padding-bottom: 1.2pt !important;
+                font-size: 10pt !important;
+            }
+
+            .skill-tags {
+                display: block !important;
+            }
+
+            .skill-tag {
+                display: inline !important;
+                background: transparent !important;
+                border: none !important;
+                padding: 0 !important;
+                margin-right: 0 !important;
+                border-radius: 0 !important;
+                font-size: 9pt !important;
+                white-space: normal !important;
+                color: #1f2430 !important;
+            }
+
+            .skill-tag::after {
+                content: " / ";
+                color: #64748b;
+            }
+
+            .skill-tags .skill-tag:last-child::after {
+                content: "";
+            }
+
+            .section-title,
+            .footer {
+                page-break-after: avoid !important;
+                page-break-before: avoid !important;
+            }
+
+            .container {
+                background: #fff !important;
+                border-color: #d7d7d7 !important;
+                box-shadow: none !important;
             }
 
             a {
@@ -375,111 +471,56 @@
 <body>
     <div class="container">
 
-        <!-- Header -->
         <div class="header">
             <h1>徐俊飞</h1>
-            <div class="title">资深后端工程师 · Go 微服务方向</div>
+            <div class="title">资深后端工程师 · Go 微服务 / 数据平台架构方向</div>
             <div class="contact-bar">
                 <span>📧 masonsxu@foxmail.com</span>
                 <span>🔗 <a href="https://github.com/masonsxu">github.com/masonsxu</a></span>
-                <span>🌐 <a href="https://masonsxu-github-io.pages.dev/">Portfolio</a></span>
-                <span>📍 现居厦门 · 意向城市: 上海/杭州</span>
+                <span>🌐 <a href="https://masonsxu-github-io.pages.dev/">masonsxu-github-io.pages.dev</a></span>
+                <span>📍 现居厦门 · 意向城市：上海 / 杭州</span>
             </div>
         </div>
 
-        <!-- Core Competency -->
         <div class="section">
-            <div class="section-title">核心竞争力</div>
+            <div class="section-title">职业定位</div>
             <div class="core-box">
-                <p><strong>5 年后端研发经验，Go 微服务架构师。</strong>主导 Python 单体→Go 微服务全面转型，带领 8
-                    人团队交付新一代分布式数据管理平台，架构方案成为公司技术标准；核心系统支撑众多生产环境运行，系统可用性 <span class="metric">99.9%</span>、部署效率提升 <span
-                        class="metric">87.5%</span>、故障率降低 <span class="metric">45%</span>；CloudWeGo 开源贡献者。</p>
+                <p><strong>5 年后端研发经验，聚焦高可用微服务与数据链路工程。</strong>擅长在不确定场景下完成架构选型、系统拆分、工程规范落地与线上稳定性治理，目标岗位：高级工程师 / 架构师 /
+                    技术负责人。</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">核心价值摘要</div>
+            <div class="core-box">
                 <ul>
-                    <li><strong>架构落地：</strong>从 0 到 1 主导核心平台微服务架构设计与交付——DDD 四层 + API 网关 + 服务治理 + 权限体系 +
-                        可观测性全链路贯通，方案成为公司微服务技术标准。</li>
-                    <li><strong>生产保障：</strong>系统可用性 <span class="metric">99.9%</span>，多次 P0 级故障当日恢复，根治 Redis 内核污染、SSH
-                        依赖断裂等疑难问题。</li>
-                    <li><strong>数据可靠性：</strong>数据传输准确率 <span class="metric">99.9%</span>，设计校验/异常处理/重传全链路机制；基于 Casbin
-                        RBAC 实现组织-部门-用户三级权限隔离，满足多院区合规要求。</li>
-                    <li><strong>工程效能：</strong>容器化改造故障率↓<span class="metric">45%</span>；系统性落地 AI 辅助开发(Vibe
-                        Coding)，将架构规范编码为 AI 可执行知识，构建自动化 DevOps 工作流；CloudWeGo 开源贡献者。</li>
+                    <li><strong>架构交付：</strong>主导 Radius 后端从单体演进到 <span class="metric">9 服务体系</span>（8 RPC + 1 API
+                        Gateway），建立 IDL-First + 分层架构 + Wire 注入规范。</li>
+                    <li><strong>业务闭环：</strong>构建 Radius 数据湖 <span class="metric">10 DAG</span> 主链路（仓库当前 13 个
+                        dag_id），打通“配置同步→批量入湖→字典抽取→业务回传”。</li>
+                    <li><strong>工程收益：</strong>部署时间 <span class="metric">4h → 30min</span>（效率 <span
+                            class="metric">+87.5%</span>），故障率 <span class="metric">-45%</span>；查询效率 <span
+                            class="metric">+50%</span>，数据加载响应 <span class="metric">+35%</span>（同周期项目复盘口径）。</li>
+                    <li><strong>稳定性：</strong>线上可用性达到 <span class="metric">99.9%</span>，多次 P0
+                        级故障当日恢复，具备复杂线上问题快速止损与根因修复能力。</li>
                 </ul>
             </div>
         </div>
 
-        <!-- Professional Skills -->
         <div class="section">
-            <div class="section-title">专业技能</div>
-            <div class="skills-table">
-                <div class="skills-row">
-                    <div class="skills-cell">
-                        <div class="skill-category">
-                            <h4>Go 微服务架构(核心主线)</h4>
-                            <div class="skill-tags">
-                                <span class="skill-tag">Go 1.24+</span>
-                                <span class="skill-tag">goroutine/channel</span>
-                                <span class="skill-tag">GC 调优</span>
-                                <span class="skill-tag">CloudWeGo</span>
-                                <span class="skill-tag">Kitex RPC</span>
-                                <span class="skill-tag">Hertz HTTP</span>
-                                <span class="skill-tag">gRPC</span>
-                                <span class="skill-tag">etcd</span>
-                                <span class="skill-tag">DDD 架构</span>
-                                <span class="skill-tag">Thrift IDL</span>
-                                <span class="skill-tag">API 网关</span>
-                                <span class="skill-tag">Google Wire</span>
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h4>分布式治理与可观测性</h4>
-                            <div class="skill-tags">
-                                <span class="skill-tag">限流熔断</span>
-                                <span class="skill-tag">服务发现</span>
-                                <span class="skill-tag">配置中心</span>
-                                <span class="skill-tag">OpenTelemetry</span>
-                                <span class="skill-tag">全链路追踪</span>
-                                <span class="skill-tag">监控告警</span>
-                                <span class="skill-tag">Casbin RBAC</span>
-                                <span class="skill-tag">JWT 认证</span>
-                                <span class="skill-tag">API 级鉴权</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skills-cell">
-                        <div class="skill-category">
-                            <h4>存储与工程化</h4>
-                            <div class="skill-tags">
-                                <span class="skill-tag">PostgreSQL</span>
-                                <span class="skill-tag">MySQL</span>
-                                <span class="skill-tag">MongoDB</span>
-                                <span class="skill-tag">Redis</span>
-                                <span class="skill-tag">S3 对象存储</span>
-                                <span class="skill-tag">Docker</span>
-                                <span class="skill-tag">Podman</span>
-                                <span class="skill-tag">容器化运维</span>
-                                <span class="skill-tag">代码评审</span>
-                                <span class="skill-tag">AI 辅助开发</span>
-                                <span class="skill-tag">Claude Code</span>
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h4>差异化领域能力</h4>
-                            <div class="skill-tags">
-                                <span class="skill-tag">数据湖架构</span>
-                                <span class="skill-tag">大规模数据处理</span>
-                                <span class="skill-tag">数据湖</span>
-                                <span class="skill-tag">Polars</span>
-                                <span class="skill-tag">PyArrow</span>
-                                <span class="skill-tag">Python Asyncio</span>
-                                <span class="skill-tag">Flask</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="section-title">关键成果（影响力优先）</div>
+            <div class="highlight-box">
+                <ul>
+                    <li>完成网关 + 多 RPC 服务治理方案落地（Hertz / Kitex / Etcd / Thrift IDL），支撑多业务域并行迭代与独立部署。</li>
+                    <li>建立 OpenTelemetry + Jaeger + 结构化日志联动链路，缩短跨服务故障定位路径。</li>
+                    <li>实现字典规则驱动抽取引擎：BFS 自动发现多表 JOIN 路径，失败回退 UNION ALL，降低手工 SQL 维护成本。</li>
+                    <li>沉淀研发资产：项目文档 <span class="metric">31 份</span>，累计约 <span class="metric">1.1
+                            万行</span>，覆盖架构、规范、运维与交接。</li>
+                </ul>
             </div>
         </div>
 
-        <!-- Work Experience -->
+
         <div class="section">
             <div class="section-title">工作经历</div>
 
@@ -491,13 +532,15 @@
                     </div>
                     <div class="job-date">2025.03 - 至今</div>
                 </div>
-                <div style="font-size:9.2pt;color:#475569;margin-bottom:4.5pt;">技术架构与分布式系统 · 核心技术成员</div>
+                <div style="font-size:9.5pt;color:#475569;margin-bottom:4.2pt;">技术架构与分布式系统 · 核心技术成员</div>
                 <ul>
-                    <li><strong>架构转型：</strong>主导 Python 单体→Go 微服务全面转型，完成技术选型(CloudWeGo/etcd/PostgreSQL)、架构设计(DDD + API
-                        网关 + 服务治理 + 权限)、工程规范建立，独立交付完整微服务体系，<strong>成为公司技术标准</strong>。</li>
-                    <li><strong>核心交付：</strong>设计并交付核心分布式数据管理平台，按业务域拆分多个独立微服务(认证/数据管理/数据湖/分析/权限)，各服务独立部署与扩展。</li>
-                    <li><strong>团队建设：</strong>带领 8 人团队完成技术体系升级，建立代码评审、IDL-First 开发、文档规范等工程机制，提升研发成熟度与交付质量。</li>
-                    <li><strong>生产保障：</strong>保障众多生产环境稳定运行，系统可用性 <span class="metric">99.9%</span>，异常数据全链路可追踪。</li>
+                    <li><strong>Mission：</strong>在多业务域并行演进场景下，重构后端技术底座并提升交付稳定性。</li>
+                    <li><strong>Action：</strong>作为架构 Owner 主导服务化升级为 9 服务体系，统一 IDL-First 开发流程、分层架构约束与依赖注入规范，建立可复制的工程交付模板。
+                    </li>
+                    <li><strong>Action：</strong>推动 8 人研发协作机制（代码评审、接口契约、交付规范）从“个人经验驱动”转为“标准流程驱动”。</li>
+                    <li><strong>Action：</strong>建设可观测链路（OTel + Jaeger + trace/request_id 传播）与错误治理规范，打通网关到核心 RPC 的排障路径。
+                    </li>
+                    <li><strong>Outcome：</strong>支撑高频需求迭代与跨模块协作，项目从“人依赖”转向“体系依赖”，并完成结构化交接资产沉淀。</li>
                 </ul>
             </div>
 
@@ -510,99 +553,151 @@
                     <div class="job-date">2021.06 - 2025.03</div>
                 </div>
                 <ul>
-                    <li><strong>核心重构：</strong>基于 Asyncio + Pydantic 重构核心链路，表单查询效率提升 <span
-                            class="metric">50%</span>，代码可维护性大幅改善。</li>
-                    <li><strong>数据处理优化：</strong>攻克大规模数据解析与处理技术难点，算法级优化使数据加载响应时间缩短 <span class="metric">35%</span>。</li>
-                    <li><strong>容器化改造：</strong>Shell→Docker 容器化改造，部署时间 4h→30min(效率提升 <span
-                            class="metric">87.5%</span>)，故障率降低 <span class="metric">45%</span>。</li>
-                    <li><strong>规模化部署：</strong>主导众多生产环境部署与第三方系统集成，设计数据校验/异常处理/重传机制，系统可用性 <span
-                            class="metric">99.9%</span>。</li>
+                    <li><strong>Mission：</strong>提升核心业务链路性能并降低线上变更风险。</li>
+                    <li><strong>Action：</strong>基于 Asyncio + Pydantic 重构核心链路，优化查询与数据加载模型；完成 Shell 到 Docker 的工程化迁移。</li>
+                    <li><strong>Outcome：</strong>查询效率 <span class="metric">+50%</span>、数据加载响应 <span
+                            class="metric">+35%</span>、部署效率 <span class="metric">+87.5%</span>、故障率 <span
+                            class="metric">-45%</span>。</li>
+                    <li><strong>Outcome：</strong>多次关键故障当日恢复，系统可用性达到 <span class="metric">99.9%</span>。</li>
                 </ul>
             </div>
         </div>
 
-        <!-- Projects -->
         <div class="section">
-            <div class="section-title">架构设计与重点项目</div>
+            <div class="section-title">代表项目</div>
 
             <div class="project">
                 <div class="project-header">
-                    <div class="project-title">▶ 分布式数据管理平台（核心项目） - 完整微服务架构设计与落地</div>
-                    <div class="project-date">技术负责人 / 架构设计 | 2025.03 - 至今 | 生产系统</div>
+                    <div class="project-title">▶ Radius Backend 微服务平台（核心项目）</div>
+                    <div class="project-date">技术负责人 | 2025.03 - 至今 | 生产系统</div>
                 </div>
-                <p><strong>核心目标：</strong>重架构Python单体系统，构建公司新一代企业级数字化基础设施。作为独立架构师完成技术选型到全量交付的全链路工作。</p>
-                <p><strong>技术方案：</strong>Go 1.24 + CloudWeGo(Kitex RPC + Hertz HTTP) + PostgreSQL + etcd + Docker +
-                    Google Wire + Thrift IDL；多个业务微服务 + API网关，IDL-First驱动开发。</p>
+                <p><strong>技术栈：</strong>Go + Hertz + Kitex + Thrift IDL + Etcd + PostgreSQL + Redis + Wire +
+                    OpenTelemetry + Jaeger</p>
                 <ul>
-                    <li>以业务能力为准则划分多个微服务，规避跨服务分布式事务；DDD四层(Handler→Logic→DAL→Converter)+ 仓储模式，业务逻辑与框架彻底解耦，可独立替换底层存储。</li>
-                    <li>设计数据湖服务实现高性能数据处理，为分析层提供统一访问接口。</li>
-                    <li>基于Casbin RBAC实现组织-部门-用户三级权限，菜单权限动态解析 + API级鉴权，满足多租户差异化管理。</li>
-                    <li>RPC追踪中间件(request_id/trace_id全链路透传) + 统一6位错误码 + 分层错误转换 + OpenTelemetry链路追踪与监控告警。</li>
-                </ul>
-                <p><strong>成果：</strong>完整替代Python单体系统，成为公司新一代技术基础设施；服务边界设计与工程规范成为团队标准；<span
-                        class="metric">2,000+</span>行架构文档沉淀，支撑技术对齐与知识传承。</p>
-            </div>
-
-            <div class="project">
-                <div class="project-header">
-                    <div class="project-title">▶ 遗留系统性能优化与容器化转型 - 核心重构与工程化改造</div>
-                    <div class="project-date">后端主程 / 核心开发 | 2021.06 - 2025.03 | 生产系统(众多生产环境)</div>
-                </div>
-                <p><strong>技术栈：</strong>Python、Flask、Asyncio、Pydantic、数据湖处理、Docker、Portainer</p>
-                <p><strong>量化成果：</strong>查询效率↑<span class="metric">50%</span> · 影像加载↓<span class="metric">35%</span> ·
-                    部署效率↑<span class="metric">87.5%</span>(4h→30min) · 故障率↓<span class="metric">45%</span> · 数据准确率<span
-                        class="metric">99.9%</span></p>
-                <p><strong>典型线上事故处理：</strong></p>
-                <ul>
-                    <li><strong>Redis内核污染恢复：</strong>gcc源码编译污染内核致服务器重启失败——确认备份后指导现场重装，交叉编译Redis二进制包完成零依赖升级，<strong>当日恢复</strong>。
+                    <li><strong>架构规模：</strong>落地 <strong>8 RPC + 1 Gateway</strong> 服务体系（go.work 多模块管理），网关统一承接 10 类业务入口。
                     </li>
-                    <li><strong>SSH失效修复：</strong>安全补丁引发apt依赖链断裂——通过nc逐一传输缺失deb包，无SSH环境下完成全部服务依赖恢复。</li>
-                    <li><strong>语音合成卡顿根治：</strong>Python ctypes内嵌C模块引发系统级卡顿——将C代码重构为独立可执行程序，subprocess进程隔离调用，彻底解决。</li>
+                    <li><strong>治理设计：</strong>建立服务契约优先（IDL-First）与分层职责边界，推动架构方案成为团队默认技术标准。</li>
+                    <li><strong>可观测性：</strong>实现 trace/request_id 贯穿传播与结构化日志联动，提升跨服务调用链追踪与错误定位效率。</li>
+                    <li><strong>工程沉淀：</strong>输出完整规范与架构文档体系（31 份，约 1.1 万行），支撑团队扩展、知识传承与新成员快速接入。</li>
                 </ul>
             </div>
 
             <div class="project">
                 <div class="project-header">
-                    <div class="project-title">▶ CloudWeGo 生态 - 架构模板 & AI辅助开发 & 开源贡献</div>
-                    <div class="project-date">架构设计 / 社区贡献者 | 2025 | github.com/masonsxu/cloudwego-microservice-demo
+                    <div class="project-title">▶ Radius Datalake 数据湖平台</div>
+                    <div class="project-date">核心开发 | 2024 - 至今 | 生产系统</div>
+                </div>
+                <p><strong>技术栈：</strong>Airflow + Iceberg + Trino + PyIceberg + Polars + PyArrow + RustFS(S3) + Python
+                </p>
+                <ul>
+                    <li><strong>链路闭环：</strong>设计并落地 10 DAG 主链路（4 个 core + 6 个 business），当前仓库总 dag_id 为 13（含日志链路）。</li>
+                    <li><strong>配置驱动：</strong>从业务 API 拉取数据源与字典配置，JWT Token 自动刷新并缓存到 Airflow Variables，降低手工维护成本。</li>
+                    <li><strong>入湖引擎：</strong>MySQL 流式游标批量入湖（默认 10k/批，max_active_tasks=10）+ Mongo 原始文档入湖（raw_document）+
+                        Iceberg schema evolution。</li>
+                    <li><strong>规则引擎：</strong>字典抽取 SQL 由规则驱动自动生成，MySQL 多表关联采用 BFS 自动找路径，失败场景自动回退 UNION ALL，显著降低人工拼 SQL
+                        成本。</li>
+                    <li><strong>回传容错：</strong>按分类并行、批次重试、错误隔离（默认 100 条/批）；核心 DAG 默认手动触发（schedule=None），可按部署策略切换为定时调度。
+                    </li>
+                </ul>
+            </div>
+
+            <div class="project">
+                <div class="project-header">
+                    <div class="project-title">▶ CloudWeGo 生态实践与开源贡献</div>
+                    <div class="project-date">架构实践 / 开源贡献者 | 2025 - 至今</div>
+                </div>
+                <p><strong>项目：</strong><a
+                        href="https://github.com/masonsxu/cloudwego-microservice-demo">cloudwego-microservice-demo</a>
+                </p>
+                <ul>
+                    <li>基于生产经验沉淀 CloudWeGo 微服务模板，覆盖网关接入、服务发现、可观测、容器化与工程规范。</li>
+                    <li>推动 AI 辅助开发流程落地（规范文档 + 技能脚本 + 自动化工作流），提升需求到交付的端到端效率。</li>
+                    <li>参与 CloudWeGo 生态问题修复与贡献（包括 hertz-contrib/jwt 等组件）。</li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title">专业技能</div>
+            <div class="skills-table">
+                <div class="skill-category skill-go">
+                    <h4>Go 微服务架构（核心）</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Go 1.24+</span>
+                        <span class="skill-tag">Kitex RPC</span>
+                        <span class="skill-tag">Hertz HTTP</span>
+                        <span class="skill-tag">Thrift IDL</span>
+                        <span class="skill-tag">DDD 分层</span>
+                        <span class="skill-tag">Google Wire</span>
+                        <span class="skill-tag">etcd 服务发现</span>
+                        <span class="skill-tag">gRPC</span>
+                        <span class="skill-tag">API 网关</span>
                     </div>
                 </div>
-                <p><strong>架构模板：</strong>基于生产实践提炼的CloudWeGo微服务标准模板(Go 1.24+ / Kitex + Hertz / etcd / Casbin /
-                    OpenTelemetry / Wire / Docker)，涵盖API网关、服务发现、RBAC、链路追踪与容器编排，经生产验证。</p>
-                <p><strong>AI辅助开发(Vibe Coding)：</strong><span class="metric">330+</span>行AGENTS.md编码架构规范为AI可理解上下文；<span
-                        class="metric">8个</span>Custom Skills封装端到端开发流程(如/add-rpc-method一键完成IDL→全层实现+测试)；<span
-                        class="metric">3个</span>AI驱动GitHub Actions(Issue自动实现/PR自动Review/Issue分类)，构建编码到DevOps全流程人机协作。</p>
-                <ul>
-                    <li><strong>hertz-contrib/jwt(PR
-                            #27)：</strong>修复RefreshToken中orig_iat被意外重置的核心Bug，解决MaxRefresh窗口计算失效问题，已合并，覆盖数千开发者。</li>
-                    <li><strong>hertz-contrib/obs-opentelemetry(PR #67)：</strong>可观测性组件优化，提升链路追踪稳定性与准确性。</li>
-                    <li><strong>cloudwego/abcoder(PR #84)：</strong>修复Go 1.25+环境下sonic依赖版本导致的编译错误。</li>
-                </ul>
+                <div class="skill-category skill-obs">
+                    <h4>分布式治理与可观测</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">OpenTelemetry</span>
+                        <span class="skill-tag">Jaeger</span>
+                        <span class="skill-tag">request_id 传播</span>
+                        <span class="skill-tag">错误码体系</span>
+                        <span class="skill-tag">慢调用告警</span>
+                        <span class="skill-tag">故障排查</span>
+                        <span class="skill-tag">JWT 认证</span>
+                        <span class="skill-tag">权限模型设计</span>
+                    </div>
+                </div>
+                <div class="skill-category skill-data">
+                    <h4>数据平台与数据工程</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Airflow</span>
+                        <span class="skill-tag">Apache Iceberg</span>
+                        <span class="skill-tag">Trino</span>
+                        <span class="skill-tag">PyIceberg</span>
+                        <span class="skill-tag">Polars</span>
+                        <span class="skill-tag">PyArrow</span>
+                        <span class="skill-tag">BFS 关联路径</span>
+                        <span class="skill-tag">批量回传链路</span>
+                    </div>
+                </div>
+                <div class="skill-category skill-store">
+                    <h4>存储与工程化</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Redis</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">S3 对象存储</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Podman</span>
+                        <span class="skill-tag">Portainer</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">AI 辅助开发</span>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Education -->
         <div class="section">
             <div class="section-title">教育背景</div>
             <div class="education-box">
                 <div style="display:flex;justify-content:space-between;align-items:baseline;">
                     <div class="education-left">
                         <h4>河南城建学院</h4>
-                        <p>信息管理与信息系统(大数据方向)</p>
+                        <p>信息管理与信息系统（大数据方向）</p>
                     </div>
                     <div class="education-right">2017.07 - 2021.06</div>
                 </div>
                 <div class="honors">
-                    <strong>荣誉奖项：</strong>2021 · 河南省优秀学位论文(省级荣誉 / Top 0.5%-1%) | 2018/2019 · 国家级单项奖学金(×2) | 2020 ·
-                    省级单项奖学金
+                    <strong>荣誉奖项：</strong>2021 · 河南省优秀学位论文（省级） | 2018/2019 · 国家级单项奖学金（2次） | 2020 · 省级单项奖学金
                 </div>
             </div>
         </div>
 
-        <!-- Footer -->
         <div class="footer">
-            最后更新：2026年3月　|　GitHub: <a href="https://github.com/masonsxu">github.com/masonsxu</a>　|　核心项目：<a
-                href="https://github.com/masonsxu/cloudwego-microservice-demo">cloudwego-microservice-demo</a>
+            最后更新：2026年3月 | GitHub: <a href="https://github.com/masonsxu">github.com/masonsxu</a>
+        </div>
+        <div class="footnote">
+            指标口径说明：效率/故障率/可用性等数据基于 2021-2026 同周期项目复盘与运维记录，不虚构业务结果。
         </div>
 
     </div>
