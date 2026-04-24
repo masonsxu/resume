@@ -531,6 +531,39 @@
             letter-spacing: 0.08em;
         }
 
+        /* 经历层级嵌套相关样式 */
+        .company-header {
+            margin-bottom: 0.9rem;
+        }
+        .company-title {
+            font-size: 1.16rem;
+        }
+        .company-subtitle {
+            color: var(--color-text-soft);
+            font-weight: normal;
+        }
+        .role-group {
+            margin-bottom: 1.2rem;
+        }
+        .role-group:last-child {
+            margin-bottom: 0;
+        }
+        .role-header {
+            margin-bottom: 0.35rem;
+        }
+        .role-title {
+            font-size: 1.05rem;
+        }
+        .role-title--accent {
+            color: var(--color-accent);
+        }
+        .role-context {
+            color: var(--color-text-soft);
+            font-size: var(--text-sm);
+            margin-bottom: 0.6rem;
+            font-style: italic;
+        }
+
         @keyframes fadeUp {
             from {
                 opacity: 0;
@@ -900,6 +933,26 @@
                 text-decoration-thickness: 0.8px;
                 text-underline-offset: 2px;
             }
+
+            /* 打印模式下的经历嵌套覆写 */
+            .company-header {
+                margin-bottom: 3pt;
+            }
+            .company-title {
+                font-size: 11.4pt;
+            }
+            .role-group {
+                margin-bottom: 6pt;
+            }
+            .role-header {
+                margin-bottom: 1.5pt;
+            }
+            .role-title {
+                font-size: 10pt;
+            }
+            .role-context {
+                margin-bottom: 3pt;
+            }
         }
     </style>
 </head>
@@ -947,39 +1000,46 @@
             <div class="timeline-list">
                 <article class="timeline-item">
                     <div class="item-card">
-                        <div class="item-header">
+                        <div class="item-header company-header">
                             <div>
-                                <h3 class="item-title">Go 后端架构师 / 技术负责人</h3>
-                                <p class="item-subtitle">福建自贸试验区厦门片区 Manteia 数据科技有限公司</p>
+                                <h3 class="item-title company-title">福建自贸试验区厦门片区 Manteia 数据科技有限公司</h3>
+                                <p class="item-subtitle company-subtitle">核心业务研发与后端架构体系演进</p>
                             </div>
-                            <time class="item-date" datetime="2025-03">2025.03 - 2026.04</time>
+                            <time class="item-date" style="font-weight: 600;" datetime="2021-06">2021.06 - 2026.04</time>
                         </div>
-                        <p class="item-context">技术架构与分布式系统 · 核心技术成员</p>
-                        <ul class="bullet-list">
-                            <li>在多业务域并行演进场景下主导后端服务化升级，完成 <span class="metric">8 RPC + 1 API Gateway</span> 的 9 服务体系建设，支撑多模块独立演进与部署。</li>
-                            <li>统一 IDL-First 开发流程、分层架构约束与 Wire 依赖注入规范，将服务研发从“人依赖”推进为“体系依赖”。</li>
-                            <li>推动 8 人研发协作机制标准化，围绕代码评审、接口契约与交付规范建立可复制的工程流程，降低跨模块协作成本。</li>
-                            <li>建设 OTel、Jaeger 与 trace / request_id 传播链路，打通网关到核心 RPC 的排障路径，提升复杂线上问题的定位、止损与修复效率。</li>
-                            <li>完成结构化交接资产沉淀，为团队扩展、新成员接入与后续演进提供稳定的工程基础。</li>
-                        </ul>
-                    </div>
-                </article>
 
-                <article class="timeline-item">
-                    <div class="item-card">
-                        <div class="item-header">
-                            <div>
-                                <h3 class="item-title">Python 后端开发工程师</h3>
-                                <p class="item-subtitle">福建自贸试验区厦门片区 Manteia 数据科技有限公司</p>
+                        <div class="role-group">
+                            <div class="item-header role-header">
+                                <div>
+                                    <h4 class="item-title role-title role-title--accent">Go 后端架构师 / 技术负责人</h4>
+                                </div>
+                                <time class="item-date" datetime="2025-03">2025.03 - 2026.04</time>
                             </div>
-                            <time class="item-date" datetime="2021-06">2021.06 - 2025.03</time>
+                            <p class="role-context">
+                                背景：基于前期在核心业务重构与工程提效上的突出表现，晋升主导新一代微服务架构升级与技术团队规范建设。
+                            </p>
+                            <ul class="bullet-list">
+                                <li>在多业务域并行演进场景下主导后端服务化升级，完成 <span class="metric">8 RPC + 1 API Gateway</span> 的 9 服务体系建设，支撑多模块独立演进与部署。</li>
+                                <li>统一 IDL-First 开发流程、分层架构约束与 Wire 依赖注入规范，将服务研发从“个人经验驱动”全面升级为“标准体系驱动”。</li>
+                                <li>建设 OTel、Jaeger 与 trace / request_id 传播链路，打通网关到核心 RPC 的排障路径，提升复杂线上问题的定位、止损与修复效率。</li>
+                                <li>推动 8 人研发协作机制标准化，沉淀结构化技术资产，降低跨模块协作成本，为团队扩张提供稳定的工程底座。</li>
+                            </ul>
                         </div>
-                        <ul class="bullet-list">
-                            <li>基于 Asyncio 与 Pydantic 重构核心业务链路，优化查询与数据加载模型，使查询效率提升 <span class="metric">50%</span>，数据加载响应提升 <span class="metric">35%</span>。</li>
-                            <li>推动核心服务从 Shell 方式迁移到容器化工程流程，将部署时间从 <span class="metric">4 小时缩短至 30 分钟</span>，整体效率提升 <span class="metric">87.5%</span>。</li>
-                            <li>通过链路治理与变更风险收敛，使故障率下降 <span class="metric">45%</span>，系统可用性提升至 <span class="metric">99.9%</span>。</li>
-                            <li>多次在关键故障中实现当日恢复，兼顾快速止损与根因修复，降低线上业务影响范围。</li>
-                        </ul>
+
+                        <div class="role-group">
+                            <div class="item-header role-header">
+                                <div>
+                                    <h4 class="item-title role-title">Python 后端开发工程师</h4>
+                                </div>
+                                <time class="item-date" datetime="2021-06">2021.06 - 2025.03</time>
+                            </div>
+                            <ul class="bullet-list">
+                                <li>基于 Asyncio 与 Pydantic 重构核心业务链路，优化查询与数据加载模型，使查询效率提升 <span class="metric">50%</span>，数据加载响应提升 <span class="metric">35%</span>。</li>
+                                <li>推动核心服务从 Shell 方式迁移至容器化工程流程，将部署时间从 <span class="metric">4 小时大幅缩短至 30 分钟</span>，交付效率提升 <span class="metric">87.5%</span>。</li>
+                                <li>通过链路治理与变更风险收敛，使故障率下降 <span class="metric">45%</span>，系统可用性提升至 <span class="metric">99.9%</span>。</li>
+                                <li>多次在核心链路故障中实现当日快速恢复，兼顾极速止损与根因修复，最大程度降低线上业务影响范围。</li>
+                            </ul>
+                        </div>
                     </div>
                 </article>
             </div>
