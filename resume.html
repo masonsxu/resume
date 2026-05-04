@@ -4,48 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="public/favicon.svg" type="image/svg+xml">
-    <title>XuJunfei - Senior Go Backend Engineer</title>
+    <meta name="description" content="徐俊飞 Masons Xu - Go 后端架构师简历，5 年经验，CloudWeGo 微服务、Apache Iceberg 数据湖、云原生工程效能">
+    <meta name="author" content="徐俊飞 Masons Xu">
+    <title>徐俊飞 Masons Xu — Go Backend Architect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <style>
         :root {
-            --color-bg: #ece8df;
-            --color-paper: #fcfaf5;
-            --color-surface: rgba(255, 253, 248, 0.82);
-            --color-surface-strong: #f6f1e8;
-            --color-text: #202733;
-            --color-text-soft: #5d6778;
-            --color-heading: #16263f;
-            --color-accent: #244e8f;
-            --color-accent-soft: rgba(36, 78, 143, 0.12);
-            --color-accent-line: rgba(36, 78, 143, 0.26);
-            --color-metric: #9b4b20;
-            --color-border: rgba(24, 38, 62, 0.14);
-            --color-border-strong: rgba(24, 38, 62, 0.24);
-            --shadow-soft: 0 20px 60px rgba(25, 39, 65, 0.08);
-            --radius-sm: 10px;
-            --radius-md: 20px;
-            --radius-lg: 30px;
-            --space-1: 0.3rem;
-            --space-2: 0.55rem;
-            --space-3: 0.9rem;
-            --space-4: 1.2rem;
-            --space-5: 1.8rem;
-            --space-6: 2.5rem;
-            --font-heading: "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", "STSong", serif;
-            --font-body: "Source Han Sans SC", "Noto Sans CJK SC", "PingFang SC", "Microsoft YaHei", sans-serif;
-            --font-mono: "Iosevka", "SFMono-Regular", "Consolas", monospace;
-            --text-xs: 0.78rem;
-            --text-sm: 0.9rem;
-            --text-base: 1rem;
-            --text-lg: 1.14rem;
-            --text-xl: 1.38rem;
-            --text-2xl: 2.85rem;
-            --duration-fast: 180ms;
-            --duration-base: 240ms;
-            --easing: cubic-bezier(.22, 1, .36, 1);
+            --color-paper: #fdfdfb;
+            --color-paper-print: #ffffff;
+            --color-ink: #0d0d0d;
+            --color-ink-soft: #4a4a4a;
+            --color-ink-mute: #737373;
+            --color-ink-faint: #a3a3a3;
+            --color-hairline: #d4d4d4;
+            --color-hairline-strong: #a8a8a8;
+            --color-seal: #b91c1c;
+            --color-selection: rgba(185, 28, 28, 0.12);
+
+            --font-sans: 'IBM Plex Sans', 'PingFang SC', 'Source Han Sans SC', 'Microsoft YaHei', sans-serif;
+            --font-mono: 'IBM Plex Mono', 'SFMono-Regular', 'Cascadia Code', 'Consolas', monospace;
         }
 
-        * {
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -59,1182 +45,910 @@
         }
 
         html {
-            background:
-                radial-gradient(circle at top, rgba(255, 247, 231, 0.9), transparent 34%),
-                linear-gradient(180deg, #f0ece4 0%, #e8e2d7 100%);
-            color: var(--color-text);
-            font-size: 15px;
-            scroll-behavior: smooth;
+            background: var(--color-paper);
+            color: var(--color-ink);
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         body {
-            min-height: 100vh;
-            font-family: var(--font-body);
-            line-height: 1.72;
-            color: var(--color-text);
-            background:
-                linear-gradient(135deg, rgba(255, 255, 255, 0.34), transparent 34%),
-                linear-gradient(180deg, rgba(255, 255, 255, 0.2), transparent 40%);
-            padding: 24px;
+            width: 100%;
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 36px 24px 24px;
+            font-family: var(--font-sans);
+            font-size: 0.895rem;
+            font-weight: 400;
+            line-height: 1.62;
+            background: var(--color-paper);
+            color: var(--color-ink);
+            font-feature-settings: "kern" 1, "liga" 1;
         }
 
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            background-image:
-                linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-            background-size: 24px 24px;
-            mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.32), transparent 72%);
-            opacity: 0.35;
+        ::selection {
+            background-color: var(--color-selection);
+            color: var(--color-ink);
         }
 
         a {
-            color: var(--color-accent);
-            text-decoration: none;
+            color: var(--color-ink);
+            text-decoration: underline;
+            text-decoration-color: var(--color-hairline-strong);
+            text-underline-offset: 2px;
+            text-decoration-thickness: 1px;
             position: relative;
             z-index: 1;
-            transition: color var(--duration-fast) var(--easing), border-color var(--duration-fast) var(--easing), background-color var(--duration-fast) var(--easing);
+            transition: text-decoration-color 120ms ease;
         }
 
         a:hover {
-            color: #173a73;
+            text-decoration-color: var(--color-seal);
         }
 
-        a:focus-visible,
-        button:focus-visible,
-        [tabindex]:focus-visible {
-            outline: 2px solid var(--color-accent);
-            outline-offset: 3px;
-            border-radius: 6px;
+        a:focus-visible {
+            outline: 2px solid var(--color-seal);
+            outline-offset: 2px;
         }
 
-        .resume {
-            width: min(100%, 880px);
-            margin: 0 auto;
-            padding: 18px 20px 16px;
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-lg);
-            background:
-                radial-gradient(circle at top right, rgba(255, 247, 229, 0.85), transparent 28%),
-                linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(252, 250, 245, 0.96) 100%);
-            box-shadow: var(--shadow-soft);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .resume::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            background:
-                linear-gradient(130deg, rgba(255, 255, 255, 0.52), transparent 30%),
-                radial-gradient(circle at 100% 0, rgba(36, 78, 143, 0.06), transparent 24%);
-        }
-
-        .hero,
-        .section,
-        .resume-footer {
-            position: relative;
-            z-index: 1;
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(14px);
-            animation: fadeUp var(--duration-base) var(--easing) forwards;
-        }
-
+        /* ============ Hero ============ */
         .hero {
-            padding: 1.55rem 1.55rem 1.35rem;
-            border: 1px solid var(--color-border-strong);
-            border-radius: calc(var(--radius-lg) - 8px);
-            background:
-                linear-gradient(140deg, rgba(245, 240, 231, 0.98) 0%, rgba(253, 251, 246, 0.96) 48%, rgba(255, 249, 238, 0.98) 100%);
-            margin-bottom: 1.45rem;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--color-hairline);
+            margin-bottom: 20px;
         }
 
-        .hero::after {
-            content: "";
-            position: absolute;
-            left: 1.55rem;
-            right: 1.55rem;
-            top: 0;
-            height: 3px;
-            border-radius: 999px;
-            background: linear-gradient(90deg, var(--color-accent), rgba(36, 78, 143, 0.18));
+        .seal-line {
+            width: 56px;
+            height: 4px;
+            background-color: var(--color-seal);
+            border: none;
+            margin: 0 0 16px;
         }
 
-        .hero__brand-row {
+        .hero-name {
+            font-family: var(--font-sans);
+            font-size: clamp(1.85rem, 4vw, 2.35rem);
+            font-weight: 600;
+            line-height: 1.15;
+            letter-spacing: -0.012em;
+            color: var(--color-ink);
+            margin-bottom: 4px;
+        }
+
+        .hero-name-en {
+            font-family: var(--font-sans);
+            font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            color: var(--color-ink-mute);
+            margin-left: 12px;
+            font-variant: normal;
+        }
+
+        .hero-role {
+            font-size: 0.985rem;
+            font-weight: 500;
+            color: var(--color-ink);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .hero-contacts {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            font-style: normal;
+            color: var(--color-ink-soft);
+            font-variant-numeric: tabular-nums;
+            font-feature-settings: "tnum";
+            line-height: 1.6;
+        }
+
+        .hero-contacts .sep {
+            color: var(--color-hairline-strong);
+            margin: 0 8px;
+            user-select: none;
+        }
+
+        /* ============ Metric Grid ============ */
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            padding: 14px 0;
+            border-top: 1px solid var(--color-hairline);
+            border-bottom: 1px solid var(--color-hairline);
+            margin-bottom: 22px;
+            list-style: none;
+        }
+
+        .metric-cell {
             display: flex;
-            align-items: center;
-            gap: 0.7rem;
-            margin-bottom: 0.9rem;
+            flex-direction: column;
+            gap: 2px;
         }
 
-        .hero__brand-logo {
-            width: 48px;
-            height: 48px;
+        .metric-cell-value {
+            font-family: var(--font-mono);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--color-seal);
+            font-variant-numeric: tabular-nums;
+            font-feature-settings: "tnum";
+            line-height: 1.1;
+        }
+
+        .metric-cell-label {
+            font-family: var(--font-sans);
+            font-size: 0.755rem;
+            font-weight: 400;
+            color: var(--color-ink-mute);
+            line-height: 1.4;
+            letter-spacing: 0.01em;
+        }
+
+        /* ============ Section ============ */
+        section {
+            margin-bottom: 18px;
+        }
+
+        section:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--color-hairline);
+            page-break-after: avoid;
+        }
+
+        .section-number {
+            font-family: var(--font-mono);
+            font-size: 0.74rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            color: var(--color-seal);
+            min-width: 18px;
             flex-shrink: 0;
         }
 
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.45rem;
-            font-size: var(--text-xs);
-            letter-spacing: 0.14em;
+        .section-title {
+            font-family: var(--font-sans);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            color: var(--color-ink);
             text-transform: uppercase;
-            color: var(--color-text-soft);
+            flex: 1;
         }
 
-        .eyebrow::before {
-            content: "";
-            width: 1.8rem;
-            height: 1px;
-            background: var(--color-accent-line);
+        /* ============ Profile ============ */
+        .profile-text {
+            font-size: 0.895rem;
+            line-height: 1.62;
+            color: var(--color-ink);
         }
 
-        .hero__name {
-            font-family: var(--font-heading);
-            font-size: clamp(2.4rem, 5vw, 3.55rem);
-            line-height: 1.08;
-            letter-spacing: 0.08em;
-            color: var(--color-heading);
-            margin-bottom: 0.35rem;
-        }
-
-        .hero__role {
-            font-size: 1.08rem;
-            font-weight: 700;
-            color: var(--color-heading);
-            margin-bottom: 0.9rem;
-        }
-
-        .hero__summary {
-            max-width: 48rem;
-            font-size: 1rem;
-            color: var(--color-text);
-            margin-bottom: 1rem;
-        }
-
-        .hero__highlights {
-            list-style: none;
-            display: grid;
-            gap: 0.6rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero__highlights li {
-            padding-left: 1rem;
-            position: relative;
-            color: var(--color-text);
-        }
-
-        .hero__highlights li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0.74rem;
-            width: 0.38rem;
-            height: 0.38rem;
-            border-radius: 999px;
-            background: var(--color-accent);
-        }
-
-        .metric {
-            color: var(--color-metric);
-            font-weight: 700;
-        }
-
-        .hero__meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.55rem 0.7rem;
-            padding-top: 0.95rem;
-            border-top: 1px solid var(--color-border);
-        }
-
-        .hero__meta-item {
-            display: inline-flex;
-            align-items: baseline;
-            gap: 0.45rem;
-            min-height: 2.1rem;
-            padding: 0.5rem 0.72rem 0.38rem;
-            border: 1px solid rgba(24, 38, 62, 0.1);
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.58);
-            color: var(--color-text-soft);
-            font-size: var(--text-sm);
-        }
-
-        .hero__meta-label {
-            font-size: 0.76rem;
-            line-height: 1;
-            color: var(--color-text-soft);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-        }
-
-        .section {
-            padding: 1.15rem 0 1.2rem;
-            border-top: 1px solid rgba(24, 38, 62, 0.1);
-        }
-
-        .section:first-of-type {
-            border-top: none;
-            padding-top: 0.2rem;
-        }
-
-        .section__title {
-            font-family: var(--font-heading);
-            font-size: var(--text-xl);
-            font-weight: 700;
-            letter-spacing: 0.04em;
-            color: var(--color-heading);
-            margin-bottom: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-        }
-
-        .section__title::before {
-            content: "";
-            width: 1.5rem;
-            height: 1px;
-            background: var(--color-accent-line);
-        }
-
-        .lede {
-            color: var(--color-text);
-            margin-bottom: 0.9rem;
-        }
-
-        .summary-list,
-        .timeline-list,
-        .other-list {
-            display: grid;
-            gap: 0.9rem;
-        }
-
-        .summary-list {
-            list-style: none;
-        }
-
-        .summary-list li {
-            position: relative;
-            padding-left: 1rem;
-            color: var(--color-text);
-        }
-
-        .summary-list li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0.76rem;
-            width: 0.38rem;
-            height: 0.38rem;
-            border-radius: 999px;
-            background: var(--color-accent);
-        }
-
-        .timeline-item,
-        .education-item,
-        .other-card {
-            position: relative;
-            padding: 0.15rem 0 0.15rem 1.15rem;
+        /* ============ Experience / Project Article ============ */
+        article {
+            margin-bottom: 14px;
             page-break-inside: avoid;
         }
 
-        .timeline-item::before,
-        .education-item::before,
-        .other-card::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0.15rem;
-            bottom: 0.1rem;
-            width: 2px;
-            border-radius: 999px;
-            background: linear-gradient(180deg, var(--color-accent), rgba(36, 78, 143, 0.1));
+        article:last-child {
+            margin-bottom: 0;
         }
 
-        .timeline-item::after,
-        .education-item::after,
-        .other-card::after {
-            content: "";
-            position: absolute;
-            left: 1px;
-            top: 0rem;
-            width: 10px;
-            height: 10px;
-            border-radius: 999px;
-            background: var(--color-accent);
-            transform: translateX(-50%);
-            z-index: 1;
-        }
-
-        .item-card {
-            padding: 0.2rem 0 0.25rem;
-            border-radius: var(--radius-sm);
-            transition: transform var(--duration-fast) var(--easing), background-color var(--duration-fast) var(--easing);
-        }
-
-        .item-card:hover {
-            transform: translateY(-1px);
-            background: rgba(36, 78, 143, 0.03);
-        }
-
-        .item-header {
+        .experience-header {
             display: flex;
-            flex-wrap: wrap;
-            align-items: baseline;
             justify-content: space-between;
-            gap: 0.35rem 1rem;
-            margin-bottom: 0.3rem;
+            align-items: baseline;
+            gap: 16px;
+            margin-bottom: 4px;
         }
 
-        .item-title {
-            font-family: var(--font-heading);
-            font-size: 1.08rem;
+        .experience-title {
+            font-family: var(--font-sans);
+            font-size: 0.96rem;
+            font-weight: 600;
+            color: var(--color-ink);
             line-height: 1.4;
-            color: var(--color-heading);
-            font-weight: 700;
         }
 
-        .item-subtitle {
-            font-size: var(--text-sm);
-            color: var(--color-accent);
-            font-weight: 700;
-            margin-bottom: 0.45rem;
-        }
-
-        .item-date {
-            font-size: var(--text-sm);
-            color: var(--color-text-soft);
+        .experience-time {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            font-weight: 400;
+            color: var(--color-ink-soft);
             white-space: nowrap;
+            font-variant-numeric: tabular-nums;
+            font-feature-settings: "tnum";
+            flex-shrink: 0;
         }
 
-        .item-context,
-        .item-stack,
-        .item-note {
-            color: var(--color-text-soft);
-            font-size: var(--text-sm);
-            margin-bottom: 0.45rem;
+        .experience-meta {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--color-ink-soft);
+            margin-bottom: 5px;
+            line-height: 1.4;
         }
 
+        .experience-stack {
+            font-family: var(--font-mono);
+            font-size: 0.755rem;
+            font-weight: 400;
+            color: var(--color-ink-soft);
+            letter-spacing: -0.005em;
+            line-height: 1.5;
+            margin-bottom: 6px;
+        }
+
+        .experience-stack-label {
+            color: var(--color-ink-mute);
+            font-weight: 500;
+            margin-right: 4px;
+        }
+
+        /* ============ Bullet List ============ */
         .bullet-list {
             list-style: none;
-            display: grid;
-            gap: 0.45rem;
+            padding-left: 14px;
         }
 
         .bullet-list li {
             position: relative;
-            padding-left: 1rem;
+            margin-bottom: 4px;
+            font-size: 0.895rem;
+            line-height: 1.62;
+            color: var(--color-ink);
         }
 
         .bullet-list li::before {
-            content: "•";
+            content: "›";
             position: absolute;
-            left: 0;
+            left: -14px;
             top: 0;
-            color: var(--color-accent);
-            font-weight: 700;
+            color: var(--color-ink-mute);
+            font-weight: 500;
+            font-family: var(--font-mono);
         }
 
-        .skills-groups {
-            display: grid;
-            gap: 0.8rem;
-        }
-
-        .skill-group {
-            padding: 0.78rem 0.92rem;
-            border: 1px solid rgba(24, 38, 62, 0.1);
-            border-radius: 12px;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(248, 244, 236, 0.64));
-            page-break-inside: avoid;
-            transition: border-color var(--duration-fast) var(--easing), transform var(--duration-fast) var(--easing), background-color var(--duration-fast) var(--easing);
-        }
-
-        .skill-group:hover {
-            transform: translateY(-1px);
-            border-color: rgba(36, 78, 143, 0.2);
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(248, 244, 236, 0.7));
-        }
-
-        .skill-group__title {
-            font-family: var(--font-heading);
-            color: var(--color-heading);
-            font-size: 0.98rem;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.28rem 0.4rem;
-        }
-
-        .skill-tag {
-            display: inline-flex;
-            align-items: center;
-            min-height: 1.7rem;
-            padding: 0.16rem 0.56rem;
-            border: 1px solid rgba(36, 78, 143, 0.12);
-            border-radius: 999px;
-            background: rgba(36, 78, 143, 0.045);
-            color: var(--color-heading);
-            font-size: 0.82rem;
-        }
-
-        .education-item .item-note {
-            margin-top: 0.45rem;
+        .bullet-list li:last-child {
             margin-bottom: 0;
         }
 
-        .todo {
-            color: var(--color-metric);
-            font-weight: 700;
+        /* ============ Inline Metric ============ */
+        .metric {
+            font-family: var(--font-mono);
+            font-weight: 600;
+            color: var(--color-seal);
+            font-variant-numeric: tabular-nums;
+            font-feature-settings: "tnum";
+            white-space: nowrap;
         }
 
-        .resume-footer {
-            margin-top: 0.9rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--color-border);
+        /* ============ Role Block (内嵌职位) ============ */
+        .role-block {
+            margin-top: 8px;
+            margin-bottom: 10px;
+            padding-left: 14px;
+            border-left: 1px solid var(--color-hairline);
+        }
+
+        .role-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .role-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 16px;
+            margin-bottom: 3px;
+        }
+
+        .role-title {
+            font-family: var(--font-sans);
+            font-size: 0.895rem;
+            font-weight: 600;
+            color: var(--color-ink);
+            line-height: 1.4;
+        }
+
+        .role-time {
+            font-family: var(--font-mono);
+            font-size: 0.755rem;
+            font-weight: 400;
+            color: var(--color-ink-soft);
+            white-space: nowrap;
+            font-variant-numeric: tabular-nums;
+            font-feature-settings: "tnum";
+            flex-shrink: 0;
+        }
+
+        .role-context {
+            font-size: 0.82rem;
+            color: var(--color-ink-mute);
+            margin-bottom: 4px;
+            line-height: 1.45;
+        }
+
+        .role-context::before {
+            content: "// ";
+            color: var(--color-ink-faint);
+            font-family: var(--font-mono);
+        }
+
+        /* ============ Skills DL ============ */
+        .skills-dl {
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            row-gap: 8px;
+            column-gap: 16px;
+            align-items: baseline;
+        }
+
+        .skills-dl dt {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-ink);
+            line-height: 1.4;
+        }
+
+        .skills-dl dd {
+            font-family: var(--font-mono);
+            font-size: 0.755rem;
+            font-weight: 400;
+            color: var(--color-ink-soft);
+            letter-spacing: -0.005em;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* ============ PR / Open Source List ============ */
+        .pr-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .pr-list li {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 14px;
+            margin-bottom: 5px;
+            align-items: baseline;
+        }
+
+        .pr-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .pr-list .pr-id {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--color-ink);
+            text-decoration: underline;
+            text-decoration-color: var(--color-hairline-strong);
+            text-underline-offset: 2px;
+        }
+
+        .pr-list .pr-id:hover {
+            text-decoration-color: var(--color-seal);
+        }
+
+        .pr-list .pr-desc {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            color: var(--color-ink);
+            line-height: 1.5;
+        }
+
+        /* ============ Footer ============ */
+        footer {
+            margin-top: 22px;
+            padding-top: 10px;
+            border-top: 1px solid var(--color-hairline);
+            font-family: var(--font-mono);
+            font-size: 0.74rem;
+            color: var(--color-ink-mute);
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 16px;
+            flex-wrap: wrap;
             page-break-before: avoid;
         }
 
-        .resume-footer__main {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 0.4rem 1rem;
-            font-size: var(--text-sm);
-            color: var(--color-text-soft);
+        footer a {
+            color: var(--color-ink-mute);
         }
 
-        .resume-footer__note {
-            margin-top: 0.5rem;
-            font-size: var(--text-xs);
-            color: var(--color-text-soft);
-        }
-
-        .resume-footer__brand {
-            font-family: var(--font-mono);
-            font-size: var(--text-sm);
-            color: #B8961F;
-            letter-spacing: 0.08em;
-        }
-
-        /* 经历层级嵌套相关样式 */
-        .company-header {
-            margin-bottom: 0.9rem;
-        }
-        .company-title {
-            font-size: 1.16rem;
-        }
-        .company-subtitle {
-            color: var(--color-text-soft);
-            font-weight: normal;
-        }
-        .role-group {
-            margin-bottom: 1.2rem;
-        }
-        .role-group:last-child {
-            margin-bottom: 0;
-        }
-        .role-header {
-            margin-bottom: 0.35rem;
-        }
-        .role-title {
-            font-size: 1.05rem;
-        }
-        .role-title--accent {
-            color: var(--color-accent);
-        }
-        .role-context {
-            color: var(--color-text-soft);
-            font-size: var(--text-sm);
-            margin-bottom: 0.6rem;
-            font-style: italic;
-        }
-
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(14px);
+        /* ============ Responsive ============ */
+        @media (max-width: 720px) {
+            body {
+                padding: 24px 18px 18px;
             }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            .metric-grid {
+                grid-template-columns: repeat(2, 1fr);
+                row-gap: 14px;
+            }
+
+            .skills-dl {
+                grid-template-columns: 1fr;
+                row-gap: 4px;
+            }
+
+            .skills-dl dd {
+                margin-bottom: 6px;
+            }
+
+            .skills-dl dd:last-child {
+                margin-bottom: 0;
+            }
+
+            .experience-header,
+            .role-header {
+                flex-direction: column;
+                gap: 2px;
+            }
+
+            .experience-time,
+            .role-time {
+                font-size: 0.72rem;
+            }
+
+            .pr-list li {
+                grid-template-columns: 1fr;
+                gap: 2px;
+                margin-bottom: 8px;
+            }
+
+            .hero-contacts {
+                line-height: 1.8;
+            }
+        }
+
+        /* ============ Print (A4) ============ */
+        @media print {
+
+            html,
+            body {
+                background: var(--color-paper-print) !important;
+                font-size: 10.4pt;
+                line-height: 1.55;
+            }
+
+            body {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            a {
+                color: var(--color-ink) !important;
+                text-decoration: underline;
+                text-decoration-color: var(--color-hairline-strong) !important;
+                text-decoration-thickness: 0.6pt;
+            }
+
+            .metric,
+            .metric-cell-value,
+            .section-number {
+                color: var(--color-seal) !important;
+            }
+
+            .seal-line {
+                background-color: var(--color-seal) !important;
+                width: 44pt;
+                height: 3pt;
+                margin-bottom: 11pt;
+            }
+
+            .hero {
+                padding-bottom: 9pt;
+                margin-bottom: 13pt;
+                page-break-after: avoid;
+            }
+
+            .hero-name {
+                font-size: 21pt;
+                margin-bottom: 2pt;
+            }
+
+            .hero-name-en {
+                font-size: 10.2pt;
+                margin-left: 8pt;
+            }
+
+            .hero-role {
+                font-size: 10.6pt;
+                margin-bottom: 6pt;
+            }
+
+            .hero-contacts {
+                font-size: 8.8pt;
+                line-height: 1.55;
+            }
+
+            .metric-grid {
+                padding: 7pt 0;
+                margin-bottom: 13pt;
+                gap: 8pt;
+                page-break-inside: avoid;
+            }
+
+            .metric-cell-value {
+                font-size: 15.5pt;
+            }
+
+            .metric-cell-label {
+                font-size: 8.2pt;
+            }
+
+            section {
+                margin-bottom: 12pt;
+            }
+
+            .section-header {
+                margin-bottom: 6pt;
+                padding-bottom: 3.5pt;
+            }
+
+            .section-number {
+                font-size: 8.2pt;
+                min-width: 16pt;
+            }
+
+            .section-title {
+                font-size: 8.6pt;
+            }
+
+            .profile-text {
+                font-size: 10pt;
+                line-height: 1.6;
+            }
+
+            article {
+                margin-bottom: 8pt;
+            }
+
+            .experience-header {
+                margin-bottom: 2pt;
+            }
+
+            .experience-title {
+                font-size: 10.6pt;
+            }
+
+            .experience-time {
+                font-size: 8.4pt;
+            }
+
+            .experience-meta {
+                font-size: 9.2pt;
+                margin-bottom: 3pt;
+            }
+
+            .experience-stack {
+                font-size: 8.2pt;
+                line-height: 1.5;
+                margin-bottom: 3.5pt;
+            }
+
+            .bullet-list {
+                padding-left: 12pt;
+            }
+
+            .bullet-list li {
+                font-size: 9.8pt;
+                line-height: 1.55;
+                margin-bottom: 2.5pt;
+            }
+
+            .bullet-list li::before {
+                left: -12pt;
+            }
+
+            .role-block {
+                margin-top: 5pt;
+                margin-bottom: 7pt;
+                padding-left: 11pt;
+            }
+
+            .role-title {
+                font-size: 9.8pt;
+            }
+
+            .role-time {
+                font-size: 8.2pt;
+            }
+
+            .role-context {
+                font-size: 8.8pt;
+                margin-bottom: 3pt;
+            }
+
+            .skills-dl {
+                grid-template-columns: 130pt 1fr;
+                row-gap: 5pt;
+                column-gap: 12pt;
+            }
+
+            .skills-dl dt {
+                font-size: 9.2pt;
+            }
+
+            .skills-dl dd {
+                font-size: 8.2pt;
+                line-height: 1.5;
+            }
+
+            .pr-list li {
+                grid-template-columns: 168pt 1fr;
+                gap: 10pt;
+                margin-bottom: 3pt;
+            }
+
+            .pr-list .pr-id {
+                font-size: 8.4pt;
+            }
+
+            .pr-list .pr-desc {
+                font-size: 9.2pt;
+                line-height: 1.5;
+            }
+
+            footer {
+                margin-top: 11pt;
+                padding-top: 5pt;
+                font-size: 8pt;
+            }
+
+            article,
+            .role-block,
+            .pr-list li,
+            .skills-dl dt,
+            .skills-dl dd {
+                page-break-inside: avoid;
+            }
+
+            @page {
+                size: A4 portrait;
+                margin: 8mm 8mm;
             }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
 
             *,
             *::before,
             *::after {
-                animation: none !important;
-                transition: none !important;
-            }
-
-            .reveal {
-                opacity: 1 !important;
-                transform: none !important;
-            }
-        }
-
-        @media (max-width: 720px) {
-            body {
-                padding: 14px;
-            }
-
-            .resume {
-                padding: 14px;
-                border-radius: 22px;
-            }
-
-            .hero {
-                padding: 1.2rem;
-            }
-
-            .hero::after {
-                left: 1.2rem;
-                right: 1.2rem;
-            }
-
-            .hero__brand-logo {
-                width: 40px;
-                height: 40px;
-            }
-
-            .hero__meta {
-                gap: 0.5rem;
-            }
-
-            .hero__meta-item {
-                width: 100%;
-                justify-content: flex-start;
-                border-radius: 14px;
-            }
-
-            .item-header {
-                align-items: flex-start;
-            }
-
-            .item-date {
-                white-space: normal;
-            }
-        }
-
-        @media print {
-            html,
-            body {
-                background: #fff !important;
-                font-size: 10.1pt;
-                line-height: 1.43;
-            }
-
-            body {
-                padding: 0;
-            }
-
-            body::before,
-            .resume::before {
-                display: none !important;
-            }
-
-            .resume {
-                width: 100%;
-                padding: 0;
-                border: none;
-                border-radius: 0;
-                background: #fcfaf5 !important;
-                box-shadow: none !important;
-            }
-
-            .hero {
-                margin-bottom: 4.5pt;
-                padding: 8pt 10pt 7pt;
-                border-radius: 10px;
-                background: #faf8f2 !important;
-                box-shadow: none !important;
-                page-break-inside: avoid;
-            }
-
-            .hero::after {
-                left: 10pt;
-                right: 10pt;
-                height: 2pt;
-                background: linear-gradient(90deg, #244e8f, #cdd6e3) !important;
-            }
-
-            .hero__name {
-                font-size: 24.8pt;
-                margin-bottom: 1pt;
-            }
-
-            .hero__role {
-                font-size: 10.8pt;
-                margin-bottom: 4pt;
-            }
-
-            .hero__summary,
-            .hero__highlights li,
-            .lede,
-            .summary-list li,
-            .bullet-list li,
-            .item-context,
-            .item-stack,
-            .item-note,
-            .resume-footer__main {
-                font-size: 9.55pt;
-            }
-
-            .hero__summary,
-            .lede,
-            .item-context,
-            .item-stack,
-            .item-note {
-                margin-bottom: 3pt;
-            }
-
-            .hero__highlights,
-            .summary-list,
-            .timeline-list,
-            .other-list,
-            .bullet-list,
-            .skills-groups {
-                gap: 0 !important;
-            }
-
-            .summary-list,
-            .timeline-list,
-            .other-list,
-            .skills-groups,
-            .bullet-list {
-                display: block !important;
-            }
-
-            .summary-list li,
-            .bullet-list li,
-            .timeline-item,
-            .other-card,
-            .skill-group {
-                margin-bottom: 2pt;
-            }
-
-            .timeline-item:last-child,
-            .other-card:last-child,
-            .skill-group:last-child,
-            .summary-list li:last-child,
-            .bullet-list li:last-child {
-                margin-bottom: 0;
-            }
-
-            .hero__meta {
-                gap: 4pt;
-                padding-top: 5pt;
-            }
-
-            .hero__meta-item {
-                min-height: auto;
-                padding: 2pt 6pt;
-                font-size: 8.6pt;
-                background: #fdfcfa !important;
-            }
-
-            .hero__meta-label {
-                font-size: 7pt;
-            }
-
-            .section {
-                padding: 3pt 0;
-                page-break-inside: auto !important;
-            }
-
-            .section__title {
-                margin-bottom: 3pt;
-                font-size: 12.2pt;
-                page-break-after: avoid !important;
-                page-break-before: avoid !important;
-            }
-
-            .eyebrow::before {
-                background: #8ea4c4 !important;
-            }
-
-            .hero__highlights li::before {
-                background: #244e8f !important;
-            }
-
-            .section__title::before {
-                width: 12pt;
-                background: #8ea4c4 !important;
-            }
-
-            .summary-list li::before {
-                background: #244e8f !important;
-            }
-
-            .item-subtitle {
-                color: #244e8f !important;
-            }
-
-            .bullet-list li::before {
-                color: #244e8f !important;
-            }
-
-            .resume,
-            .section,
-            .timeline-list,
-            .other-list {
-                overflow: visible !important;
-            }
-
-            .timeline-item,
-            .education-item,
-            .other-card {
-                padding: 0 0 0 13pt;
-                overflow: visible !important;
-            }
-
-            .timeline-item::before,
-            .education-item::before,
-            .other-card::before {
-                left: 2pt;
-                top: 5pt;
-                width: 1.5pt;
-                background: linear-gradient(180deg, #244e8f, #cdd6e3) !important;
-            }
-
-            .timeline-item::after,
-            .education-item::after,
-            .other-card::after {
-                left: 2.75pt;
-                top: 0pt;
-                width: 6pt;
-                height: 6pt;
-                border: none !important;
-                background: #244e8f !important;
-                transform: translateX(-50%);
-            }
-
-            .timeline-item,
-            .education-item,
-            .other-card,
-            .skill-group,
-            .hero,
-            .resume-footer {
-                page-break-inside: avoid !important;
-            }
-
-            .item-card {
-                padding-top: 0 !important;
-                padding-bottom: 0 !important;
-            }
-
-            .item-header {
-                margin-bottom: 1.5pt;
-            }
-
-            .item-title {
-                font-size: 10.9pt;
-            }
-
-            .item-subtitle,
-            .item-date {
-                font-size: 8.9pt;
-            }
-
-            .item-card:hover,
-            .skill-group:hover {
-                transform: none !important;
-                background: transparent !important;
-            }
-
-            .skill-group {
-                padding: 3.5pt 6pt;
-                background: #faf8f2 !important;
-            }
-
-            .skill-group__title {
-                margin-bottom: 1pt;
-                font-size: 9.6pt;
-            }
-
-            .skill-tags {
-                display: block !important;
-            }
-
-            .skill-tag {
-                display: inline !important;
-                padding: 0 !important;
-                border: none !important;
-                border-radius: 0 !important;
-                background: transparent !important;
-                font-size: 8.9pt !important;
-                color: #202733 !important;
-            }
-
-            .skill-tag::after {
-                content: " / ";
-                color: #5d6778;
-            }
-
-            .skill-tags .skill-tag:last-child::after {
-                content: "";
-            }
-
-            .resume-footer {
-                margin-top: 4pt;
-                padding-top: 4pt;
-            }
-
-            .resume-footer,
-            .resume-footer__main,
-            .resume-footer__note {
-                page-break-before: avoid !important;
-            }
-
-            .resume-footer__note {
-                margin-top: 2pt;
-                font-size: 8.2pt;
-            }
-
-            .hero__brand-logo {
-                width: 36px;
-                height: 36px;
-            }
-
-            .resume-footer__brand {
-                font-size: 8.9pt;
-            }
-
-            .reveal {
-                opacity: 1 !important;
-                transform: none !important;
-                animation: none !important;
-            }
-
-            a {
-                color: #244e8f !important;
-                text-decoration: underline;
-                text-decoration-thickness: 0.8px;
-                text-underline-offset: 2px;
-            }
-
-            /* 打印模式下的经历嵌套覆写 */
-            .company-header {
-                margin-bottom: 3pt;
-            }
-            .company-title {
-                font-size: 11.4pt;
-            }
-            .role-group {
-                margin-bottom: 6pt;
-            }
-            .role-header {
-                margin-bottom: 1.5pt;
-            }
-            .role-title {
-                font-size: 10pt;
-            }
-            .role-context {
-                margin-bottom: 3pt;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
             }
         }
     </style>
 </head>
 
 <body>
-    <main class="resume" aria-label="徐俊飞简历">
-        <header class="hero reveal" style="animation-delay: 40ms;">
-            <div class="hero__brand-row">
-                <img class="hero__brand-logo" src="public/logo-options/logo-secondary-square-light.svg" alt="MXW" width="48" height="48">
-                <div class="eyebrow">Senior Backend Resume</div>
+    <header class="hero">
+        <hr class="seal-line" aria-hidden="true">
+        <h1 class="hero-name">徐俊飞<span class="hero-name-en">Masons Xu</span></h1>
+        <p class="hero-role">Go 后端架构师 · 分布式系统 · 云原生基础设施</p>
+        <address class="hero-contacts">
+            <a href="mailto:masonsxu@foxmail.com">masonsxu@foxmail.com</a>
+            <span class="sep">·</span>
+            <a href="https://github.com/masonsxu">github.com/masonsxu</a>
+            <span class="sep">·</span>
+            <a href="https://masonsxu-github-io.pages.dev">masonsxu-github-io.pages.dev</a>
+            <span class="sep">·</span>
+            <span>厦门 → 上海 / 杭州</span>
+        </address>
+    </header>
+
+    <ul class="metric-grid" aria-label="核心指标">
+        <li class="metric-cell">
+            <span class="metric-cell-value">5+</span>
+            <span class="metric-cell-label">Years Backend</span>
+        </li>
+        <li class="metric-cell">
+            <span class="metric-cell-value">10+</span>
+            <span class="metric-cell-label">Microservices</span>
+        </li>
+        <li class="metric-cell">
+            <span class="metric-cell-value">99.9%</span>
+            <span class="metric-cell-label">Availability</span>
+        </li>
+        <li class="metric-cell">
+            <span class="metric-cell-value">87%</span>
+            <span class="metric-cell-label">Deploy Faster</span>
+        </li>
+    </ul>
+
+    <section aria-labelledby="profile-title">
+        <header class="section-header">
+            <span class="section-number">I</span>
+            <h2 class="section-title" id="profile-title">Profile</h2>
+        </header>
+        <p class="profile-text">
+            5 年 Go 后端开发经验，深耕分布式系统架构与云原生基础设施。从应届生独立成长为系统实际负责人，主导 Python 单体到 CloudWeGo 微服务架构的整体转型，具备从 0 到 1 独立交付复杂系统的全链路能力。技术覆盖分布式微服务（Kitex / Hertz / Wire / etcd / Casbin）、数据湖与 ETL（Iceberg / Airflow / Trino / Polars）、云原生工程效能（OpenTelemetry / Jaeger / Docker / Podman）三大方向，并通过开源贡献与 AI 辅助开发体系将经验沉淀为可复用的工程资产。
+        </p>
+    </section>
+
+    <section aria-labelledby="experience-title">
+        <header class="section-header">
+            <span class="section-number">II</span>
+            <h2 class="section-title" id="experience-title">Experience</h2>
+        </header>
+        <article>
+            <header class="experience-header">
+                <h3 class="experience-title">福建自贸试验区厦门片区 Manteia 数据科技有限公司</h3>
+                <time class="experience-time" datetime="2021-06/2026-04">2021.06 — 2026.04</time>
+            </header>
+            <p class="experience-meta">核心业务研发与后端架构体系演进</p>
+
+            <div class="role-block">
+                <header class="role-header">
+                    <h4 class="role-title">Go 后端架构师 / 技术负责人</h4>
+                    <time class="role-time" datetime="2025-03/2026-04">2025.03 — 2026.04</time>
+                </header>
+                <p class="role-context">基于前期在核心业务重构与工程提效上的突出表现，晋升主导新一代微服务架构升级与技术团队规范建设。</p>
+                <ul class="bullet-list">
+                    <li>主导后端服务化升级，完成 <span class="metric">8 RPC + 1 API Gateway</span> 的 9 服务体系建设，支撑多业务域并行迭代与独立部署。</li>
+                    <li>统一 IDL-First 开发流程、分层架构约束与 Wire 依赖注入规范，将服务研发从「个人经验驱动」全面升级为「标准体系驱动」。</li>
+                    <li>建设 OpenTelemetry + Jaeger 与 trace / request_id 传播链路，打通网关到核心 RPC 的排障路径，提升复杂线上问题的定位、止损与修复效率。</li>
+                    <li>推动 <span class="metric">8 人</span> 研发协作机制标准化，沉淀结构化技术资产 <span class="metric">31 份 / 1.1 万行</span>，降低跨模块协作成本。</li>
+                </ul>
             </div>
-            <h1 class="hero__name">徐俊飞</h1>
-            <p class="hero__role">资深后端工程师 · Go 微服务 / 数据平台架构方向</p>
-            <p class="hero__summary">
-                5 年后端研发经验，聚焦高可用微服务与数据链路工程。擅长在复杂场景下完成架构选型、系统拆分、工程规范落地与线上稳定性治理，并将技术建设沉淀为可复用的交付体系与可量化的效率收益。
-            </p>
-            <ul class="hero__highlights" aria-label="核心亮点摘要">
-                <li>主导 Radius 后端从单体演进为 <span class="metric">9 服务体系</span>，建立 IDL-First、分层架构与依赖注入规范，支撑多业务域并行迭代。</li>
-                <li>构建 Radius 数据湖 <span class="metric">10 DAG</span> 主链路，打通“配置同步 → 批量入湖 → 字典抽取 → 业务回传”的数据闭环。</li>
-                <li>推动部署时间从 <span class="metric">4h → 30min</span>，查询效率 <span class="metric">+50%</span>，数据加载响应 <span class="metric">+35%</span>，故障率 <span class="metric">-45%</span>。</li>
-            </ul>
-            <div class="hero__meta" aria-label="联系方式">
-                <a class="hero__meta-item" href="mailto:masonsxu@foxmail.com"><span class="hero__meta-label">Email</span>masonsxu@foxmail.com</a>
-                <a class="hero__meta-item" href="https://github.com/masonsxu"><span class="hero__meta-label">GitHub</span>github.com/masonsxu</a>
-                <a class="hero__meta-item" href="https://masonsxu-github-io.pages.dev/"><span class="hero__meta-label">Website</span>masonsxu-github-io.pages.dev</a>
-                <span class="hero__meta-item"><span class="hero__meta-label">Location</span>现居厦门 · 意向城市：上海 / 杭州</span>
+
+            <div class="role-block">
+                <header class="role-header">
+                    <h4 class="role-title">Python 后端开发工程师</h4>
+                    <time class="role-time" datetime="2021-06/2025-03">2021.06 — 2025.03</time>
+                </header>
+                <ul class="bullet-list">
+                    <li>以应届生加入，独立成长为系统实际负责人。基于 Asyncio 与 Pydantic 重构核心业务链路，查询效率提升 <span class="metric">50%</span>，数据加载响应提升 <span class="metric">35%</span>。</li>
+                    <li>推动核心服务从 Shell 方式迁移至容器化工程流程，部署时间从 <span class="metric">4 小时</span> 缩短至 <span class="metric">30 分钟</span>，交付效率提升 <span class="metric">87.5%</span>。</li>
+                    <li>通过链路治理与变更风险收敛，故障率下降 <span class="metric">45%</span>，系统可用性提升至 <span class="metric">99.9%</span>。</li>
+                    <li>多次在核心链路故障中实现当日快速恢复，兼顾极速止损与根因修复，最大程度降低线上业务影响范围。</li>
+                </ul>
             </div>
+        </article>
+    </section>
+
+    <section aria-labelledby="projects-title">
+        <header class="section-header">
+            <span class="section-number">III</span>
+            <h2 class="section-title" id="projects-title">Selected Projects</h2>
         </header>
 
-        <section class="section reveal" id="summary" aria-labelledby="summary-title" style="animation-delay: 90ms;">
-            <h2 class="section__title" id="summary-title">个人简介</h2>
-            <p class="lede">
-                以结果为导向推进后端架构与数据平台建设，能够同时承担核心链路的方案设计、落地推进与线上止损，也能把研发协作从“个人经验驱动”推进为“标准流程驱动”。目标岗位为高级工程师 / 架构师 / 技术负责人。
-            </p>
-            <ul class="summary-list">
-                <li>推动网关与多 RPC 服务治理方案落地，形成覆盖接口契约、服务发现与可观测联动的统一技术底座。</li>
-                <li>建立 OpenTelemetry、Jaeger 与结构化日志联动链路，缩短跨服务故障定位路径，支撑高频需求下的稳定交付。</li>
-                <li>实现字典规则驱动抽取引擎，通过 BFS 自动发现多表 JOIN 路径，并在失败场景自动回退 UNION ALL，降低手工 SQL 维护成本。</li>
-                <li>沉淀项目文档 <span class="metric">31 份</span>、累计约 <span class="metric">1.1 万行</span>，覆盖架构、规范、运维与交接，增强团队扩展与知识传承效率。</li>
+        <article>
+            <header class="experience-header">
+                <h3 class="experience-title">Radius Backend · 分布式微服务平台</h3>
+                <time class="experience-time" datetime="2025-03/2026-04">2025.03 — 2026.04</time>
+            </header>
+            <p class="experience-meta">技术负责人 · 生产系统</p>
+            <p class="experience-stack"><span class="experience-stack-label">Stack:</span>Go 1.24, Kitex RPC, Hertz HTTP, Thrift IDL, Google Wire, etcd, Casbin RBAC, OpenTelemetry, Jaeger, PostgreSQL, Redis</p>
+            <ul class="bullet-list">
+                <li>独立设计并交付基于 CloudWeGo 生态的分布式数据平台，<span class="metric">6 个月</span>完成 Radius 项目设计、开发与测试闭环。</li>
+                <li>采用 Kitex RPC + Hertz HTTP 双栈架构与 Thrift IDL-First 流程，构建从 API 网关到 <span class="metric">8 个 RPC 微服务</span> 的完整分布式系统。</li>
+                <li>建立 DDD 四层架构（Handler → Logic → DAL → Model）与 Google Wire 编译时依赖注入，业务逻辑与框架零耦合，仓储模式隔离数据访问。</li>
+                <li>沉淀 <span class="metric">6 位</span>结构化错误码体系与 <span class="metric">100 goroutines</span> 并发隔离测试，建立 unsafe.Pointer 零拷贝转换等性能优化范式。</li>
             </ul>
-        </section>
+        </article>
 
-        <section class="section reveal" id="experience" aria-labelledby="experience-title" style="animation-delay: 140ms;">
-            <h2 class="section__title" id="experience-title">工作经历</h2>
-            <div class="timeline-list">
-                <article class="timeline-item">
-                    <div class="item-card">
-                        <div class="item-header company-header">
-                            <div>
-                                <h3 class="item-title company-title">福建自贸试验区厦门片区 Manteia 数据科技有限公司</h3>
-                                <p class="item-subtitle company-subtitle">核心业务研发与后端架构体系演进</p>
-                            </div>
-                            <time class="item-date" style="font-weight: 600;" datetime="2021-06">2021.06 - 2026.04</time>
-                        </div>
+        <article>
+            <header class="experience-header">
+                <h3 class="experience-title">Radius Datalake · Apache Iceberg 数据湖平台</h3>
+                <time class="experience-time" datetime="2025-03/2026-04">2025.03 — 2026.04</time>
+            </header>
+            <p class="experience-meta">核心开发 · 生产系统</p>
+            <p class="experience-stack"><span class="experience-stack-label">Stack:</span>Apache Iceberg, Airflow 3.1, Trino, PyIceberg, Polars, PyArrow, MySQL, MongoDB, RustFS (S3 Compatible)</p>
+            <ul class="bullet-list">
+                <li>构建配置驱动 ETL 数据湖平台，<span class="metric">5 个月</span>从设计到生产投入使用，承载 <span class="metric">10 个 DAG</span> 主链路（4 core + 6 business）。</li>
+                <li>实现多源异构数据统一入湖：MySQL SSDictCursor 流式游标、MongoDB raw_document JSON 三列 schema、Iceberg Schema Evolution 自动加列。</li>
+                <li>实现规则驱动 SQL 自动生成，BFS 图搜索发现多表 JOIN 最优路径，失败时自动回退 UNION ALL，显著降低人工拼接 SQL 成本。</li>
+                <li>构建按分类并行、批次重试、错误隔离的回传容错机制，FieldCommon0 集合交集过滤防止癌种数据交叉污染。</li>
+            </ul>
+        </article>
 
-                        <div class="role-group">
-                            <div class="item-header role-header">
-                                <div>
-                                    <h4 class="item-title role-title role-title--accent">Go 后端架构师 / 技术负责人</h4>
-                                </div>
-                                <time class="item-date" datetime="2025-03">2025.03 - 2026.04</time>
-                            </div>
-                            <p class="role-context">
-                                背景：基于前期在核心业务重构与工程提效上的突出表现，晋升主导新一代微服务架构升级与技术团队规范建设。
-                            </p>
-                            <ul class="bullet-list">
-                                <li>在多业务域并行演进场景下主导后端服务化升级，完成 <span class="metric">8 RPC + 1 API Gateway</span> 的 9 服务体系建设，支撑多模块独立演进与部署。</li>
-                                <li>统一 IDL-First 开发流程、分层架构约束与 Wire 依赖注入规范，将服务研发从“个人经验驱动”全面升级为“标准体系驱动”。</li>
-                                <li>建设 OTel、Jaeger 与 trace / request_id 传播链路，打通网关到核心 RPC 的排障路径，提升复杂线上问题的定位、止损与修复效率。</li>
-                                <li>推动 8 人研发协作机制标准化，沉淀结构化技术资产，降低跨模块协作成本，为团队扩张提供稳定的工程底座。</li>
-                            </ul>
-                        </div>
+        <article>
+            <header class="experience-header">
+                <h3 class="experience-title">放疗流程管理系统 · 表单引擎与流程编排</h3>
+                <time class="experience-time" datetime="2021-06/2025-03">2021.06 — 2025.03</time>
+            </header>
+            <p class="experience-meta">系统主程 · 累计 <span class="metric">4,000+</span> commits</p>
+            <p class="experience-stack"><span class="experience-stack-label">Stack:</span>Flask, MongoDB, MySQL, Redis, Celery, Docker, Asyncio, Pydantic</p>
+            <ul class="bullet-list">
+                <li>独立负责放疗流程系统全生命周期，主导 MongoDB 文档嵌套树自定义表单引擎，支持 <span class="metric">4 层</span>深度组件树与 <span class="metric">30+</span> 组件类型。</li>
+                <li>实现三元引用模型的跨表单数据联动，MongoDB array_filters 3 层嵌套精准更新；JSON 驱动工作流引擎支持 NEXT / PREVIOUS / REJECT 三种推进模式。</li>
+                <li>适配器模式对接 <span class="metric">25+</span> 第三方系统，性能重构使响应时间降低 <span class="metric">50%</span>，可用性提升至 <span class="metric">99.9%</span>。</li>
+            </ul>
+        </article>
 
-                        <div class="role-group">
-                            <div class="item-header role-header">
-                                <div>
-                                    <h4 class="item-title role-title">Python 后端开发工程师</h4>
-                                </div>
-                                <time class="item-date" datetime="2021-06">2021.06 - 2025.03</time>
-                            </div>
-                            <ul class="bullet-list">
-                                <li>基于 Asyncio 与 Pydantic 重构核心业务链路，优化查询与数据加载模型，使查询效率提升 <span class="metric">50%</span>，数据加载响应提升 <span class="metric">35%</span>。</li>
-                                <li>推动核心服务从 Shell 方式迁移至容器化工程流程，将部署时间从 <span class="metric">4 小时大幅缩短至 30 分钟</span>，交付效率提升 <span class="metric">87.5%</span>。</li>
-                                <li>通过链路治理与变更风险收敛，使故障率下降 <span class="metric">45%</span>，系统可用性提升至 <span class="metric">99.9%</span>。</li>
-                                <li>多次在核心链路故障中实现当日快速恢复，兼顾极速止损与根因修复，最大程度降低线上业务影响范围。</li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
+        <article>
+            <header class="experience-header">
+                <h3 class="experience-title">CloudWeGo 微服务模板 · 开源贡献</h3>
+                <time class="experience-time">2025 — Present</time>
+            </header>
+            <p class="experience-meta">开源贡献者 · <a href="https://github.com/masonsxu/cloudwego-microservice-demo">github.com/masonsxu/cloudwego-microservice-demo</a></p>
+            <ul class="bullet-list">
+                <li>基于生产经验沉淀 CloudWeGo 微服务标准架构模板，覆盖 Kitex / Hertz 双栈、DDD 分层、Wire DI 与可观测性的完整工程规范。</li>
+                <li>建立 <span class="metric">330+ 行</span> AGENTS.md 架构规范、<span class="metric">8 个</span> Custom Skills 开发流程脚本与 <span class="metric">3 个</span> AI 驱动 GitHub Actions 工作流。</li>
+                <li>向 CloudWeGo 生态贡献并合并 <span class="metric">3 个 PR</span>，覆盖 hertz-contrib/jwt RefreshToken Bug 修复、可观测性稳定性优化、Go 1.25+ 编译兼容性修复。</li>
+            </ul>
+        </article>
+    </section>
 
-        <section class="section reveal" id="projects" aria-labelledby="projects-title" style="animation-delay: 190ms;">
-            <h2 class="section__title" id="projects-title">项目经历</h2>
-            <div class="timeline-list">
-                <article class="timeline-item">
-                    <div class="item-card">
-                        <div class="item-header">
-                            <div>
-                                <h3 class="item-title">Radius Backend 微服务平台</h3>
-                                <p class="item-subtitle">技术负责人 · 生产系统</p>
-                            </div>
-                            <time class="item-date" datetime="2025-03">2025.03 - 2026.04</time>
-                        </div>
-                        <p class="item-stack">技术栈：Go、Hertz、Kitex、Thrift IDL、Etcd、PostgreSQL、Redis、Wire、OpenTelemetry、Jaeger</p>
-                        <ul class="bullet-list">
-                            <li>落地 <span class="metric">8 RPC + 1 Gateway</span> 的服务体系，统一承接 10 类业务入口，支撑多业务域并行迭代与独立部署。</li>
-                            <li>建立服务契约优先与分层职责边界，使架构方案从单点设计升级为团队默认技术标准。</li>
-                            <li>实现 trace / request_id 贯穿传播与结构化日志联动，提升跨服务调用链追踪与错误定位效率。</li>
-                            <li>输出完整架构、规范、运维与交接文档体系，累计 <span class="metric">31 份</span>、约 <span class="metric">1.1 万行</span>，增强团队扩展与知识传承能力。</li>
-                        </ul>
-                    </div>
-                </article>
+    <section aria-labelledby="skills-title">
+        <header class="section-header">
+            <span class="section-number">IV</span>
+            <h2 class="section-title" id="skills-title">Skills</h2>
+        </header>
+        <dl class="skills-dl">
+            <dt>Go Distributed Systems</dt>
+            <dd>Go 1.24+, Kitex RPC, Hertz HTTP, gRPC, Thrift IDL, Google Wire, GORM, Casbin RBAC, JWT, etcd</dd>
 
-                <article class="timeline-item">
-                    <div class="item-card">
-                        <div class="item-header">
-                            <div>
-                                <h3 class="item-title">Radius Datalake 数据湖平台</h3>
-                                <p class="item-subtitle">核心开发 · 生产系统</p>
-                            </div>
-                            <time class="item-date" datetime="2025-03">2025.03 - 2026.04</time>
-                        </div>
-                        <p class="item-stack">技术栈：Airflow、Iceberg、Trino、PyIceberg、Polars、PyArrow、RustFS（S3）、Python</p>
-                        <ul class="bullet-list">
-                            <li>设计并落地 <span class="metric">10 DAG</span> 主链路（4 个 core + 6 个 business），当前仓库总 dag_id 为 13，形成稳定的数据闭环。</li>
-                            <li>通过配置驱动拉取业务 API 数据源与字典配置，并实现 JWT Token 自动刷新与 Airflow Variables 缓存，降低手工维护成本。</li>
-                            <li>完成 MySQL 流式游标批量入湖、Mongo 原始文档入湖与 Iceberg schema evolution，支撑多来源数据接入与持续演进。</li>
-                            <li>实现规则驱动 SQL 自动生成，采用 BFS 自动发现多表 JOIN 路径，并在失败场景自动回退 UNION ALL，显著降低人工拼接 SQL 成本。</li>
-                            <li>构建按分类并行、批次重试、错误隔离的回传容错机制，核心 DAG 默认手动触发，可按部署策略切换为定时调度。</li>
-                        </ul>
-                    </div>
-                </article>
+            <dt>Data Lake &amp; ETL</dt>
+            <dd>Apache Iceberg, Airflow 3.1, Trino, PyIceberg, Polars, PyArrow, Schema Evolution, BFS Join Path</dd>
 
-                <article class="timeline-item">
-                    <div class="item-card">
-                        <div class="item-header">
-                            <div>
-                                <h3 class="item-title">CloudWeGo 生态实践与开源贡献</h3>
-                                <p class="item-subtitle">架构实践 / 开源贡献者</p>
-                            </div>
-                            <time class="item-date" datetime="2025">2025 - 至今</time>
-                        </div>
-                        <p class="item-note">项目地址：<a href="https://github.com/masonsxu/cloudwego-microservice-demo">github.com/masonsxu/cloudwego-microservice-demo</a></p>
-                        <ul class="bullet-list">
-                            <li>基于生产经验沉淀 CloudWeGo 微服务模板，覆盖网关接入、服务发现、可观测、容器化与工程规范。</li>
-                            <li>推动 AI 辅助开发流程落地，通过规范文档、技能脚本与自动化工作流提升需求到交付的端到端效率。</li>
-                            <li>参与 CloudWeGo 生态问题修复与贡献，包括 hertz-contrib/jwt 等组件。</li>
-                        </ul>
-                    </div>
-                </article>
-            </div>
-        </section>
+            <dt>Observability</dt>
+            <dd>OpenTelemetry, Jaeger, Structured Logging, Trace Propagation, Slow-Call Detection, Error Code System</dd>
 
-        <section class="section reveal" id="skills" aria-labelledby="skills-title" style="animation-delay: 240ms;">
-            <h2 class="section__title" id="skills-title">技能</h2>
-            <div class="skills-groups">
-                <section class="skill-group" aria-labelledby="skill-go">
-                    <h3 class="skill-group__title" id="skill-go">微服务架构</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Go 1.24+</span>
-                        <span class="skill-tag">Kitex RPC</span>
-                        <span class="skill-tag">Hertz HTTP</span>
-                        <span class="skill-tag">Thrift IDL</span>
-                        <span class="skill-tag">DDD 分层</span>
-                        <span class="skill-tag">Google Wire</span>
-                        <span class="skill-tag">etcd 服务发现</span>
-                        <span class="skill-tag">gRPC</span>
-                        <span class="skill-tag">API 网关</span>
-                    </div>
-                </section>
-                <section class="skill-group" aria-labelledby="skill-obs">
-                    <h3 class="skill-group__title" id="skill-obs">分布式治理与可观测</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">OpenTelemetry</span>
-                        <span class="skill-tag">Jaeger</span>
-                        <span class="skill-tag">request_id 传播</span>
-                        <span class="skill-tag">错误码体系</span>
-                        <span class="skill-tag">慢调用告警</span>
-                        <span class="skill-tag">故障排查</span>
-                        <span class="skill-tag">JWT 认证</span>
-                        <span class="skill-tag">权限模型设计</span>
-                    </div>
-                </section>
-                <section class="skill-group" aria-labelledby="skill-data">
-                    <h3 class="skill-group__title" id="skill-data">数据平台与数据工程</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Airflow</span>
-                        <span class="skill-tag">Apache Iceberg</span>
-                        <span class="skill-tag">Trino</span>
-                        <span class="skill-tag">PyIceberg</span>
-                        <span class="skill-tag">Polars</span>
-                        <span class="skill-tag">PyArrow</span>
-                        <span class="skill-tag">BFS 关联路径</span>
-                        <span class="skill-tag">批量回传链路</span>
-                    </div>
-                </section>
-                <section class="skill-group" aria-labelledby="skill-store">
-                    <h3 class="skill-group__title" id="skill-store">存储与工程化</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">Redis</span>
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">S3 对象存储</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Podman</span>
-                        <span class="skill-tag">Portainer</span>
-                        <span class="skill-tag">CI/CD</span>
-                        <span class="skill-tag">AI 辅助开发</span>
-                    </div>
-                </section>
-            </div>
-        </section>
+            <dt>Cloud Native &amp; Storage</dt>
+            <dd>Docker, Podman, Kubernetes, PostgreSQL, MySQL, Redis, MongoDB, S3 Compatible Storage, GitHub Actions, AI-Assisted Dev</dd>
+        </dl>
+    </section>
 
-        <section class="section reveal" id="education" aria-labelledby="education-title" style="animation-delay: 290ms;">
-            <h2 class="section__title" id="education-title">教育</h2>
-            <article class="education-item">
-                <div class="item-card">
-                    <div class="item-header">
-                        <div>
-                            <h3 class="item-title">河南城建学院</h3>
-                            <p class="item-subtitle">信息管理与信息系统（大数据方向）</p>
-                        </div>
-                        <time class="item-date" datetime="2017-07">2017.07 - 2021.06</time>
-                    </div>
-                    <p class="item-note"><strong>荣誉奖项：</strong>2021 · 河南省优秀学位论文（省级）｜2018 / 2019 · 国家级单项奖学金（2 次）｜2020 · 省级单项奖学金</p>
-                </div>
-            </article>
-        </section>
+    <section aria-labelledby="opensource-title">
+        <header class="section-header">
+            <span class="section-number">V</span>
+            <h2 class="section-title" id="opensource-title">Open Source</h2>
+        </header>
+        <ul class="pr-list">
+            <li>
+                <a class="pr-id" href="https://github.com/hertz-contrib/jwt/pull/27">hertz-contrib/jwt #27</a>
+                <span class="pr-desc">修复 RefreshToken 中 orig_iat 被意外重置导致 MaxRefresh 窗口失效的 Bug。</span>
+            </li>
+            <li>
+                <a class="pr-id" href="https://github.com/hertz-contrib/obs-opentelemetry/pull/67">hertz-contrib/obs-opentelemetry #67</a>
+                <span class="pr-desc">优化可观测性组件，提升链路追踪稳定性与准确性。</span>
+            </li>
+            <li>
+                <a class="pr-id" href="https://github.com/cloudwego/abcoder/pull/84">cloudwego/abcoder #84</a>
+                <span class="pr-desc">修复 Go 1.25+ 环境下 sonic 依赖版本导致的安装编译错误。</span>
+            </li>
+        </ul>
+    </section>
 
-        <section class="section reveal" id="others" aria-labelledby="others-title" style="animation-delay: 340ms;">
-            <h2 class="section__title" id="others-title">其他</h2>
-            <div class="other-list">
-                <article class="other-card">
-                    <div class="item-card">
-                        <ul class="bullet-list">
-                            <li>个人主页：<a href="https://masonsxu-github-io.pages.dev/">masonsxu-github-io.pages.dev</a></li>
-                            <li>开源实践：持续维护 CloudWeGo 微服务模板，并参与相关生态问题修复与贡献。</li>
-                        </ul>
-                    </div>
-                </article>
-            </div>
-        </section>
+    <section aria-labelledby="education-title">
+        <header class="section-header">
+            <span class="section-number">VI</span>
+            <h2 class="section-title" id="education-title">Education</h2>
+        </header>
+        <article>
+            <header class="experience-header">
+                <h3 class="experience-title">河南城建学院 · 信息管理与信息系统（大数据方向）· 本科</h3>
+                <time class="experience-time" datetime="2017-07/2021-06">2017.07 — 2021.06</time>
+            </header>
+            <p class="experience-meta">国家级单项奖学金 ×2（2018 / 2019）· 河南省优秀学位论文（省级 Top 1%）· 省级单项奖学金（2020）</p>
+        </article>
+    </section>
 
-        <footer class="resume-footer reveal" style="animation-delay: 390ms;">
-            <div class="resume-footer__main">
-                <span class="resume-footer__brand">MASONS.XU</span>
-                <span>最后更新：2026 年 4 月</span>
-                <span>GitHub：<a href="https://github.com/masonsxu">github.com/masonsxu</a></span>
-            </div>
-            <p class="resume-footer__note">指标口径说明：效率、故障率、可用性等数据基于 2021–2026 同周期项目复盘与运维记录，不虚构业务结果。</p>
-        </footer>
-    </main>
+    <footer>
+        <span>v2.0 · Specsheet · last updated 2026.05 · A4 portrait</span>
+        <a href="https://masonsxu-github-io.pages.dev">masonsxu-github-io.pages.dev</a>
+    </footer>
 
-    <script>
-        (() => {
-            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelectorAll('.reveal').forEach((node) => {
-                    node.style.opacity = '1';
-                    node.style.transform = 'none';
-                    node.style.animation = 'none';
-                });
-                return;
-            }
-
-            const items = document.querySelectorAll('.reveal');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animationPlayState = 'running';
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.14 });
-
-            items.forEach((item) => {
-                item.style.animationPlayState = 'paused';
-                observer.observe(item);
-            });
-        })();
-    </script>
 </body>
 
 </html>
